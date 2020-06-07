@@ -28,8 +28,8 @@ namespace BrowserCheck.Config
                 try
                 {
                     page.Canvas.DrawString(name, font1, brush1, page.Canvas.ClientSize.Width / 2, y, format1);
-                    y = y + font1.MeasureString("Country List", format1).Height;
-                    y = y + 5;
+                    y += font1.MeasureString("Country List", format1).Height;
+                    y += 5;
                     String[][] dataSource = new String[dataset.Length][];
                     for (int i = 0; i < dataset.Length; i++)
                     {
@@ -80,14 +80,14 @@ namespace BrowserCheck.Config
                         page.Canvas.DrawImage(image, x, intro, width, height);
                     }
                 }
-                intro = intro + height;
+                intro += height;
                 page.Canvas.DrawString("Browser Report", font1, brush1, page.Canvas.ClientSize.Width / 2, intro, format1);
-                intro = intro + fontInfo.MeasureString("Country List", format1).Height;
-                intro = intro + 20;
+                intro += fontInfo.MeasureString("Country List", format1).Height;
+                intro += 20;
                 page.Canvas.DrawString("Name    : " + name, fontInfo, brush1, 0, intro, leftAlignment);
-                intro = intro + 20;
+                intro += 20;
                 page.Canvas.DrawString("Surname : " + surname, fontInfo, brush1, 0, intro, leftAlignment);
-                intro = intro + 20;
+                intro += 20;
                 page.Canvas.DrawString("E-Mail  : " + email, fontInfo, brush1, 0, intro, leftAlignment);
                 if (numberOfNewLine <= 1)
                 {
@@ -117,7 +117,7 @@ namespace BrowserCheck.Config
             {
                 Directory.CreateDirectory(yourRoot);
             }
-            yourRoot = yourRoot + "\\";
+            yourRoot += "\\";
             if (File.Exists(yourRoot+name + ".pdf"))
             {
                 DialogResult result = Exception.ThrowExc.Instance.WarningYesNo(Const.Constants.WANT_OVERWRITE);

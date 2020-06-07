@@ -20,53 +20,19 @@ namespace BrowserCheck.Forms
             InitializeComponent();
         }
 
-        
-        private void CasePage_Load(object sender, EventArgs e)
+        private void chooseDir_Click_1(object sender, EventArgs e)
         {
-            string[] dirs = { };
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            pathOfDir.Text = path + "\\Mozilla\\Firefox\\Profiles";
-            dirs = checkDirsMozilla(pathOfDir.Text);
-            DefaultPopup popup = new DefaultPopup(dirs);
-            if (dirs.Length > 1)
+            if (firefoxRadio.Checked)
             {
-                if (popup.ShowDialog() == DialogResult.OK)
-                {
-                     pathOfDir.Text = popup.Path;
-                }
-            }
-            else if(dirs.Length == 1)
-            {
-                pathOfDir.Text = dirs[0];
+                folderItem.RootFolder = Environment.SpecialFolder.ApplicationData;
             }
             else
             {
-                pathOfDir.Text = "";
+                folderItem.RootFolder = Environment.SpecialFolder.LocalApplicationData;
             }
-            
-          
-
-        }
-
-        private string[] checkDirsMozilla(string path)
-        {
-            string[] dirs = { };
-            try
-            {
-                dirs = Directory.GetDirectories(path, "*default*", SearchOption.TopDirectoryOnly);
-            }
-            catch
-            {
-                ;
-            }
-            return dirs;
-        }
-
-        private void chooseDir_Click_1(object sender, EventArgs e)
-        {
             folderItem.ShowDialog();
             pathOfDir.Text = folderItem.SelectedPath;
-        }
+         }
 
         private void scanButton_Click_1(object sender, EventArgs e)
         {
@@ -76,21 +42,22 @@ namespace BrowserCheck.Forms
             }
             else
             {
-                MozillaController mozilla = new MozillaController();
-                mozilla.setPath(pathOfDir.Text);
-                MozillaForm mozillaForm = new MozillaForm(mozilla);
-                mozillaForm.Show();
+                if (firefoxRadio.Checked)
+                {
+                    MozillaController mozilla = new MozillaController();
+                    mozilla.setPath(pathOfDir.Text);
+                    MozillaForm mozillaForm = new MozillaForm(mozilla);
+                    mozillaForm.Show();
+                }
+                else
+                {
+                    ChromeController chrome = new ChromeController();
+                    chrome.setPath(pathOfDir.Text);
+                    ChromeForm chromeForm = new ChromeForm(chrome);
+                    chromeForm.Show();
+                }
                 this.Close();
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ChromeController chrome= new ChromeController();
-            chrome.setPath("C:\\Users\\VV\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\History");
-            ChromeForm chromeForm = new ChromeForm(chrome);
-            chromeForm.Show();
-            this.Close();
         }
     }
 }

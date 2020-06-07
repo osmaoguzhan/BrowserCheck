@@ -1,11 +1,7 @@
 ﻿using BrowserCheck.Model;
 using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BrowserCheck.DatabaseOperations
 {
@@ -16,12 +12,12 @@ namespace BrowserCheck.DatabaseOperations
 
         public bool checkUser(string email, string password)
         {
+           
             bool check = false;
-            try
+            using (conn)
             {
-
-                using (conn)
-                {
+                try
+                {                
                     conn.Open();
                     using (SQLiteCommand cmd = new SQLiteCommand(conn))
                     {
@@ -39,30 +35,34 @@ namespace BrowserCheck.DatabaseOperations
                                     Global.Session.Instance.MyUser.Surname = rdr.GetValue(1).ToString();
                                     Global.Session.Instance.MyUser.Email = rdr.GetValue(2).ToString();
                                 }
-
                                 check = true;
                             }
                         }
 
                     }
-                    conn.Close();
                 }
+                catch
+                {
+                    check = false;
+                }
+                finally
+                {
+                    conn.Close();
 
+                }
             }
-            catch
-            {
-                check = false;
-            }
-             return check;
+            return check;
         }
 
         public bool addUser(User user)
         {
-            bool check = false;
-            try
+         
+            bool check = false;  
+            using (conn)
             {
-                using (conn)
+                try
                 {
+
                     conn.Open();
                     using (SQLiteCommand cmd = new SQLiteCommand(conn))
                     {
@@ -78,16 +78,18 @@ namespace BrowserCheck.DatabaseOperations
                         cmd.ExecuteNonQuery();
 
                         transaction.Commit();
+                        check = true;
                     }
+                }    
+                catch
+                {
+                    check = false;
+                }
+                finally
+                {
                     conn.Close();
                 }
-                check = true;
             }
-            catch
-            {
-                check = false;
-            }
-
             return check;
         }
 

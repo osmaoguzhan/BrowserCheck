@@ -28,32 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CasePage));
             this.folderItem = new System.Windows.Forms.FolderBrowserDialog();
             this.chooseDir = new System.Windows.Forms.Button();
             this.pathOfDir = new System.Windows.Forms.TextBox();
-            this.scanButton = new System.Windows.Forms.Button();
             this.chromeRadio = new System.Windows.Forms.RadioButton();
             this.firefoxRadio = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.scanButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // folderItem
             // 
             this.folderItem.Description = "Choose Browser Path";
-            this.folderItem.RootFolder = System.Environment.SpecialFolder.UserProfile;
-            this.folderItem.SelectedPath = "C:\\Users\\VV\\";
+            this.folderItem.RootFolder = System.Environment.SpecialFolder.ApplicationData;
+            this.folderItem.SelectedPath = "C:\\Users\\VV\\AppData";
             this.folderItem.ShowNewFolderButton = false;
             // 
             // chooseDir
             // 
-            this.chooseDir.Location = new System.Drawing.Point(238, 58);
+            this.chooseDir.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.chooseDir.FlatAppearance.BorderSize = 2;
+            this.chooseDir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.chooseDir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Honeydew;
+            this.chooseDir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chooseDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.chooseDir.Image = global::BrowserCheck.Properties.Resources.folder;
+            this.chooseDir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.chooseDir.Location = new System.Drawing.Point(263, 52);
             this.chooseDir.Name = "chooseDir";
-            this.chooseDir.Size = new System.Drawing.Size(117, 23);
+            this.chooseDir.Size = new System.Drawing.Size(99, 29);
             this.chooseDir.TabIndex = 13;
             this.chooseDir.Text = "Choose Directory";
-            this.chooseDir.UseVisualStyleBackColor = true;
+            this.chooseDir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chooseDir.UseVisualStyleBackColor = false;
             this.chooseDir.Click += new System.EventHandler(this.chooseDir_Click_1);
             // 
             // pathOfDir
@@ -63,16 +72,6 @@
             this.pathOfDir.Name = "pathOfDir";
             this.pathOfDir.Size = new System.Drawing.Size(346, 20);
             this.pathOfDir.TabIndex = 12;
-            // 
-            // scanButton
-            // 
-            this.scanButton.Location = new System.Drawing.Point(406, 108);
-            this.scanButton.Name = "scanButton";
-            this.scanButton.Size = new System.Drawing.Size(75, 23);
-            this.scanButton.TabIndex = 11;
-            this.scanButton.Text = "Scan";
-            this.scanButton.UseVisualStyleBackColor = true;
-            this.scanButton.Click += new System.EventHandler(this.scanButton_Click_1);
             // 
             // chromeRadio
             // 
@@ -109,33 +108,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
             // 
-            // button1
+            // scanButton
             // 
-            this.button1.Location = new System.Drawing.Point(306, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.scanButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.scanButton.FlatAppearance.BorderSize = 2;
+            this.scanButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.scanButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.scanButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.scanButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.scanButton.Image = global::BrowserCheck.Properties.Resources.search;
+            this.scanButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.scanButton.Location = new System.Drawing.Point(400, 95);
+            this.scanButton.Name = "scanButton";
+            this.scanButton.Size = new System.Drawing.Size(86, 36);
+            this.scanButton.TabIndex = 11;
+            this.scanButton.Text = "Scan";
+            this.scanButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.scanButton.UseVisualStyleBackColor = false;
+            this.scanButton.Click += new System.EventHandler(this.scanButton_Click_1);
             // 
             // CasePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 145);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.chooseDir);
             this.Controls.Add(this.pathOfDir);
             this.Controls.Add(this.scanButton);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CasePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Case Page";
-            this.Load += new System.EventHandler(this.CasePage_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -151,6 +158,5 @@
         private System.Windows.Forms.RadioButton chromeRadio;
         private System.Windows.Forms.RadioButton firefoxRadio;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
     }
 }

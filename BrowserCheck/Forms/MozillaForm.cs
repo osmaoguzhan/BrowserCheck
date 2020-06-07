@@ -13,6 +13,7 @@ namespace BrowserCheck.Forms
 {
     public partial class MozillaForm : Form
     {
+        //Arraylists and objects that are going to be used
         MozillaController mozilla;
         static PdfController pdfController = new PdfController();
         PdfDocument doc = pdfController.create();
@@ -30,6 +31,7 @@ namespace BrowserCheck.Forms
             InitializeComboboxes();
             this.mozilla = mozilla;
         }
+        //Initializing gridviews
         private void Form1_Load(object sender, EventArgs e)
         {
             nameLabel.Text = Global.Session.Instance.MyUser.Name;
@@ -49,6 +51,11 @@ namespace BrowserCheck.Forms
             annosMozillaGrid.DataSource = annosList;
 
         }
+        /**
+         * 
+         * Sorting and searching datagridview elements
+         * 
+         * **/
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
             formHistoryGrid.DataSource = formList.Where(x => x.Value.Contains(searchBox.Text) || x.FieldName.Contains(searchBox.Text)).ToList();

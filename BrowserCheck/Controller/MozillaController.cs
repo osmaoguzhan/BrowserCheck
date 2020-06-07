@@ -18,14 +18,14 @@ namespace BrowserCheck.Controller
         public List<FormHistoryMozilla> getFormHistory()
         {
             List<FormHistoryMozilla> formList;
-            bool check = Validator.MozillaValidator.Instance.checkFile(mozilla.Path + "\\formhistory.sqlite");
+            bool check = Validator.BrowserValidator.Instance.checkFile(mozilla.Path + "\\formhistory.sqlite");
             if (check)
             {
                 formList = new List<FormHistoryMozilla>();
                 conn = new SQLiteConnection("Data Source=" + mozilla.Path + "\\formhistory.sqlite;" + version);
-                try
+                using (conn)
                 {
-                    using (conn)
+                    try
                     {
                         conn.Open();
                         using (SQLiteCommand cmd = new SQLiteCommand(conn))
@@ -49,12 +49,15 @@ namespace BrowserCheck.Controller
                             }
 
                         }
+                    }
+                    catch
+                    {
+                        formList = null;
+                    }
+                    finally
+                    {
                         conn.Close();
                     }
-                }
-                catch
-                {
-                    formList = null;
                 }
             }else
             {
@@ -66,16 +69,16 @@ namespace BrowserCheck.Controller
 
         public List<WebHistoryMozilla> getWebHistory()
         {
-            bool check = Validator.MozillaValidator.Instance.checkFile(mozilla.Path + "\\places.sqlite");
+            bool check = Validator.BrowserValidator.Instance.checkFile(mozilla.Path + "\\places.sqlite");
             List<WebHistoryMozilla> webList;
             if (check)
             {
                 webList = new List<WebHistoryMozilla>();
                 conn = new SQLiteConnection("Data Source=" + mozilla.Path + "\\places.sqlite;" + version);
-                try
+                using (conn)
                 {
-                    using (conn)
-                    {
+                    try
+                    {    
                         conn.Open();
                         using (SQLiteCommand cmd = new SQLiteCommand(conn))
                         {
@@ -101,12 +104,15 @@ namespace BrowserCheck.Controller
                             }
 
                         }
+                    }
+                    catch
+                    {
+                        webList = null;
+                    }
+                    finally
+                    {
                         conn.Close();
                     }
-                }
-                catch
-                {
-                    webList = null;
                 }
             }
             else
@@ -117,16 +123,16 @@ namespace BrowserCheck.Controller
         }
         public List<InputHistoryMozilla> getInputHistory()
         {
-            bool check = Validator.MozillaValidator.Instance.checkFile(mozilla.Path + "\\places.sqlite");
+            bool check = Validator.BrowserValidator.Instance.checkFile(mozilla.Path + "\\places.sqlite");
             List<InputHistoryMozilla> inputList;
             if (check)
             {
                 inputList = new List<InputHistoryMozilla>();
                 conn = new SQLiteConnection("Data Source=" + mozilla.Path + "\\places.sqlite;" + version);
-                try
+                using (conn)
                 {
-                    using (conn)
-                    {
+                    try
+                    {             
                         conn.Open();
                         using (SQLiteCommand cmd = new SQLiteCommand(conn))
                         {
@@ -144,14 +150,16 @@ namespace BrowserCheck.Controller
                                 }
                             }
 
-                        }
+                        }                  
+                    }
+                    catch
+                    {
+                        inputList = null;
+                    }
+                    finally
+                    {
                         conn.Close();
                     }
-                }
-
-                catch
-                {
-                    inputList = null;
                 }
             }
             else
@@ -163,15 +171,15 @@ namespace BrowserCheck.Controller
         }
         public List<BookmarksMozilla> getBookmarks()
         {
-            bool check = Validator.MozillaValidator.Instance.checkFile(mozilla.Path + "\\places.sqlite");
+            bool check = Validator.BrowserValidator.Instance.checkFile(mozilla.Path + "\\places.sqlite");
             List<BookmarksMozilla> bookmarkList;
             if (check)
             {
                 conn = new SQLiteConnection("Data Source=" + mozilla.Path + "\\places.sqlite;" + version);
                 bookmarkList = new List<BookmarksMozilla>();
-                try
+                using (conn)
                 {
-                    using (conn)
+                    try
                     {
                         conn.Open();
                         using (SQLiteCommand cmd = new SQLiteCommand(conn))
@@ -198,12 +206,15 @@ namespace BrowserCheck.Controller
                             }
 
                         }
+                    }
+                    catch
+                    {
+                    bookmarkList = null;
+                    }
+                    finally
+                    {
                         conn.Close();
                     }
-                }
-                catch
-                {
-                    bookmarkList = null;
                 }
             }
             else
@@ -216,15 +227,15 @@ namespace BrowserCheck.Controller
 
         public List<CookiesMozilla> getCookies()
         {
-            bool check = Validator.MozillaValidator.Instance.checkFile(mozilla.Path + "\\cookies.sqlite");
+            bool check = Validator.BrowserValidator.Instance.checkFile(mozilla.Path + "\\cookies.sqlite");
             List<CookiesMozilla> cookiesList;
             if (check)
             {
                 conn = new SQLiteConnection("Data Source=" + mozilla.Path + "\\cookies.sqlite;" + version);
                 cookiesList = new List<CookiesMozilla>();
-                try
+                using (conn)
                 {
-                    using (conn)
+                    try
                     {
                         conn.Open();
                         using (SQLiteCommand cmd = new SQLiteCommand(conn))
@@ -257,12 +268,15 @@ namespace BrowserCheck.Controller
                             }
 
                         }
+                    }
+                    catch
+                    {
+                    cookiesList = null;
+                    }
+                    finally
+                    {
                         conn.Close();
                     }
-                }
-                catch
-                {
-                    cookiesList = null;
                 }
             }
             else
@@ -274,17 +288,18 @@ namespace BrowserCheck.Controller
         }
         public List<AnnosMozilla> getAnnos()
         {
-            bool check = Validator.MozillaValidator.Instance.checkFile(mozilla.Path + "\\places.sqlite");
+            bool check = Validator.BrowserValidator.Instance.checkFile(mozilla.Path + "\\places.sqlite");
             List<AnnosMozilla> annosList;
             if (check)
             {
                 conn = new SQLiteConnection("Data Source=" + mozilla.Path + "\\places.sqlite;" + version);
                 annosList = new List<AnnosMozilla>();
-                try
+
+                using (conn)
                 {
-                    using (conn)
+                    try
                     {
-                        conn.Open();
+                       conn.Open();
                         using (SQLiteCommand cmd = new SQLiteCommand(conn))
                         {
                             cmd.CommandText = "SELECT content,dateAdded,lastModified from moz_annos where anno_attribute_id = 5";
@@ -308,13 +323,16 @@ namespace BrowserCheck.Controller
                                 }
                             }
 
-                        }
+                        }                      
+                    }
+                    catch
+                    {
+                        annosList = null;
+                    }
+                    finally
+                    {
                         conn.Close();
                     }
-                }
-                catch
-                {
-                    annosList = null;
                 }
             }
             else

@@ -33,7 +33,6 @@
             this.treeViewReport = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.refresh = new System.Windows.Forms.Button();
             this.imageListIcon = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.nameSurnameLabel = new System.Windows.Forms.Label();
@@ -41,13 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.zoomOut = new System.Windows.Forms.Button();
-            this.zoomIn = new System.Windows.Forms.Button();
             this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.newCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.authorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,11 +48,18 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.user = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dateToolStrip = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.clockTool = new System.Windows.Forms.ToolStripLabel();
             this.clock = new System.Windows.Forms.Timer(this.components);
+            this.toolStripForTime = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.labelDate = new System.Windows.Forms.ToolStripLabel();
+            this.labelTime = new System.Windows.Forms.ToolStripLabel();
+            this.refresh = new System.Windows.Forms.Button();
+            this.zoomOut = new System.Windows.Forms.Button();
+            this.zoomIn = new System.Windows.Forms.Button();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.newCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -69,7 +69,7 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.toolStripForTime.SuspendLayout();
             this.SuspendLayout();
             // 
             // treeViewReport
@@ -93,7 +93,7 @@
             // splitContainer1
             // 
             this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(2, 27);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 28);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -109,27 +109,16 @@
             this.splitContainer1.SplitterDistance = 260;
             this.splitContainer1.TabIndex = 3;
             // 
-            // refresh
-            // 
-            this.refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.refresh.ImageIndex = 2;
-            this.refresh.ImageList = this.imageListIcon;
-            this.refresh.Location = new System.Drawing.Point(182, 4);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(72, 23);
-            this.refresh.TabIndex = 3;
-            this.refresh.Text = "Refresh";
-            this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.refresh.UseVisualStyleBackColor = false;
-            this.refresh.Click += new System.EventHandler(this.refresh_Click);
-            // 
             // imageListIcon
             // 
             this.imageListIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListIcon.ImageStream")));
             this.imageListIcon.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListIcon.Images.SetKeyName(0, "addition-sign.png");
-            this.imageListIcon.Images.SetKeyName(1, "magnifying-glass.png");
-            this.imageListIcon.Images.SetKeyName(2, "reload.png");
+            this.imageListIcon.Images.SetKeyName(0, "reload.png");
+            this.imageListIcon.Images.SetKeyName(1, "question.png");
+            this.imageListIcon.Images.SetKeyName(2, "exit.png");
+            this.imageListIcon.Images.SetKeyName(3, "folder.png");
+            this.imageListIcon.Images.SetKeyName(4, "logout.png");
+            this.imageListIcon.Images.SetKeyName(5, "paper.png");
             // 
             // splitContainer2
             // 
@@ -203,6 +192,146 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Report Creation Time: ";
             // 
+            // printPreviewControl1
+            // 
+            this.printPreviewControl1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.printPreviewControl1.Location = new System.Drawing.Point(3, 47);
+            this.printPreviewControl1.Name = "printPreviewControl1";
+            this.printPreviewControl1.Size = new System.Drawing.Size(796, 448);
+            this.printPreviewControl1.TabIndex = 0;
+            this.printPreviewControl1.UseAntiAlias = true;
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem,
+            this.authorToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem2.Image = global::BrowserCheck.Properties.Resources.question;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(63, 21);
+            this.toolStripMenuItem2.Text = "Help";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.question;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.helpToolStripMenuItem.Text = "View Help";
+            // 
+            // authorToolStripMenuItem
+            // 
+            this.authorToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.user;
+            this.authorToolStripMenuItem.Name = "authorToolStripMenuItem";
+            this.authorToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.authorToolStripMenuItem.Text = "Author";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.form;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.aboutToolStripMenuItem.Text = "About BrowserCheck";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.user});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 25);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // user
+            // 
+            this.user.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.user.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.user.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logOutToolStripMenuItem1});
+            this.user.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user.Name = "user";
+            this.user.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.user.RightToLeftAutoMirrorImage = true;
+            this.user.ShortcutKeyDisplayString = "";
+            this.user.Size = new System.Drawing.Size(12, 21);
+            // 
+            // logOutToolStripMenuItem1
+            // 
+            this.logOutToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutToolStripMenuItem1.Name = "logOutToolStripMenuItem1";
+            this.logOutToolStripMenuItem1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.logOutToolStripMenuItem1.ShortcutKeyDisplayString = "Ctrl+Alt+F4";
+            this.logOutToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.F4)));
+            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(197, 22);
+            this.logOutToolStripMenuItem1.Text = "Log Out";
+            this.logOutToolStripMenuItem1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.logOutToolStripMenuItem1.Click += new System.EventHandler(this.logOutToolStripMenuItem1_Click);
+            // 
+            // clock
+            // 
+            this.clock.Tick += new System.EventHandler(this.clock_Tick);
+            // 
+            // toolStripForTime
+            // 
+            this.toolStripForTime.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStripForTime.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.labelDate,
+            this.toolStripSeparator1,
+            this.labelTime});
+            this.toolStripForTime.Location = new System.Drawing.Point(0, 586);
+            this.toolStripForTime.Name = "toolStripForTime";
+            this.toolStripForTime.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStripForTime.Size = new System.Drawing.Size(1067, 25);
+            this.toolStripForTime.TabIndex = 5;
+            this.toolStripForTime.Text = "toolStrip1";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // labelDate
+            // 
+            this.labelDate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.labelDate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelDate.Image = global::BrowserCheck.Properties.Resources.calendar;
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(90, 22);
+            this.labelDate.Text = "labelDate";
+            // 
+            // labelTime
+            // 
+            this.labelTime.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.labelTime.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelTime.Image = global::BrowserCheck.Properties.Resources.clock;
+            this.labelTime.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(91, 22);
+            this.labelTime.Text = "labelTime";
+            this.labelTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // refresh
+            // 
+            this.refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.refresh.ImageIndex = 0;
+            this.refresh.ImageList = this.imageListIcon;
+            this.refresh.Location = new System.Drawing.Point(182, 4);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(72, 23);
+            this.refresh.TabIndex = 3;
+            this.refresh.Text = "Refresh";
+            this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refresh.UseVisualStyleBackColor = false;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
             // zoomOut
             // 
             this.zoomOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("zoomOut.BackgroundImage")));
@@ -227,15 +356,6 @@
             this.zoomIn.UseVisualStyleBackColor = true;
             this.zoomIn.Click += new System.EventHandler(this.zoomIn_Click);
             // 
-            // printPreviewControl1
-            // 
-            this.printPreviewControl1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.printPreviewControl1.Location = new System.Drawing.Point(3, 47);
-            this.printPreviewControl1.Name = "printPreviewControl1";
-            this.printPreviewControl1.Size = new System.Drawing.Size(796, 448);
-            this.printPreviewControl1.TabIndex = 0;
-            this.printPreviewControl1.UseAntiAlias = true;
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -243,12 +363,14 @@
             this.showFolderToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.Image = global::BrowserCheck.Properties.Resources.paper;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(39, 21);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(55, 21);
             this.toolStripMenuItem1.Text = "File";
             // 
             // newCaseToolStripMenuItem
             // 
+            this.newCaseToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.plus;
             this.newCaseToolStripMenuItem.Name = "newCaseToolStripMenuItem";
             this.newCaseToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+Shift+F2";
             this.newCaseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
@@ -259,6 +381,7 @@
             // 
             // showFolderToolStripMenuItem
             // 
+            this.showFolderToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.folder;
             this.showFolderToolStripMenuItem.Name = "showFolderToolStripMenuItem";
             this.showFolderToolStripMenuItem.ShortcutKeyDisplayString = "Shift+F1";
             this.showFolderToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F1)));
@@ -269,124 +392,20 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.exit;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeyDisplayString = "Alt+F4";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helpToolStripMenuItem,
-            this.authorToolStripMenuItem,
-            this.aboutToolStripMenuItem});
-            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(47, 21);
-            this.toolStripMenuItem2.Text = "Help";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.helpToolStripMenuItem.Text = "View Help";
-            // 
-            // authorToolStripMenuItem
-            // 
-            this.authorToolStripMenuItem.Name = "authorToolStripMenuItem";
-            this.authorToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.authorToolStripMenuItem.Text = "Author";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.aboutToolStripMenuItem.Text = "About BrowserCheck";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.user});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 25);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // user
-            // 
-            this.user.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.user.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.user.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logOutToolStripMenuItem1});
-            this.user.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user.Name = "user";
-            this.user.ShortcutKeyDisplayString = "";
-            this.user.Size = new System.Drawing.Size(12, 21);
-            // 
-            // logOutToolStripMenuItem1
-            // 
-            this.logOutToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutToolStripMenuItem1.Name = "logOutToolStripMenuItem1";
-            this.logOutToolStripMenuItem1.ShortcutKeyDisplayString = "Ctrl+Alt+F4";
-            this.logOutToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-            | System.Windows.Forms.Keys.F4)));
-            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(197, 22);
-            this.logOutToolStripMenuItem1.Text = "Log Out";
-            this.logOutToolStripMenuItem1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            this.logOutToolStripMenuItem1.Click += new System.EventHandler(this.logOutToolStripMenuItem1_Click);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dateToolStrip,
-            this.toolStripSeparator1,
-            this.clockTool});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 586);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1067, 25);
-            this.toolStrip1.TabIndex = 5;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // dateToolStrip
-            // 
-            this.dateToolStrip.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.dateToolStrip.Enabled = false;
-            this.dateToolStrip.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dateToolStrip.Name = "dateToolStrip";
-            this.dateToolStrip.Size = new System.Drawing.Size(0, 22);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // clockTool
-            // 
-            this.clockTool.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.clockTool.Enabled = false;
-            this.clockTool.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.clockTool.Name = "clockTool";
-            this.clockTool.Size = new System.Drawing.Size(0, 22);
-            // 
-            // clock
-            // 
-            this.clock.Tick += new System.EventHandler(this.clock_Tick);
             // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 611);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStripForTime);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -410,8 +429,8 @@
             this.splitContainer2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStripForTime.ResumeLayout(false);
+            this.toolStripForTime.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,11 +461,11 @@
         private System.Windows.Forms.ImageList imageListIcon;
         private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.Label nameSurnameLabel;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripLabel clockTool;
         private System.Windows.Forms.Timer clock;
-        private System.Windows.Forms.ToolStripLabel dateToolStrip;
         private System.Windows.Forms.ToolStripMenuItem showFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip toolStripForTime;
+        private System.Windows.Forms.ToolStripLabel labelDate;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel labelTime;
     }
 }

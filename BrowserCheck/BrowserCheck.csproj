@@ -109,18 +109,6 @@
     <Compile Include="Forms\CasePage.Designer.cs">
       <DependentUpon>CasePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DataForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DataForm.Designer.cs">
-      <DependentUpon>DataForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\DefaultPopup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\DefaultPopup.Designer.cs">
-      <DependentUpon>DefaultPopup.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\MozillaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,7 +144,7 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validator\MozillaValidator.cs" />
+    <Compile Include="Validator\BrowserValidator.cs" />
     <Compile Include="Validator\UserValidator.cs" />
     <Compile Include="Validator\Validator.cs" />
     <EmbeddedResource Include="Forms\CasePage.resx">
@@ -164,12 +152,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChromeForm.resx">
       <DependentUpon>ChromeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DataForm.resx">
-      <DependentUpon>DataForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DefaultPopup.resx">
-      <DependentUpon>DefaultPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MozillaForm.resx">
       <DependentUpon>MozillaForm.cs</DependentUpon>
@@ -194,6 +176,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BrowserCheck.Model.AnnosMozilla.datasource" />
@@ -236,6 +219,78 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\addition-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\interface.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\magnifying-glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\registertrans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\registertrans1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\form.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\fingerprint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Application Files\Background Images\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

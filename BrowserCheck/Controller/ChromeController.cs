@@ -20,11 +20,11 @@ namespace BrowserCheck.Controller
         public List<KeywordSearchChrome> getKeywords()
         {
             List<KeywordSearchChrome> keywordList;
-            bool check = Validator.MozillaValidator.Instance.checkFile(chrome.Path);
+            bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path+"\\History");
             if (check)
             {
                 keywordList = new List<KeywordSearchChrome>();
-                conn = new SQLiteConnection("Data Source=" + chrome.Path + ";" + version);
+                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\History;" + version);
                 try
                 {
                     using (conn)
@@ -64,11 +64,11 @@ namespace BrowserCheck.Controller
         public List<HistoryChrome> getHistory()
         {
             List<HistoryChrome> historyList;
-            bool check = Validator.MozillaValidator.Instance.checkFile(chrome.Path);
+            bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path+ "\\History");
             if (check)
             {
                 historyList = new List<HistoryChrome>();
-                conn = new SQLiteConnection("Data Source=" + chrome.Path + ";" + version);
+                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\History;" + version);
                 try
                 {
                     using (conn)
@@ -112,11 +112,11 @@ namespace BrowserCheck.Controller
         public List<DownloadsChrome> getDownloads()
         {
             List<DownloadsChrome> downloadList;
-            bool check = Validator.MozillaValidator.Instance.checkFile(chrome.Path);
+            bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path+ "\\History");
             if (check)
             {
                 downloadList = new List<DownloadsChrome>();
-                conn = new SQLiteConnection("Data Source=" + chrome.Path + ";" + version);
+                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\History;" + version);
                 try
                 {
                     using (conn)
@@ -164,11 +164,11 @@ namespace BrowserCheck.Controller
         public List<AutoFillChrome> getAutofill()
         {
             List<AutoFillChrome> autofillList;
-            bool check = Validator.MozillaValidator.Instance.checkFile(chrome.Path+"\\..\\Web Data");
+            bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path+"\\Web Data");
             if (check)
             {
                 autofillList = new List<AutoFillChrome>();
-                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\..\\Web Data;" + version);
+                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\Web Data;" + version);
                 try
                 {
                     using (conn)
@@ -215,11 +215,11 @@ namespace BrowserCheck.Controller
         public List<CookiesChrome> getCookies()
         {
             List<CookiesChrome> cookieList;
-            bool check = Validator.MozillaValidator.Instance.checkFile(chrome.Path + "\\..\\Cookies");
+            bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path + "\\Cookies");
             if (check)
             {
                 cookieList = new List<CookiesChrome>();
-                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\..\\Cookies;" + version);
+                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\Cookies;" + version);
                 try
                 {
                     using (conn)
@@ -267,11 +267,11 @@ namespace BrowserCheck.Controller
         public List<TopSitesChrome> getTopSites()
         {
             List<TopSitesChrome> topSitesList;
-            bool check = Validator.MozillaValidator.Instance.checkFile(chrome.Path + "\\..\\Top Sites");
+            bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path + "\\Top Sites");
             if (check)
             {
                 topSitesList = new List<TopSitesChrome>();
-                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\..\\Top Sites;" + version);
+                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\Top Sites;" + version);
                 try
                 {
                     using (conn)

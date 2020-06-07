@@ -38,7 +38,7 @@ namespace BrowserCheck.Controller
             string header = "";
             for (int i = 0; i < columnNumber; i++)
             {
-                header += grid.Columns[0].HeaderText + ";";
+                header += grid.Columns[i].HeaderText + ";";
             }
             header = header.Remove(header.Length - 1);
             array[0] = header;

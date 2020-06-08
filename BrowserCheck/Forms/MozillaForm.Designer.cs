@@ -55,7 +55,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.formHistoryGrid = new System.Windows.Forms.DataGridView();
+            this.fieldNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeUsedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addToReport = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.formHistoryMozillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.webHistoryMozilla = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.webHistorySort = new System.Windows.Forms.Button();
@@ -64,7 +70,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.searchBoxWeb = new System.Windows.Forms.TextBox();
             this.webHistoryGrid = new System.Windows.Forms.DataGridView();
+            this.browseUrl = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.urlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visitCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastVisitDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addToReportWeb = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.webHistoryMozillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inputHistoryMozilla = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.inputHistorySort = new System.Windows.Forms.Button();
@@ -73,7 +86,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.searchBoxInput = new System.Windows.Forms.TextBox();
             this.inputHistoryGrid = new System.Windows.Forms.DataGridView();
+            this.ınputDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usecountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addToReportInput = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ınputHistoryMozillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookmarkMozilla = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.bookmarkSort = new System.Windows.Forms.Button();
@@ -82,7 +98,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.searchBoxBookmark = new System.Windows.Forms.TextBox();
             this.bookmarkMozillaGrid = new System.Windows.Forms.DataGridView();
+            this.urlDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateAddedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastModifiedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addToReportBookmark = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bookmarksMozillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cookiesMozilla = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.cookiesMozillaSort = new System.Windows.Forms.Button();
@@ -91,8 +112,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.searchBoxCookies = new System.Windows.Forms.TextBox();
             this.cookiesMozillaGrid = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CookiePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expiryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastAccessedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creationTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addToReportCookies = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cookiesMozillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.annosMozilla = new System.Windows.Forms.TabPage();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.sortAnnosMozilla = new System.Windows.Forms.Button();
@@ -101,7 +129,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.searcBoxAnnos = new System.Windows.Forms.TextBox();
             this.annosMozillaGrid = new System.Windows.Forms.DataGridView();
+            this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateAddedDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastModifiedDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addToReportAnnos = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.annosMozillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printTab = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
@@ -125,37 +157,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.profilePic = new System.Windows.Forms.PictureBox();
             this.openFilePicutre = new System.Windows.Forms.OpenFileDialog();
-            this.fieldNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeUsedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formHistoryMozillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.urlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visitCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastVisitDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.webHistoryMozillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ınputDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usecountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ınputHistoryMozillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.urlDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateAddedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastModifiedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookmarksMozillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expiryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastAccessedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.creationTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cookiesMozillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateAddedDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastModifiedDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.annosMozillaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mozillaTabControl.SuspendLayout();
             this.formHistoryMozilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -163,36 +164,42 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.formHistoryGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formHistoryMozillaBindingSource)).BeginInit();
             this.webHistoryMozilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webHistoryGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webHistoryMozillaBindingSource)).BeginInit();
             this.inputHistoryMozilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inputHistoryGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ınputHistoryMozillaBindingSource)).BeginInit();
             this.bookmarkMozilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookmarkMozillaGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookmarksMozillaBindingSource)).BeginInit();
             this.cookiesMozilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cookiesMozillaGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cookiesMozillaBindingSource)).BeginInit();
             this.annosMozilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
             this.splitContainer6.Panel1.SuspendLayout();
             this.splitContainer6.Panel2.SuspendLayout();
             this.splitContainer6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.annosMozillaGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.annosMozillaBindingSource)).BeginInit();
             this.printTab.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
@@ -201,12 +208,6 @@
             this.splitContainer7.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formHistoryMozillaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.webHistoryMozillaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ınputHistoryMozillaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookmarksMozillaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cookiesMozillaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.annosMozillaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mozillaTabControl
@@ -225,7 +226,6 @@
             this.mozillaTabControl.SelectedIndex = 0;
             this.mozillaTabControl.Size = new System.Drawing.Size(1064, 580);
             this.mozillaTabControl.TabIndex = 1;
-            this.mozillaTabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.mozillaTabControl_Selected);
             // 
             // formHistoryMozilla
             // 
@@ -341,10 +341,55 @@
             this.formHistoryGrid.Size = new System.Drawing.Size(1050, 507);
             this.formHistoryGrid.TabIndex = 0;
             // 
+            // fieldNameDataGridViewTextBoxColumn
+            // 
+            this.fieldNameDataGridViewTextBoxColumn.DataPropertyName = "FieldName";
+            this.fieldNameDataGridViewTextBoxColumn.FillWeight = 91.85447F;
+            this.fieldNameDataGridViewTextBoxColumn.HeaderText = "FieldName";
+            this.fieldNameDataGridViewTextBoxColumn.Name = "fieldNameDataGridViewTextBoxColumn";
+            this.fieldNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // valueDataGridViewTextBoxColumn
+            // 
+            this.valueDataGridViewTextBoxColumn.DataPropertyName = "Value";
+            this.valueDataGridViewTextBoxColumn.FillWeight = 91.85447F;
+            this.valueDataGridViewTextBoxColumn.HeaderText = "Value";
+            this.valueDataGridViewTextBoxColumn.Name = "valueDataGridViewTextBoxColumn";
+            this.valueDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // timeUsedDataGridViewTextBoxColumn
+            // 
+            this.timeUsedDataGridViewTextBoxColumn.DataPropertyName = "TimeUsed";
+            this.timeUsedDataGridViewTextBoxColumn.FillWeight = 91.85447F;
+            this.timeUsedDataGridViewTextBoxColumn.HeaderText = "TimeUsed";
+            this.timeUsedDataGridViewTextBoxColumn.Name = "timeUsedDataGridViewTextBoxColumn";
+            this.timeUsedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstDateDataGridViewTextBoxColumn
+            // 
+            this.firstDateDataGridViewTextBoxColumn.DataPropertyName = "FirstDate";
+            this.firstDateDataGridViewTextBoxColumn.FillWeight = 91.85447F;
+            this.firstDateDataGridViewTextBoxColumn.HeaderText = "FirstDate";
+            this.firstDateDataGridViewTextBoxColumn.Name = "firstDateDataGridViewTextBoxColumn";
+            this.firstDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastDateDataGridViewTextBoxColumn
+            // 
+            this.lastDateDataGridViewTextBoxColumn.DataPropertyName = "LastDate";
+            this.lastDateDataGridViewTextBoxColumn.FillWeight = 91.85447F;
+            this.lastDateDataGridViewTextBoxColumn.HeaderText = "LastDate";
+            this.lastDateDataGridViewTextBoxColumn.Name = "lastDateDataGridViewTextBoxColumn";
+            this.lastDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // addToReport
             // 
+            this.addToReport.FillWeight = 91.85447F;
             this.addToReport.HeaderText = "Add To Report";
             this.addToReport.Name = "addToReport";
+            // 
+            // formHistoryMozillaBindingSource
+            // 
+            this.formHistoryMozillaBindingSource.DataSource = typeof(BrowserCheck.Model.FormHistoryMozilla);
             // 
             // webHistoryMozilla
             // 
@@ -444,6 +489,7 @@
             this.webHistoryGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.webHistoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.webHistoryGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.browseUrl,
             this.urlDataGridViewTextBoxColumn,
             this.titleDataGridViewTextBoxColumn,
             this.visitCountDataGridViewTextBoxColumn,
@@ -456,11 +502,68 @@
             this.webHistoryGrid.Name = "webHistoryGrid";
             this.webHistoryGrid.Size = new System.Drawing.Size(1050, 508);
             this.webHistoryGrid.TabIndex = 0;
+            this.webHistoryGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.webHistoryGrid_CellContentClick);
+            // 
+            // browseUrl
+            // 
+            this.browseUrl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.browseUrl.DataPropertyName = "Url";
+            this.browseUrl.FillWeight = 177.665F;
+            this.browseUrl.HeaderText = "Browse";
+            this.browseUrl.Name = "browseUrl";
+            this.browseUrl.Text = "Browse";
+            this.browseUrl.UseColumnTextForLinkValue = true;
+            this.browseUrl.Width = 48;
+            // 
+            // urlDataGridViewTextBoxColumn
+            // 
+            this.urlDataGridViewTextBoxColumn.DataPropertyName = "Url";
+            this.urlDataGridViewTextBoxColumn.FillWeight = 87.05586F;
+            this.urlDataGridViewTextBoxColumn.HeaderText = "Url";
+            this.urlDataGridViewTextBoxColumn.Name = "urlDataGridViewTextBoxColumn";
+            this.urlDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.FillWeight = 87.05586F;
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // visitCountDataGridViewTextBoxColumn
+            // 
+            this.visitCountDataGridViewTextBoxColumn.DataPropertyName = "VisitCount";
+            this.visitCountDataGridViewTextBoxColumn.FillWeight = 87.05586F;
+            this.visitCountDataGridViewTextBoxColumn.HeaderText = "VisitCount";
+            this.visitCountDataGridViewTextBoxColumn.Name = "visitCountDataGridViewTextBoxColumn";
+            this.visitCountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastVisitDateDataGridViewTextBoxColumn
+            // 
+            this.lastVisitDateDataGridViewTextBoxColumn.DataPropertyName = "LastVisitDate";
+            this.lastVisitDateDataGridViewTextBoxColumn.FillWeight = 87.05586F;
+            this.lastVisitDateDataGridViewTextBoxColumn.HeaderText = "LastVisitDate";
+            this.lastVisitDateDataGridViewTextBoxColumn.Name = "lastVisitDateDataGridViewTextBoxColumn";
+            this.lastVisitDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.FillWeight = 87.05586F;
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // addToReportWeb
             // 
+            this.addToReportWeb.FillWeight = 87.05586F;
             this.addToReportWeb.HeaderText = "Add To Report";
             this.addToReportWeb.Name = "addToReportWeb";
+            // 
+            // webHistoryMozillaBindingSource
+            // 
+            this.webHistoryMozillaBindingSource.DataSource = typeof(BrowserCheck.Model.WebHistoryMozilla);
             // 
             // inputHistoryMozilla
             // 
@@ -566,10 +669,28 @@
             this.inputHistoryGrid.Size = new System.Drawing.Size(1056, 512);
             this.inputHistoryGrid.TabIndex = 0;
             // 
+            // ınputDataGridViewTextBoxColumn
+            // 
+            this.ınputDataGridViewTextBoxColumn.DataPropertyName = "Input";
+            this.ınputDataGridViewTextBoxColumn.HeaderText = "Input";
+            this.ınputDataGridViewTextBoxColumn.Name = "ınputDataGridViewTextBoxColumn";
+            this.ınputDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // usecountDataGridViewTextBoxColumn
+            // 
+            this.usecountDataGridViewTextBoxColumn.DataPropertyName = "Use_count";
+            this.usecountDataGridViewTextBoxColumn.HeaderText = "Use_count";
+            this.usecountDataGridViewTextBoxColumn.Name = "usecountDataGridViewTextBoxColumn";
+            this.usecountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // addToReportInput
             // 
             this.addToReportInput.HeaderText = "Add To Report";
             this.addToReportInput.Name = "addToReportInput";
+            // 
+            // ınputHistoryMozillaBindingSource
+            // 
+            this.ınputHistoryMozillaBindingSource.DataSource = typeof(BrowserCheck.Model.InputHistoryMozilla);
             // 
             // bookmarkMozilla
             // 
@@ -679,10 +800,42 @@
             this.bookmarkMozillaGrid.Size = new System.Drawing.Size(1056, 513);
             this.bookmarkMozillaGrid.TabIndex = 0;
             // 
+            // urlDataGridViewTextBoxColumn1
+            // 
+            this.urlDataGridViewTextBoxColumn1.DataPropertyName = "Url";
+            this.urlDataGridViewTextBoxColumn1.HeaderText = "Url";
+            this.urlDataGridViewTextBoxColumn1.Name = "urlDataGridViewTextBoxColumn1";
+            this.urlDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn1
+            // 
+            this.titleDataGridViewTextBoxColumn1.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn1.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
+            this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dateAddedDataGridViewTextBoxColumn
+            // 
+            this.dateAddedDataGridViewTextBoxColumn.DataPropertyName = "DateAdded";
+            this.dateAddedDataGridViewTextBoxColumn.HeaderText = "DateAdded";
+            this.dateAddedDataGridViewTextBoxColumn.Name = "dateAddedDataGridViewTextBoxColumn";
+            this.dateAddedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastModifiedDataGridViewTextBoxColumn
+            // 
+            this.lastModifiedDataGridViewTextBoxColumn.DataPropertyName = "LastModified";
+            this.lastModifiedDataGridViewTextBoxColumn.HeaderText = "LastModified";
+            this.lastModifiedDataGridViewTextBoxColumn.Name = "lastModifiedDataGridViewTextBoxColumn";
+            this.lastModifiedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // addToReportBookmark
             // 
             this.addToReportBookmark.HeaderText = "Add To Report";
             this.addToReportBookmark.Name = "addToReportBookmark";
+            // 
+            // bookmarksMozillaBindingSource
+            // 
+            this.bookmarksMozillaBindingSource.DataSource = typeof(BrowserCheck.Model.BookmarksMozilla);
             // 
             // cookiesMozilla
             // 
@@ -798,6 +951,27 @@
             this.cookiesMozillaGrid.Size = new System.Drawing.Size(1056, 512);
             this.cookiesMozillaGrid.TabIndex = 0;
             // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // valueDataGridViewTextBoxColumn1
+            // 
+            this.valueDataGridViewTextBoxColumn1.DataPropertyName = "Value";
+            this.valueDataGridViewTextBoxColumn1.HeaderText = "Value";
+            this.valueDataGridViewTextBoxColumn1.Name = "valueDataGridViewTextBoxColumn1";
+            this.valueDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // hostDataGridViewTextBoxColumn
+            // 
+            this.hostDataGridViewTextBoxColumn.DataPropertyName = "Host";
+            this.hostDataGridViewTextBoxColumn.HeaderText = "Host";
+            this.hostDataGridViewTextBoxColumn.Name = "hostDataGridViewTextBoxColumn";
+            this.hostDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // CookiePath
             // 
             this.CookiePath.DataPropertyName = "CookiePath";
@@ -805,10 +979,35 @@
             this.CookiePath.Name = "CookiePath";
             this.CookiePath.ReadOnly = true;
             // 
+            // expiryDataGridViewTextBoxColumn
+            // 
+            this.expiryDataGridViewTextBoxColumn.DataPropertyName = "Expiry";
+            this.expiryDataGridViewTextBoxColumn.HeaderText = "Expiry";
+            this.expiryDataGridViewTextBoxColumn.Name = "expiryDataGridViewTextBoxColumn";
+            this.expiryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastAccessedDataGridViewTextBoxColumn
+            // 
+            this.lastAccessedDataGridViewTextBoxColumn.DataPropertyName = "LastAccessed";
+            this.lastAccessedDataGridViewTextBoxColumn.HeaderText = "LastAccessed";
+            this.lastAccessedDataGridViewTextBoxColumn.Name = "lastAccessedDataGridViewTextBoxColumn";
+            this.lastAccessedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // creationTimeDataGridViewTextBoxColumn
+            // 
+            this.creationTimeDataGridViewTextBoxColumn.DataPropertyName = "CreationTime";
+            this.creationTimeDataGridViewTextBoxColumn.HeaderText = "CreationTime";
+            this.creationTimeDataGridViewTextBoxColumn.Name = "creationTimeDataGridViewTextBoxColumn";
+            this.creationTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // addToReportCookies
             // 
             this.addToReportCookies.HeaderText = "Add To Report";
             this.addToReportCookies.Name = "addToReportCookies";
+            // 
+            // cookiesMozillaBindingSource
+            // 
+            this.cookiesMozillaBindingSource.DataSource = typeof(BrowserCheck.Model.CookiesMozilla);
             // 
             // annosMozilla
             // 
@@ -917,10 +1116,35 @@
             this.annosMozillaGrid.Size = new System.Drawing.Size(1050, 510);
             this.annosMozillaGrid.TabIndex = 0;
             // 
+            // contentDataGridViewTextBoxColumn
+            // 
+            this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
+            this.contentDataGridViewTextBoxColumn.HeaderText = "Content";
+            this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
+            this.contentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateAddedDataGridViewTextBoxColumn1
+            // 
+            this.dateAddedDataGridViewTextBoxColumn1.DataPropertyName = "DateAdded";
+            this.dateAddedDataGridViewTextBoxColumn1.HeaderText = "DateAdded";
+            this.dateAddedDataGridViewTextBoxColumn1.Name = "dateAddedDataGridViewTextBoxColumn1";
+            this.dateAddedDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // lastModifiedDataGridViewTextBoxColumn1
+            // 
+            this.lastModifiedDataGridViewTextBoxColumn1.DataPropertyName = "LastModified";
+            this.lastModifiedDataGridViewTextBoxColumn1.HeaderText = "LastModified";
+            this.lastModifiedDataGridViewTextBoxColumn1.Name = "lastModifiedDataGridViewTextBoxColumn1";
+            this.lastModifiedDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
             // addToReportAnnos
             // 
             this.addToReportAnnos.HeaderText = "Add To Report";
             this.addToReportAnnos.Name = "addToReportAnnos";
+            // 
+            // annosMozillaBindingSource
+            // 
+            this.annosMozillaBindingSource.DataSource = typeof(BrowserCheck.Model.AnnosMozilla);
             // 
             // printTab
             // 
@@ -1180,205 +1404,6 @@
             // 
             this.openFilePicutre.FileName = "filePicture";
             // 
-            // fieldNameDataGridViewTextBoxColumn
-            // 
-            this.fieldNameDataGridViewTextBoxColumn.DataPropertyName = "FieldName";
-            this.fieldNameDataGridViewTextBoxColumn.HeaderText = "FieldName";
-            this.fieldNameDataGridViewTextBoxColumn.Name = "fieldNameDataGridViewTextBoxColumn";
-            this.fieldNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // valueDataGridViewTextBoxColumn
-            // 
-            this.valueDataGridViewTextBoxColumn.DataPropertyName = "Value";
-            this.valueDataGridViewTextBoxColumn.HeaderText = "Value";
-            this.valueDataGridViewTextBoxColumn.Name = "valueDataGridViewTextBoxColumn";
-            this.valueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // timeUsedDataGridViewTextBoxColumn
-            // 
-            this.timeUsedDataGridViewTextBoxColumn.DataPropertyName = "TimeUsed";
-            this.timeUsedDataGridViewTextBoxColumn.HeaderText = "TimeUsed";
-            this.timeUsedDataGridViewTextBoxColumn.Name = "timeUsedDataGridViewTextBoxColumn";
-            this.timeUsedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // firstDateDataGridViewTextBoxColumn
-            // 
-            this.firstDateDataGridViewTextBoxColumn.DataPropertyName = "FirstDate";
-            this.firstDateDataGridViewTextBoxColumn.HeaderText = "FirstDate";
-            this.firstDateDataGridViewTextBoxColumn.Name = "firstDateDataGridViewTextBoxColumn";
-            this.firstDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastDateDataGridViewTextBoxColumn
-            // 
-            this.lastDateDataGridViewTextBoxColumn.DataPropertyName = "LastDate";
-            this.lastDateDataGridViewTextBoxColumn.HeaderText = "LastDate";
-            this.lastDateDataGridViewTextBoxColumn.Name = "lastDateDataGridViewTextBoxColumn";
-            this.lastDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // formHistoryMozillaBindingSource
-            // 
-            this.formHistoryMozillaBindingSource.DataSource = typeof(BrowserCheck.Model.FormHistoryMozilla);
-            // 
-            // urlDataGridViewTextBoxColumn
-            // 
-            this.urlDataGridViewTextBoxColumn.DataPropertyName = "Url";
-            this.urlDataGridViewTextBoxColumn.HeaderText = "Url";
-            this.urlDataGridViewTextBoxColumn.Name = "urlDataGridViewTextBoxColumn";
-            this.urlDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // visitCountDataGridViewTextBoxColumn
-            // 
-            this.visitCountDataGridViewTextBoxColumn.DataPropertyName = "VisitCount";
-            this.visitCountDataGridViewTextBoxColumn.HeaderText = "VisitCount";
-            this.visitCountDataGridViewTextBoxColumn.Name = "visitCountDataGridViewTextBoxColumn";
-            this.visitCountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastVisitDateDataGridViewTextBoxColumn
-            // 
-            this.lastVisitDateDataGridViewTextBoxColumn.DataPropertyName = "LastVisitDate";
-            this.lastVisitDateDataGridViewTextBoxColumn.HeaderText = "LastVisitDate";
-            this.lastVisitDateDataGridViewTextBoxColumn.Name = "lastVisitDateDataGridViewTextBoxColumn";
-            this.lastVisitDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // webHistoryMozillaBindingSource
-            // 
-            this.webHistoryMozillaBindingSource.DataSource = typeof(BrowserCheck.Model.WebHistoryMozilla);
-            // 
-            // ınputDataGridViewTextBoxColumn
-            // 
-            this.ınputDataGridViewTextBoxColumn.DataPropertyName = "Input";
-            this.ınputDataGridViewTextBoxColumn.HeaderText = "Input";
-            this.ınputDataGridViewTextBoxColumn.Name = "ınputDataGridViewTextBoxColumn";
-            this.ınputDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // usecountDataGridViewTextBoxColumn
-            // 
-            this.usecountDataGridViewTextBoxColumn.DataPropertyName = "Use_count";
-            this.usecountDataGridViewTextBoxColumn.HeaderText = "Use_count";
-            this.usecountDataGridViewTextBoxColumn.Name = "usecountDataGridViewTextBoxColumn";
-            this.usecountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ınputHistoryMozillaBindingSource
-            // 
-            this.ınputHistoryMozillaBindingSource.DataSource = typeof(BrowserCheck.Model.InputHistoryMozilla);
-            // 
-            // urlDataGridViewTextBoxColumn1
-            // 
-            this.urlDataGridViewTextBoxColumn1.DataPropertyName = "Url";
-            this.urlDataGridViewTextBoxColumn1.HeaderText = "Url";
-            this.urlDataGridViewTextBoxColumn1.Name = "urlDataGridViewTextBoxColumn1";
-            this.urlDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // titleDataGridViewTextBoxColumn1
-            // 
-            this.titleDataGridViewTextBoxColumn1.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn1.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
-            this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dateAddedDataGridViewTextBoxColumn
-            // 
-            this.dateAddedDataGridViewTextBoxColumn.DataPropertyName = "DateAdded";
-            this.dateAddedDataGridViewTextBoxColumn.HeaderText = "DateAdded";
-            this.dateAddedDataGridViewTextBoxColumn.Name = "dateAddedDataGridViewTextBoxColumn";
-            this.dateAddedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastModifiedDataGridViewTextBoxColumn
-            // 
-            this.lastModifiedDataGridViewTextBoxColumn.DataPropertyName = "LastModified";
-            this.lastModifiedDataGridViewTextBoxColumn.HeaderText = "LastModified";
-            this.lastModifiedDataGridViewTextBoxColumn.Name = "lastModifiedDataGridViewTextBoxColumn";
-            this.lastModifiedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bookmarksMozillaBindingSource
-            // 
-            this.bookmarksMozillaBindingSource.DataSource = typeof(BrowserCheck.Model.BookmarksMozilla);
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // valueDataGridViewTextBoxColumn1
-            // 
-            this.valueDataGridViewTextBoxColumn1.DataPropertyName = "Value";
-            this.valueDataGridViewTextBoxColumn1.HeaderText = "Value";
-            this.valueDataGridViewTextBoxColumn1.Name = "valueDataGridViewTextBoxColumn1";
-            this.valueDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // hostDataGridViewTextBoxColumn
-            // 
-            this.hostDataGridViewTextBoxColumn.DataPropertyName = "Host";
-            this.hostDataGridViewTextBoxColumn.HeaderText = "Host";
-            this.hostDataGridViewTextBoxColumn.Name = "hostDataGridViewTextBoxColumn";
-            this.hostDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // expiryDataGridViewTextBoxColumn
-            // 
-            this.expiryDataGridViewTextBoxColumn.DataPropertyName = "Expiry";
-            this.expiryDataGridViewTextBoxColumn.HeaderText = "Expiry";
-            this.expiryDataGridViewTextBoxColumn.Name = "expiryDataGridViewTextBoxColumn";
-            this.expiryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastAccessedDataGridViewTextBoxColumn
-            // 
-            this.lastAccessedDataGridViewTextBoxColumn.DataPropertyName = "LastAccessed";
-            this.lastAccessedDataGridViewTextBoxColumn.HeaderText = "LastAccessed";
-            this.lastAccessedDataGridViewTextBoxColumn.Name = "lastAccessedDataGridViewTextBoxColumn";
-            this.lastAccessedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // creationTimeDataGridViewTextBoxColumn
-            // 
-            this.creationTimeDataGridViewTextBoxColumn.DataPropertyName = "CreationTime";
-            this.creationTimeDataGridViewTextBoxColumn.HeaderText = "CreationTime";
-            this.creationTimeDataGridViewTextBoxColumn.Name = "creationTimeDataGridViewTextBoxColumn";
-            this.creationTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cookiesMozillaBindingSource
-            // 
-            this.cookiesMozillaBindingSource.DataSource = typeof(BrowserCheck.Model.CookiesMozilla);
-            // 
-            // contentDataGridViewTextBoxColumn
-            // 
-            this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
-            this.contentDataGridViewTextBoxColumn.HeaderText = "Content";
-            this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
-            this.contentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateAddedDataGridViewTextBoxColumn1
-            // 
-            this.dateAddedDataGridViewTextBoxColumn1.DataPropertyName = "DateAdded";
-            this.dateAddedDataGridViewTextBoxColumn1.HeaderText = "DateAdded";
-            this.dateAddedDataGridViewTextBoxColumn1.Name = "dateAddedDataGridViewTextBoxColumn1";
-            this.dateAddedDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // lastModifiedDataGridViewTextBoxColumn1
-            // 
-            this.lastModifiedDataGridViewTextBoxColumn1.DataPropertyName = "LastModified";
-            this.lastModifiedDataGridViewTextBoxColumn1.HeaderText = "LastModified";
-            this.lastModifiedDataGridViewTextBoxColumn1.Name = "lastModifiedDataGridViewTextBoxColumn1";
-            this.lastModifiedDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // annosMozillaBindingSource
-            // 
-            this.annosMozillaBindingSource.DataSource = typeof(BrowserCheck.Model.AnnosMozilla);
-            // 
             // MozillaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1387,6 +1412,7 @@
             this.Controls.Add(this.mozillaTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MozillaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mozilla Datas";
@@ -1399,6 +1425,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.formHistoryGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.formHistoryMozillaBindingSource)).EndInit();
             this.webHistoryMozilla.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
@@ -1406,6 +1433,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.webHistoryGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webHistoryMozillaBindingSource)).EndInit();
             this.inputHistoryMozilla.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
@@ -1413,6 +1441,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inputHistoryGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ınputHistoryMozillaBindingSource)).EndInit();
             this.bookmarkMozilla.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel1.PerformLayout();
@@ -1420,6 +1449,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bookmarkMozillaGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookmarksMozillaBindingSource)).EndInit();
             this.cookiesMozilla.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel1.PerformLayout();
@@ -1427,6 +1457,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cookiesMozillaGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cookiesMozillaBindingSource)).EndInit();
             this.annosMozilla.ResumeLayout(false);
             this.splitContainer6.Panel1.ResumeLayout(false);
             this.splitContainer6.Panel1.PerformLayout();
@@ -1434,6 +1465,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
             this.splitContainer6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.annosMozillaGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.annosMozillaBindingSource)).EndInit();
             this.printTab.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.splitContainer7.Panel1.ResumeLayout(false);
@@ -1444,12 +1476,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.formHistoryMozillaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.webHistoryMozillaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ınputHistoryMozillaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookmarksMozillaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cookiesMozillaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.annosMozillaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1475,12 +1501,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox searchBoxWeb;
         private System.Windows.Forms.DataGridView webHistoryGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn urlDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn visitCountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisitDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn addToReportWeb;
         private System.Windows.Forms.BindingSource webHistoryMozillaBindingSource;
         private System.Windows.Forms.TabPage inputHistoryMozilla;
         private System.Windows.Forms.SplitContainer splitContainer3;
@@ -1517,12 +1537,6 @@
         private System.Windows.Forms.TextBox searchBoxCookies;
         private System.Windows.Forms.DataGridView cookiesMozillaGrid;
         private System.Windows.Forms.BindingSource cookiesMozillaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fieldNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeUsedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn addToReport;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn hostDataGridViewTextBoxColumn;
@@ -1565,5 +1579,18 @@
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label surnameLabel;
         private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fieldNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeUsedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn addToReport;
+        private System.Windows.Forms.DataGridViewLinkColumn browseUrl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn urlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visitCountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisitDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn addToReportWeb;
     }
 }

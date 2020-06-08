@@ -18,6 +18,7 @@ namespace BrowserCheck.Model
 
     public class HistoryChrome : Chrome
     {
+        private string url; public string Url { get { return url; } set { this.url = value; } }
         private string title; public string Title { get { return title; } set { this.title = value; } }
         private int visitCount; public int VisitCount { get { return visitCount; } set { this.visitCount = value; } }
         private DateTime lastVisitTime; public DateTime LastVisitTime { get { return lastVisitTime; } set { this.lastVisitTime = value; } }

@@ -47,7 +47,6 @@
             this.urlSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.urlHistoryGrid = new System.Windows.Forms.DataGridView();
-            this.addToReportHistory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.downloadHistory = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.downloadsCombo = new System.Windows.Forms.ComboBox();
@@ -109,10 +108,6 @@
             this.openFilePicture = new System.Windows.Forms.OpenFileDialog();
             this.termsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.keywordSearchChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visitCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastVisitTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visitDurationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.historyChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.targetPathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,6 +132,13 @@
             this.urlRankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.topSitesChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.browseUrl = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.urlColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visitCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastVisitTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visitDurationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addToReportHistory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.chromeTabControl.SuspendLayout();
             this.keywordHistoryTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -239,11 +241,13 @@
             // 
             // sortKeyword
             // 
+            this.sortKeyword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sortKeyword.Location = new System.Drawing.Point(962, 4);
             this.sortKeyword.Name = "sortKeyword";
             this.sortKeyword.Size = new System.Drawing.Size(75, 23);
             this.sortKeyword.TabIndex = 6;
             this.sortKeyword.Text = "Sort";
+            this.sortKeyword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.sortKeyword.UseVisualStyleBackColor = true;
             this.sortKeyword.Click += new System.EventHandler(this.sortKeyword_Click);
             // 
@@ -395,6 +399,8 @@
             this.urlHistoryGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.urlHistoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.urlHistoryGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.browseUrl,
+            this.urlColumn,
             this.titleDataGridViewTextBoxColumn,
             this.visitCountDataGridViewTextBoxColumn,
             this.lastVisitTimeDataGridViewTextBoxColumn,
@@ -406,11 +412,7 @@
             this.urlHistoryGrid.Name = "urlHistoryGrid";
             this.urlHistoryGrid.Size = new System.Drawing.Size(1053, 543);
             this.urlHistoryGrid.TabIndex = 0;
-            // 
-            // addToReportHistory
-            // 
-            this.addToReportHistory.HeaderText = "Add To Report";
-            this.addToReportHistory.Name = "addToReportHistory";
+            this.urlHistoryGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.urlHistoryGrid_CellContentClick);
             // 
             // downloadHistory
             // 
@@ -1131,34 +1133,6 @@
             // 
             this.keywordSearchChromeBindingSource.DataSource = typeof(BrowserCheck.Model.KeywordSearchChrome);
             // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // visitCountDataGridViewTextBoxColumn
-            // 
-            this.visitCountDataGridViewTextBoxColumn.DataPropertyName = "VisitCount";
-            this.visitCountDataGridViewTextBoxColumn.HeaderText = "VisitCount";
-            this.visitCountDataGridViewTextBoxColumn.Name = "visitCountDataGridViewTextBoxColumn";
-            this.visitCountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastVisitTimeDataGridViewTextBoxColumn
-            // 
-            this.lastVisitTimeDataGridViewTextBoxColumn.DataPropertyName = "LastVisitTime";
-            this.lastVisitTimeDataGridViewTextBoxColumn.HeaderText = "LastVisitTime";
-            this.lastVisitTimeDataGridViewTextBoxColumn.Name = "lastVisitTimeDataGridViewTextBoxColumn";
-            this.lastVisitTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // visitDurationDataGridViewTextBoxColumn
-            // 
-            this.visitDurationDataGridViewTextBoxColumn.DataPropertyName = "VisitDuration";
-            this.visitDurationDataGridViewTextBoxColumn.HeaderText = "VisitDuration";
-            this.visitDurationDataGridViewTextBoxColumn.Name = "visitDurationDataGridViewTextBoxColumn";
-            this.visitDurationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // historyChromeBindingSource
             // 
             this.historyChromeBindingSource.DataSource = typeof(BrowserCheck.Model.HistoryChrome);
@@ -1312,6 +1286,56 @@
             // 
             this.topSitesChromeBindingSource.DataSource = typeof(BrowserCheck.Model.TopSitesChrome);
             // 
+            // browseUrl
+            // 
+            this.browseUrl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.browseUrl.DataPropertyName = "Browse";
+            this.browseUrl.HeaderText = "Browse";
+            this.browseUrl.Name = "browseUrl";
+            this.browseUrl.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.browseUrl.Text = "Browse";
+            this.browseUrl.UseColumnTextForLinkValue = true;
+            this.browseUrl.Width = 48;
+            // 
+            // urlColumn
+            // 
+            this.urlColumn.DataPropertyName = "Url";
+            this.urlColumn.HeaderText = "Url";
+            this.urlColumn.Name = "urlColumn";
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // visitCountDataGridViewTextBoxColumn
+            // 
+            this.visitCountDataGridViewTextBoxColumn.DataPropertyName = "VisitCount";
+            this.visitCountDataGridViewTextBoxColumn.HeaderText = "VisitCount";
+            this.visitCountDataGridViewTextBoxColumn.Name = "visitCountDataGridViewTextBoxColumn";
+            this.visitCountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastVisitTimeDataGridViewTextBoxColumn
+            // 
+            this.lastVisitTimeDataGridViewTextBoxColumn.DataPropertyName = "LastVisitTime";
+            this.lastVisitTimeDataGridViewTextBoxColumn.HeaderText = "LastVisitTime";
+            this.lastVisitTimeDataGridViewTextBoxColumn.Name = "lastVisitTimeDataGridViewTextBoxColumn";
+            this.lastVisitTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // visitDurationDataGridViewTextBoxColumn
+            // 
+            this.visitDurationDataGridViewTextBoxColumn.DataPropertyName = "VisitDuration";
+            this.visitDurationDataGridViewTextBoxColumn.HeaderText = "VisitDuration";
+            this.visitDurationDataGridViewTextBoxColumn.Name = "visitDurationDataGridViewTextBoxColumn";
+            this.visitDurationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addToReportHistory
+            // 
+            this.addToReportHistory.HeaderText = "Add To Report";
+            this.addToReportHistory.Name = "addToReportHistory";
+            // 
             // ChromeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1412,11 +1436,6 @@
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.TabPage downloadHistory;
         private System.Windows.Forms.DataGridView urlHistoryGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn visitCountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisitTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn visitDurationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn addToReportHistory;
         private System.Windows.Forms.BindingSource historyChromeBindingSource;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.DataGridView downloadsHistoryGrid;
@@ -1508,5 +1527,12 @@
         private System.Windows.Forms.ComboBox autofillCombo;
         private System.Windows.Forms.ComboBox cookiesCombo;
         private System.Windows.Forms.ComboBox topsitesCombo;
+        private System.Windows.Forms.DataGridViewLinkColumn browseUrl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn urlColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visitCountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisitTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visitDurationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn addToReportHistory;
     }
 }

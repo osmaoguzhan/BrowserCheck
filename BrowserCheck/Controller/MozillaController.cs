@@ -295,14 +295,14 @@ namespace BrowserCheck.Controller
                 conn = new SQLiteConnection("Data Source=" + mozilla.Path + "\\places.sqlite;" + version);
                 annosList = new List<AnnosMozilla>();
 
-                using (conn)
+                using (conn) 
                 {
                     try
                     {
                        conn.Open();
                         using (SQLiteCommand cmd = new SQLiteCommand(conn))
                         {
-                            cmd.CommandText = "SELECT content,dateAdded,lastModified from moz_annos where anno_attribute_id = 5";
+                            cmd.CommandText = "SELECT content, dateAdded, lastModified FROM moz_annos where content LIKE 'file:%'"; 
                             cmd.Prepare();
                             using (SQLiteDataReader rdr = cmd.ExecuteReader())
                             {

@@ -5,6 +5,7 @@ using Spire.Pdf;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -129,17 +130,6 @@ namespace BrowserCheck.Forms
                 runCreatePdf(!argument);
             }
         }
-        private void mozillaTabControl_Selected(object sender, TabControlEventArgs e)
-        {
-            if (e.TabPage == printTab)
-            {
-                this.MaximizeBox = false;
-            }
-            else
-            {
-                this.MaximizeBox = true;
-            }
-        }
         private void addPicture_Click(object sender, EventArgs e)
         {
             openFilePicutre.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
@@ -182,7 +172,7 @@ namespace BrowserCheck.Forms
             if (controlForPhoto)
             {
                 pdfController.createPdf(doc, sec, formHistoryGrid, 5, "Form History");
-                pdfController.createPdf(doc, sec, webHistoryGrid, 5, "Web History");
+                pdfController.createPdf(doc, sec, webHistoryGrid, 6, "Web History");
                 pdfController.createPdf(doc, sec, inputHistoryGrid, 2, "Input History");
                 pdfController.createPdf(doc, sec, bookmarkMozillaGrid, 4, "Bookmark");
                 pdfController.createPdf(doc, sec, cookiesMozillaGrid, 7, "Cookies");
@@ -203,6 +193,17 @@ namespace BrowserCheck.Forms
                 doc = pdfController.create();
             }           
         }
-       
+
+        private void webHistoryGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var send = (DataGridView)sender;
+            if(send.Columns[e.ColumnIndex] is DataGridViewLinkColumn && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = webHistoryGrid.Rows[e.RowIndex];         
+                Process.Start("IExplore.exe", row.Cells[1].Value.ToString());
+
+            }
+
+        }
     }
 }

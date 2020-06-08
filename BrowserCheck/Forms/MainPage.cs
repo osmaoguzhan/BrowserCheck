@@ -134,7 +134,7 @@ namespace BrowserCheck.Forms
         {
 
             Application.OpenForms[0].Show();
-            Global.Session.Instance.clearSession();
+            Global.Session.Instance.MyUser = null;
             this.Close();             
         }
 
@@ -165,6 +165,18 @@ namespace BrowserCheck.Forms
         private void showFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("explorer.exe", yourRoot);
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.ShowDialog();
+        }
+
+        private void authorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HowToUse how = new HowToUse();
+            how.ShowDialog();
         }
     }
 }

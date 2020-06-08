@@ -76,20 +76,21 @@ namespace BrowserCheck.Controller
                         conn.Open();
                         using (SQLiteCommand cmd = new SQLiteCommand(conn))
                         {
-                            cmd.CommandText = "SELECT urls.title,urls.last_visit_time,urls.visit_count,visits.visit_duration FROM urls INNER JOIN visits ON urls.id = visits.url ORDER BY visit_duration DESC";
+                            cmd.CommandText = "SELECT urls.url,urls.title,urls.last_visit_time,urls.visit_count,visits.visit_duration FROM urls INNER JOIN visits ON urls.id = visits.url ORDER BY visit_duration DESC";
                             cmd.Prepare();
                             using (SQLiteDataReader rdr = cmd.ExecuteReader())
                             {
                                 while (rdr.Read())
                                 {
                                     long temp = 0;
-                                    if (rdr.GetValue(1) != DBNull.Value) temp = Convert.ToInt64(rdr.GetValue(1));
+                                    if (rdr.GetValue(2) != DBNull.Value) temp = Convert.ToInt64(rdr.GetValue(2));
                                     historyList.Add(new HistoryChrome()
                                     {
-                                        Title = rdr.GetValue(0).ToString() ?? "-",
+                                        Url = rdr.GetValue(0).ToString() ?? "-",
+                                        Title = rdr.GetValue(1).ToString() ?? "-",
                                         LastVisitTime = Common.Common.Instance.FromUnixTime(temp).AddYears(-369),
-                                        VisitCount = Convert.ToInt32(rdr.GetValue(2) ?? 0), 
-                                        VisitDuration = Convert.ToInt64(rdr.GetValue(3) ?? 0) 
+                                        VisitCount = Convert.ToInt32(rdr.GetValue(3) ?? 0), 
+                                        VisitDuration = Convert.ToInt64(rdr.GetValue(4) ?? 0) 
                                     });
                                 }
                             }
@@ -239,23 +240,21 @@ namespace BrowserCheck.Controller
                                     cookieList.Add(new CookiesChrome()
                                     {
                                         Creation = Common.Common.Instance.FromUnixTime(creation).AddYears(-369),
-                                        HostKey = rdr.GetValue(1).ToString() ?? "-",
-                                        Name = rdr.GetValue(2).ToString() ?? "-",
-                                        Value = rdr.GetValue(3).ToString() ?? "-",
+                                        HostKey = rdr.GetValue(1).ToString() ?? "",
+                                        Name = rdr.GetValue(2).ToString() ?? "",
+                                        Value = rdr.GetValue(3).ToString() ?? "",
                                         CookiePath = rdr.GetValue(4).ToString() ?? "-",
                                         Expires = Common.Common.Instance.FromUnixTime(expires).AddYears(-369)
                                     });
                                 }
                             }
-
                         }
-                        conn.Close();
+                        conn.Close();                       
                     }
                 }
                 catch
                 {
-
-                    cookieList = null;
+                     cookieList = null;
                 }
             }
             else

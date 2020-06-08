@@ -33,6 +33,7 @@
             this.treeViewReport = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.refresh = new System.Windows.Forms.Button();
             this.imageListIcon = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.nameSurnameLabel = new System.Windows.Forms.Label();
@@ -40,26 +41,24 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.authorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.user = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.clock = new System.Windows.Forms.Timer(this.components);
-            this.toolStripForTime = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.labelDate = new System.Windows.Forms.ToolStripLabel();
-            this.labelTime = new System.Windows.Forms.ToolStripLabel();
-            this.refresh = new System.Windows.Forms.Button();
             this.zoomOut = new System.Windows.Forms.Button();
             this.zoomIn = new System.Windows.Forms.Button();
+            this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.newCaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.authorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.user = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.clock = new System.Windows.Forms.Timer(this.components);
+            this.toolStripForTime = new System.Windows.Forms.ToolStrip();
+            this.labelDate = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.labelTime = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -109,6 +108,20 @@
             this.splitContainer1.SplitterDistance = 260;
             this.splitContainer1.TabIndex = 3;
             // 
+            // refresh
+            // 
+            this.refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.refresh.ImageIndex = 0;
+            this.refresh.ImageList = this.imageListIcon;
+            this.refresh.Location = new System.Drawing.Point(182, 4);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(72, 23);
+            this.refresh.TabIndex = 3;
+            this.refresh.Text = "Refresh";
+            this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.refresh.UseVisualStyleBackColor = false;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
             // imageListIcon
             // 
             this.imageListIcon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListIcon.ImageStream")));
@@ -148,7 +161,7 @@
             // 
             this.nameSurnameLabel.AutoSize = true;
             this.nameSurnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.nameSurnameLabel.Location = new System.Drawing.Point(489, 10);
+            this.nameSurnameLabel.Location = new System.Drawing.Point(535, 10);
             this.nameSurnameLabel.Name = "nameSurnameLabel";
             this.nameSurnameLabel.Size = new System.Drawing.Size(0, 20);
             this.nameSurnameLabel.TabIndex = 3;
@@ -158,9 +171,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.Location = new System.Drawing.Point(406, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 20);
+            this.label5.Size = new System.Drawing.Size(129, 20);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Welcome";
+            this.label5.Text = "Logged In User:";
             // 
             // label4
             // 
@@ -192,6 +205,30 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Report Creation Time: ";
             // 
+            // zoomOut
+            // 
+            this.zoomOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("zoomOut.BackgroundImage")));
+            this.zoomOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.zoomOut.Enabled = false;
+            this.zoomOut.Location = new System.Drawing.Point(49, 3);
+            this.zoomOut.Name = "zoomOut";
+            this.zoomOut.Size = new System.Drawing.Size(37, 35);
+            this.zoomOut.TabIndex = 2;
+            this.zoomOut.UseVisualStyleBackColor = true;
+            this.zoomOut.Click += new System.EventHandler(this.zoomOut_Click);
+            // 
+            // zoomIn
+            // 
+            this.zoomIn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("zoomIn.BackgroundImage")));
+            this.zoomIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.zoomIn.Enabled = false;
+            this.zoomIn.Location = new System.Drawing.Point(7, 3);
+            this.zoomIn.Name = "zoomIn";
+            this.zoomIn.Size = new System.Drawing.Size(36, 35);
+            this.zoomIn.TabIndex = 1;
+            this.zoomIn.UseVisualStyleBackColor = true;
+            this.zoomIn.Click += new System.EventHandler(this.zoomIn_Click);
+            // 
             // printPreviewControl1
             // 
             this.printPreviewControl1.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -200,39 +237,6 @@
             this.printPreviewControl1.Size = new System.Drawing.Size(796, 448);
             this.printPreviewControl1.TabIndex = 0;
             this.printPreviewControl1.UseAntiAlias = true;
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helpToolStripMenuItem,
-            this.authorToolStripMenuItem,
-            this.aboutToolStripMenuItem});
-            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem2.Image = global::BrowserCheck.Properties.Resources.question;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(63, 21);
-            this.toolStripMenuItem2.Text = "Help";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.question;
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.helpToolStripMenuItem.Text = "View Help";
-            // 
-            // authorToolStripMenuItem
-            // 
-            this.authorToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.user;
-            this.authorToolStripMenuItem.Name = "authorToolStripMenuItem";
-            this.authorToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.authorToolStripMenuItem.Text = "Author";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.form;
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.aboutToolStripMenuItem.Text = "About BrowserCheck";
             // 
             // menuStrip1
             // 
@@ -247,6 +251,77 @@
             this.menuStrip1.Size = new System.Drawing.Size(1067, 25);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newCaseToolStripMenuItem,
+            this.showFolderToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.Image = global::BrowserCheck.Properties.Resources.paper;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(55, 21);
+            this.toolStripMenuItem1.Text = "File";
+            // 
+            // newCaseToolStripMenuItem
+            // 
+            this.newCaseToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.plus;
+            this.newCaseToolStripMenuItem.Name = "newCaseToolStripMenuItem";
+            this.newCaseToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+Shift+F2";
+            this.newCaseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.F2)));
+            this.newCaseToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.newCaseToolStripMenuItem.Text = "New";
+            this.newCaseToolStripMenuItem.Click += new System.EventHandler(this.newCaseToolStripMenuItem_Click);
+            // 
+            // showFolderToolStripMenuItem
+            // 
+            this.showFolderToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.folder;
+            this.showFolderToolStripMenuItem.Name = "showFolderToolStripMenuItem";
+            this.showFolderToolStripMenuItem.ShortcutKeyDisplayString = "Shift+F1";
+            this.showFolderToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F1)));
+            this.showFolderToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.showFolderToolStripMenuItem.Text = "Show Report Folder";
+            this.showFolderToolStripMenuItem.Click += new System.EventHandler(this.showFolderToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.exit;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.ShortcutKeyDisplayString = "Alt+F4";
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.authorToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem2.Image = global::BrowserCheck.Properties.Resources.question;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(63, 21);
+            this.toolStripMenuItem2.Text = "Help";
+            // 
+            // authorToolStripMenuItem
+            // 
+            this.authorToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.user;
+            this.authorToolStripMenuItem.Name = "authorToolStripMenuItem";
+            this.authorToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.authorToolStripMenuItem.Text = "How to Use";
+            this.authorToolStripMenuItem.Click += new System.EventHandler(this.authorToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.form;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.aboutToolStripMenuItem.Text = "About BrowserCheck";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // user
             // 
@@ -292,12 +367,6 @@
             this.toolStripForTime.TabIndex = 5;
             this.toolStripForTime.Text = "toolStrip1";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // labelDate
             // 
             this.labelDate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -306,6 +375,12 @@
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(90, 22);
             this.labelDate.Text = "labelDate";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // labelTime
             // 
@@ -317,88 +392,6 @@
             this.labelTime.Size = new System.Drawing.Size(91, 22);
             this.labelTime.Text = "labelTime";
             this.labelTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // refresh
-            // 
-            this.refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.refresh.ImageIndex = 0;
-            this.refresh.ImageList = this.imageListIcon;
-            this.refresh.Location = new System.Drawing.Point(182, 4);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(72, 23);
-            this.refresh.TabIndex = 3;
-            this.refresh.Text = "Refresh";
-            this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.refresh.UseVisualStyleBackColor = false;
-            this.refresh.Click += new System.EventHandler(this.refresh_Click);
-            // 
-            // zoomOut
-            // 
-            this.zoomOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("zoomOut.BackgroundImage")));
-            this.zoomOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.zoomOut.Enabled = false;
-            this.zoomOut.Location = new System.Drawing.Point(49, 3);
-            this.zoomOut.Name = "zoomOut";
-            this.zoomOut.Size = new System.Drawing.Size(37, 35);
-            this.zoomOut.TabIndex = 2;
-            this.zoomOut.UseVisualStyleBackColor = true;
-            this.zoomOut.Click += new System.EventHandler(this.zoomOut_Click);
-            // 
-            // zoomIn
-            // 
-            this.zoomIn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("zoomIn.BackgroundImage")));
-            this.zoomIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.zoomIn.Enabled = false;
-            this.zoomIn.Location = new System.Drawing.Point(7, 3);
-            this.zoomIn.Name = "zoomIn";
-            this.zoomIn.Size = new System.Drawing.Size(36, 35);
-            this.zoomIn.TabIndex = 1;
-            this.zoomIn.UseVisualStyleBackColor = true;
-            this.zoomIn.Click += new System.EventHandler(this.zoomIn_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newCaseToolStripMenuItem,
-            this.showFolderToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem1.Image = global::BrowserCheck.Properties.Resources.paper;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(55, 21);
-            this.toolStripMenuItem1.Text = "File";
-            // 
-            // newCaseToolStripMenuItem
-            // 
-            this.newCaseToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.plus;
-            this.newCaseToolStripMenuItem.Name = "newCaseToolStripMenuItem";
-            this.newCaseToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+Shift+F2";
-            this.newCaseToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.F2)));
-            this.newCaseToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
-            this.newCaseToolStripMenuItem.Text = "New";
-            this.newCaseToolStripMenuItem.Click += new System.EventHandler(this.newCaseToolStripMenuItem_Click);
-            // 
-            // showFolderToolStripMenuItem
-            // 
-            this.showFolderToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.folder;
-            this.showFolderToolStripMenuItem.Name = "showFolderToolStripMenuItem";
-            this.showFolderToolStripMenuItem.ShortcutKeyDisplayString = "Shift+F1";
-            this.showFolderToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F1)));
-            this.showFolderToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
-            this.showFolderToolStripMenuItem.Text = "Show Report Folder";
-            this.showFolderToolStripMenuItem.Click += new System.EventHandler(this.showFolderToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitToolStripMenuItem.Image = global::BrowserCheck.Properties.Resources.exit;
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeyDisplayString = "Alt+F4";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // MainPage
             // 
@@ -451,7 +444,6 @@
         private System.Windows.Forms.ToolStripMenuItem newCaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem authorToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem user;

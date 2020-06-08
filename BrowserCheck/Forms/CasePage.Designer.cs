@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CasePage));
             this.folderItem = new System.Windows.Forms.FolderBrowserDialog();
-            this.chooseDir = new System.Windows.Forms.Button();
             this.pathOfDir = new System.Windows.Forms.TextBox();
             this.chromeRadio = new System.Windows.Forms.RadioButton();
             this.firefoxRadio = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chooseDir = new System.Windows.Forms.Button();
             this.scanButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -42,28 +42,9 @@
             // folderItem
             // 
             this.folderItem.Description = "Choose Browser Path";
-            this.folderItem.RootFolder = System.Environment.SpecialFolder.ApplicationData;
+            this.folderItem.RootFolder = System.Environment.SpecialFolder.MyComputer;
             this.folderItem.SelectedPath = "C:\\Users\\VV\\AppData";
             this.folderItem.ShowNewFolderButton = false;
-            // 
-            // chooseDir
-            // 
-            this.chooseDir.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.chooseDir.FlatAppearance.BorderSize = 2;
-            this.chooseDir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.chooseDir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Honeydew;
-            this.chooseDir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chooseDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chooseDir.Image = global::BrowserCheck.Properties.Resources.folder;
-            this.chooseDir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.chooseDir.Location = new System.Drawing.Point(263, 52);
-            this.chooseDir.Name = "chooseDir";
-            this.chooseDir.Size = new System.Drawing.Size(99, 29);
-            this.chooseDir.TabIndex = 13;
-            this.chooseDir.Text = "Choose Directory";
-            this.chooseDir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chooseDir.UseVisualStyleBackColor = false;
-            this.chooseDir.Click += new System.EventHandler(this.chooseDir_Click_1);
             // 
             // pathOfDir
             // 
@@ -107,6 +88,25 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Options";
+            // 
+            // chooseDir
+            // 
+            this.chooseDir.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.chooseDir.FlatAppearance.BorderSize = 2;
+            this.chooseDir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.chooseDir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Honeydew;
+            this.chooseDir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.chooseDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.chooseDir.Image = global::BrowserCheck.Properties.Resources.folder;
+            this.chooseDir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.chooseDir.Location = new System.Drawing.Point(263, 52);
+            this.chooseDir.Name = "chooseDir";
+            this.chooseDir.Size = new System.Drawing.Size(99, 29);
+            this.chooseDir.TabIndex = 13;
+            this.chooseDir.Text = "Choose Directory";
+            this.chooseDir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chooseDir.UseVisualStyleBackColor = false;
+            this.chooseDir.Click += new System.EventHandler(this.chooseDir_Click_1);
             // 
             // scanButton
             // 

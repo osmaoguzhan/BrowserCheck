@@ -1,14 +1,5 @@
 ﻿using BrowserCheck.Controller;
-using BrowserCheck.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BrowserCheck.Forms
@@ -22,14 +13,8 @@ namespace BrowserCheck.Forms
 
         private void chooseDir_Click_1(object sender, EventArgs e)
         {
-            if (firefoxRadio.Checked)
-            {
-                folderItem.RootFolder = Environment.SpecialFolder.ApplicationData;
-            }
-            else
-            {
-                folderItem.RootFolder = Environment.SpecialFolder.LocalApplicationData;
-            }
+ 
+            folderItem.RootFolder = Environment.SpecialFolder.MyComputer;
             folderItem.ShowDialog();
             pathOfDir.Text = folderItem.SelectedPath;
          }

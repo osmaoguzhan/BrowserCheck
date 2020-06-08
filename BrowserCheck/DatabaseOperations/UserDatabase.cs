@@ -8,12 +8,13 @@ namespace BrowserCheck.DatabaseOperations
     class UserDatabase
     {
         private static string path = Directory.GetCurrentDirectory();
-        private SQLiteConnection conn = new SQLiteConnection("Data Source=" + path + "/../../Application Files/Database/users.db;Version=3;");
+        private SQLiteConnection conn = new SQLiteConnection("Data Source=" + path + "/../../ApplicationFiles/Database/users.db;Version=3;");
 
         public bool checkUser(string email, string password)
         {
            
             bool check = false;
+            User user = new User();
             using (conn)
             {
                 try
@@ -31,9 +32,10 @@ namespace BrowserCheck.DatabaseOperations
                             {
                                 while (rdr.Read())
                                 {
-                                    Global.Session.Instance.MyUser.Name = rdr.GetValue(0).ToString();
-                                    Global.Session.Instance.MyUser.Surname = rdr.GetValue(1).ToString();
-                                    Global.Session.Instance.MyUser.Email = rdr.GetValue(2).ToString();
+                                    user.Name = rdr.GetValue(0).ToString();
+                                    user.Surname = rdr.GetValue(1).ToString();
+                                    user.Email = rdr.GetValue(2).ToString();
+                                    Global.Session.Instance.MyUser = user;
                                 }
                                 check = true;
                             }

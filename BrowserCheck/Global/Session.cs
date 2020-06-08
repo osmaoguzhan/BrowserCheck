@@ -40,9 +40,11 @@ namespace BrowserCheck.Global
 
         }
 
-        public void clearSession()
+        /*public void clearSession()
         {
-            MyUser = null;
-        }
+            MyUser.Name ="";
+            MyUser.Surname = "";
+            MyUser.Email = "";
+        }*/
     }
 }

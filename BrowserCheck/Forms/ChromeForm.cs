@@ -4,6 +4,7 @@ using BrowserCheck.Model;
 using Spire.Pdf;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -208,6 +209,17 @@ namespace BrowserCheck.Forms
         private void topsitesSort_Click(object sender, EventArgs e)
         {
             topsitesGrid.DataSource = Common.Common.Instance.Sort_List<TopSitesChrome>(topsitesAscDsc.SelectedItem.ToString(), topsitesCombo.SelectedItem.ToString(), topSitesList);
+        }
+
+        private void urlHistoryGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var send = (DataGridView)sender;
+            if (send.Columns[e.ColumnIndex] is DataGridViewLinkColumn && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = urlHistoryGrid.Rows[e.RowIndex];
+                Process.Start("IExplore.exe", row.Cells[1].Value.ToString());
+
+            }
         }
     }
 }

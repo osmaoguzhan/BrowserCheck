@@ -330,15 +330,18 @@
             this.user.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logOutToolStripMenuItem1});
             this.user.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user.Image = global::BrowserCheck.Properties.Resources.user;
             this.user.Name = "user";
             this.user.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.user.RightToLeftAutoMirrorImage = true;
             this.user.ShortcutKeyDisplayString = "";
-            this.user.Size = new System.Drawing.Size(12, 21);
+            this.user.Size = new System.Drawing.Size(28, 21);
             // 
             // logOutToolStripMenuItem1
             // 
             this.logOutToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutToolStripMenuItem1.Image = global::BrowserCheck.Properties.Resources.logout;
+            this.logOutToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logOutToolStripMenuItem1.Name = "logOutToolStripMenuItem1";
             this.logOutToolStripMenuItem1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.logOutToolStripMenuItem1.ShortcutKeyDisplayString = "Ctrl+Alt+F4";

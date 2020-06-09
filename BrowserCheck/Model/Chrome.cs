@@ -8,57 +8,77 @@ namespace BrowserCheck.Model
 {
     public class Chrome
     {
-        private string path; public string Path { get { return path; } set { this.path = value; } }
+        public string Path { get; set; }
     }
 
     public class KeywordSearchChrome : Chrome
     {
-        private string terms; public string Terms { get { return terms; } set { this.terms = value; } }
+        public string Terms { get; set; }
     }
 
     public class HistoryChrome : Chrome
     {
-        private string url; public string Url { get { return url; } set { this.url = value; } }
-        private string title; public string Title { get { return title; } set { this.title = value; } }
-        private int visitCount; public int VisitCount { get { return visitCount; } set { this.visitCount = value; } }
-        private DateTime lastVisitTime; public DateTime LastVisitTime { get { return lastVisitTime; } set { this.lastVisitTime = value; } }
-        private long visitDuration; public long VisitDuration { get { return visitDuration; } set { this.visitDuration = value; } }
+        public string Url { get; set; }
+
+        public string Title { get; set; }
+
+        public int VisitCount { get; set; }
+
+        public DateTime LastVisitTime { get; set; }
+
+        public long VisitDuration { get; set; }
     }
 
     public class DownloadsChrome : Chrome
     {
-        private string targetPath; public string TargetPath { get { return targetPath; } set { this.targetPath = value; } }
-        private DateTime startTime; public DateTime StartTime { get { return startTime; } set { this.startTime = value; } }
-        private DateTime endTime; public DateTime EndTime { get { return endTime; } set { this.endTime = value; } }
-        private string referer; public string Referer { get { return referer; } set { this.referer = value; } }
-        private string mimeType; public string MimeType { get { return mimeType; } set { this.mimeType = value; } }
-        private string originalMimeType; public string OriginalMimeType { get { return originalMimeType; } set { this.originalMimeType = value; } }
+        public string TargetPath { get; set; }
+
+        public DateTime StartTime { get; set; }
+
+        public DateTime EndTime { get; set; }
+
+        public string Referer { get; set; }
+
+        public string MimeType { get; set; }
+
+        public string OriginalMimeType { get; set; }
 
     }
 
     public class AutoFillChrome : Chrome
     {
-        private string name; public string Name { get { return name; } set { this.name = value; } }
-        private string value; public string Value { get { return value; } set { this.value = value; } }
-        private DateTime dateCreated; public DateTime DateCreated { get { return dateCreated; } set { this.dateCreated = value; } }
-        private DateTime dateLastUsed; public DateTime DateLastUsed { get { return dateLastUsed; } set { this.dateLastUsed = value; } }
-        private int count; public int Count { get { return count; } set { this.count = value; } }
+        public string Name { get; set; }
+
+        public string Value { get; set; }
+
+        public DateTime DateCreated { get; set; }
+
+        public DateTime DateLastUsed { get; set; }
+
+        public int Count { get; set; }
     }
     public class CookiesChrome : Chrome
     {
-        private DateTime creation; public DateTime Creation { get { return creation; } set { this.creation = value; } }
-        private string hostKey; public string HostKey { get { return hostKey; } set { this.hostKey = value; } }
-        private string name; public string Name { get { return name; } set { this.name = value; } }
-        private string value; public string Value { get { return value; } set { this.value = value; } }
-        private string cookiePath; public string CookiePath { get { return cookiePath; } set { this.cookiePath = value; } }
-        private DateTime expires; public DateTime Expires { get { return expires; } set { this.expires = value; } }
-       
+        public DateTime Creation { get; set; }
+
+        public string HostKey { get; set; }
+
+        public string Name { get; set; }
+
+        public string Value { get; set; }
+
+        public string CookiePath { get; set; }
+
+        public DateTime Expires { get; set; }
+
     }
 
     public class TopSitesChrome : Chrome
     {
-        private string url; public string Url { get { return url; } set { this.url = value; } }
-        private int urlRank; public int UrlRank { get { return urlRank; } set { this.urlRank = value; } }
-        private string title; public string Title { get { return title; } set { this.title = value; } }
+        public string Url { get; set; }
+
+        public int UrlRank { get; set; }
+
+        public string Title { get; set; }
     }
 }

@@ -8,16 +8,16 @@ namespace BrowserCheck.Controller
     public class ChromeController
     {
 
-        private Chrome chrome = new Chrome();
-        private static string version = "Version=3;";
+        private readonly Chrome chrome = new Chrome();
+        private static readonly string version = "Version=3;";
         private SQLiteConnection conn;
 
-        public void setPath(string path)
+        public void SetPath(string path)
         {
             chrome.Path = path;
         }
 
-        public List<KeywordSearchChrome> getKeywords()
+        public List<KeywordSearchChrome> GetKeywords()
         {
             List<KeywordSearchChrome> keywordList;
             bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path+"\\History");
@@ -51,7 +51,7 @@ namespace BrowserCheck.Controller
                 }
                 catch
                 {
-                    keywordList = null;
+                   ;
                 }
             }
             else
@@ -61,7 +61,7 @@ namespace BrowserCheck.Controller
 
             return keywordList;
         }
-        public List<HistoryChrome> getHistory()
+        public List<HistoryChrome> GetHistory()
         {
             List<HistoryChrome> historyList;
             bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path+ "\\History");
@@ -101,7 +101,7 @@ namespace BrowserCheck.Controller
                 }
                 catch
                 {
-                    historyList = null;
+                   ;
                 }
             }
             else
@@ -110,7 +110,7 @@ namespace BrowserCheck.Controller
             }
             return historyList;
         }
-        public List<DownloadsChrome> getDownloads()
+        public List<DownloadsChrome> GetDownloads()
         {
             List<DownloadsChrome> downloadList;
             bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path+ "\\History");
@@ -153,7 +153,7 @@ namespace BrowserCheck.Controller
                 catch
                 {
                     
-                    downloadList = null;
+                  ;
                 }
             }
             else
@@ -162,7 +162,7 @@ namespace BrowserCheck.Controller
             }
             return downloadList;
         }
-        public List<AutoFillChrome> getAutofill()
+        public List<AutoFillChrome> GetAutofill()
         {
             List<AutoFillChrome> autofillList;
             bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path+"\\Web Data");
@@ -204,7 +204,7 @@ namespace BrowserCheck.Controller
                 catch
                 {
 
-                    autofillList = null;
+                   ;
                 }
             }
             else
@@ -213,7 +213,7 @@ namespace BrowserCheck.Controller
             }
             return autofillList;
         }
-        public List<CookiesChrome> getCookies()
+        public List<CookiesChrome> GetCookies()
         {
             List<CookiesChrome> cookieList;
             bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path + "\\Cookies");
@@ -254,7 +254,7 @@ namespace BrowserCheck.Controller
                 }
                 catch
                 {
-                     cookieList = null;
+                     ;
                 }
             }
             else
@@ -263,7 +263,7 @@ namespace BrowserCheck.Controller
             }
             return cookieList;
         }
-        public List<TopSitesChrome> getTopSites()
+        public List<TopSitesChrome> GetTopSites()
         {
             List<TopSitesChrome> topSitesList;
             bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path + "\\Top Sites");
@@ -301,7 +301,7 @@ namespace BrowserCheck.Controller
                 catch
                 {
 
-                    topSitesList = null;
+                    ;
                 }
             }
             else

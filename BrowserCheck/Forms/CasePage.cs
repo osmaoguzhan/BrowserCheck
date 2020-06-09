@@ -30,14 +30,14 @@ namespace BrowserCheck.Forms
                 if (firefoxRadio.Checked)
                 {
                     MozillaController mozilla = new MozillaController();
-                    mozilla.setPath(pathOfDir.Text);
+                    mozilla.SetPath(pathOfDir.Text);
                     MozillaForm mozillaForm = new MozillaForm(mozilla);
                     mozillaForm.Show();
                 }
                 else
                 {
                     ChromeController chrome = new ChromeController();
-                    chrome.setPath(pathOfDir.Text);
+                    chrome.SetPath(pathOfDir.Text);
                     ChromeForm chromeForm = new ChromeForm(chrome);
                     chromeForm.Show();
                 }

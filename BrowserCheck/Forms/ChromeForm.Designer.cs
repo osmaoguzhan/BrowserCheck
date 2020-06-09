@@ -34,11 +34,14 @@
             this.keywordHistoryTab = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.sortKeyword = new System.Windows.Forms.Button();
+            this.imageListButton = new System.Windows.Forms.ImageList(this.components);
             this.keywordAscDsc = new System.Windows.Forms.ComboBox();
             this.keywordSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.keywordsGrid = new System.Windows.Forms.DataGridView();
+            this.termsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addToReportKeyword = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.keywordSearchChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.urlHistoryTab = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.urlsCombo = new System.Windows.Forms.ComboBox();
@@ -47,6 +50,14 @@
             this.urlSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.urlHistoryGrid = new System.Windows.Forms.DataGridView();
+            this.browseUrl = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.urlColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visitCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastVisitTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visitDurationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addToReportHistory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.historyChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.downloadHistory = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.downloadsCombo = new System.Windows.Forms.ComboBox();
@@ -55,8 +66,14 @@
             this.downloadSearch = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.downloadsHistoryGrid = new System.Windows.Forms.DataGridView();
+            this.targetPathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Referer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mimeTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.originalMimeTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addToReportDownloads = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.downloadsChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.autofillTab = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.autofillCombo = new System.Windows.Forms.ComboBox();
@@ -65,7 +82,13 @@
             this.autofillSearch = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.autofillGrid = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateLastUsedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addToReportAutofill = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.autoFillChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cookiesTab = new System.Windows.Forms.TabPage();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.cookiesCombo = new System.Windows.Forms.ComboBox();
@@ -74,7 +97,14 @@
             this.cookieSearch = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cookiesGrid = new System.Windows.Forms.DataGridView();
+            this.creationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hostKeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cookiePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expiresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addToReportCookie = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cookiesChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.topSites = new System.Windows.Forms.TabPage();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.topsitesCombo = new System.Windows.Forms.ComboBox();
@@ -83,11 +113,14 @@
             this.topsitesSearch = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.topsitesGrid = new System.Windows.Forms.DataGridView();
+            this.urlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urlRankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addToReportTopSites = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.topSitesChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printPdf = new System.Windows.Forms.TabPage();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.printButton = new System.Windows.Forms.Button();
-            this.imageListButton = new System.Windows.Forms.ImageList(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.reportName = new System.Windows.Forms.TextBox();
@@ -106,39 +139,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.profilePic = new System.Windows.Forms.PictureBox();
             this.openFilePicture = new System.Windows.Forms.OpenFileDialog();
-            this.termsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.keywordSearchChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.historyChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.targetPathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mimeTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.originalMimeTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.downloadsChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateLastUsedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.autoFillChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.creationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hostKeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cookiePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expiresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cookiesChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.urlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urlRankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.topSitesChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.browseUrl = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.urlColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visitCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastVisitTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.visitDurationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addToReportHistory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.chromeTabControl.SuspendLayout();
             this.keywordHistoryTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -146,36 +146,42 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keywordsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keywordSearchChromeBindingSource)).BeginInit();
             this.urlHistoryTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.urlHistoryGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyChromeBindingSource)).BeginInit();
             this.downloadHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.downloadsHistoryGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.downloadsChromeBindingSource)).BeginInit();
             this.autofillTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autofillGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoFillChromeBindingSource)).BeginInit();
             this.cookiesTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cookiesGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cookiesChromeBindingSource)).BeginInit();
             this.topSites.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
             this.splitContainer6.Panel1.SuspendLayout();
             this.splitContainer6.Panel2.SuspendLayout();
             this.splitContainer6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.topsitesGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.topSitesChromeBindingSource)).BeginInit();
             this.printPdf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
             this.splitContainer7.Panel1.SuspendLayout();
@@ -183,12 +189,6 @@
             this.splitContainer7.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.keywordSearchChromeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyChromeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.downloadsChromeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.autoFillChromeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cookiesChromeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.topSitesChromeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // chromeTabControl
@@ -221,6 +221,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(3, 3);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -242,14 +243,22 @@
             // sortKeyword
             // 
             this.sortKeyword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sortKeyword.ImageList = this.imageListButton;
             this.sortKeyword.Location = new System.Drawing.Point(962, 4);
             this.sortKeyword.Name = "sortKeyword";
             this.sortKeyword.Size = new System.Drawing.Size(75, 23);
             this.sortKeyword.TabIndex = 6;
             this.sortKeyword.Text = "Sort";
-            this.sortKeyword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.sortKeyword.UseVisualStyleBackColor = true;
-            this.sortKeyword.Click += new System.EventHandler(this.sortKeyword_Click);
+            this.sortKeyword.Click += new System.EventHandler(this.SortKeyword_Click);
+            // 
+            // imageListButton
+            // 
+            this.imageListButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButton.ImageStream")));
+            this.imageListButton.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListButton.Images.SetKeyName(0, "plus.png");
+            this.imageListButton.Images.SetKeyName(1, "save.png");
+            this.imageListButton.Images.SetKeyName(2, "sort.png");
             // 
             // keywordAscDsc
             // 
@@ -270,7 +279,7 @@
             this.keywordSearch.Name = "keywordSearch";
             this.keywordSearch.Size = new System.Drawing.Size(241, 20);
             this.keywordSearch.TabIndex = 3;
-            this.keywordSearch.TextChanged += new System.EventHandler(this.keywordSearch_TextChanged);
+            this.keywordSearch.TextChanged += new System.EventHandler(this.KeywordSearch_TextChanged);
             // 
             // label1
             // 
@@ -298,10 +307,21 @@
             this.keywordsGrid.Size = new System.Drawing.Size(1053, 544);
             this.keywordsGrid.TabIndex = 0;
             // 
+            // termsDataGridViewTextBoxColumn
+            // 
+            this.termsDataGridViewTextBoxColumn.DataPropertyName = "Terms";
+            this.termsDataGridViewTextBoxColumn.HeaderText = "Terms";
+            this.termsDataGridViewTextBoxColumn.Name = "termsDataGridViewTextBoxColumn";
+            this.termsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // addToReportKeyword
             // 
             this.addToReportKeyword.HeaderText = "Add To Report";
             this.addToReportKeyword.Name = "addToReportKeyword";
+            // 
+            // keywordSearchChromeBindingSource
+            // 
+            this.keywordSearchChromeBindingSource.DataSource = typeof(BrowserCheck.Model.KeywordSearchChrome);
             // 
             // urlHistoryTab
             // 
@@ -317,6 +337,7 @@
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(3, 3);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -359,7 +380,7 @@
             this.urlsSort.TabIndex = 10;
             this.urlsSort.Text = "Sort";
             this.urlsSort.UseVisualStyleBackColor = true;
-            this.urlsSort.Click += new System.EventHandler(this.urlsSort_Click);
+            this.urlsSort.Click += new System.EventHandler(this.UrlsSort_Click);
             // 
             // urlsAscDsc
             // 
@@ -380,7 +401,7 @@
             this.urlSearch.Name = "urlSearch";
             this.urlSearch.Size = new System.Drawing.Size(241, 20);
             this.urlSearch.TabIndex = 8;
-            this.urlSearch.TextChanged += new System.EventHandler(this.urlSearch_TextChanged);
+            this.urlSearch.TextChanged += new System.EventHandler(this.UrlSearch_TextChanged);
             // 
             // label2
             // 
@@ -412,7 +433,61 @@
             this.urlHistoryGrid.Name = "urlHistoryGrid";
             this.urlHistoryGrid.Size = new System.Drawing.Size(1053, 543);
             this.urlHistoryGrid.TabIndex = 0;
-            this.urlHistoryGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.urlHistoryGrid_CellContentClick);
+            this.urlHistoryGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UrlHistoryGrid_CellContentClick);
+            // 
+            // browseUrl
+            // 
+            this.browseUrl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.browseUrl.DataPropertyName = "Browse";
+            this.browseUrl.HeaderText = "Browse";
+            this.browseUrl.Name = "browseUrl";
+            this.browseUrl.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.browseUrl.Text = "Browse";
+            this.browseUrl.UseColumnTextForLinkValue = true;
+            this.browseUrl.Width = 48;
+            // 
+            // urlColumn
+            // 
+            this.urlColumn.DataPropertyName = "Url";
+            this.urlColumn.HeaderText = "Url";
+            this.urlColumn.Name = "urlColumn";
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // visitCountDataGridViewTextBoxColumn
+            // 
+            this.visitCountDataGridViewTextBoxColumn.DataPropertyName = "VisitCount";
+            this.visitCountDataGridViewTextBoxColumn.HeaderText = "VisitCount";
+            this.visitCountDataGridViewTextBoxColumn.Name = "visitCountDataGridViewTextBoxColumn";
+            this.visitCountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastVisitTimeDataGridViewTextBoxColumn
+            // 
+            this.lastVisitTimeDataGridViewTextBoxColumn.DataPropertyName = "LastVisitTime";
+            this.lastVisitTimeDataGridViewTextBoxColumn.HeaderText = "LastVisitTime";
+            this.lastVisitTimeDataGridViewTextBoxColumn.Name = "lastVisitTimeDataGridViewTextBoxColumn";
+            this.lastVisitTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // visitDurationDataGridViewTextBoxColumn
+            // 
+            this.visitDurationDataGridViewTextBoxColumn.DataPropertyName = "VisitDuration";
+            this.visitDurationDataGridViewTextBoxColumn.HeaderText = "VisitDuration";
+            this.visitDurationDataGridViewTextBoxColumn.Name = "visitDurationDataGridViewTextBoxColumn";
+            this.visitDurationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addToReportHistory
+            // 
+            this.addToReportHistory.HeaderText = "Add To Report";
+            this.addToReportHistory.Name = "addToReportHistory";
+            // 
+            // historyChromeBindingSource
+            // 
+            this.historyChromeBindingSource.DataSource = typeof(BrowserCheck.Model.HistoryChrome);
             // 
             // downloadHistory
             // 
@@ -427,6 +502,7 @@
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.IsSplitterFixed = true;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -471,7 +547,7 @@
             this.sortDownloads.TabIndex = 10;
             this.sortDownloads.Text = "Sort";
             this.sortDownloads.UseVisualStyleBackColor = true;
-            this.sortDownloads.Click += new System.EventHandler(this.sortDownloads_Click);
+            this.sortDownloads.Click += new System.EventHandler(this.SortDownloads_Click);
             // 
             // downloadsAscDsc
             // 
@@ -492,7 +568,7 @@
             this.downloadSearch.Name = "downloadSearch";
             this.downloadSearch.Size = new System.Drawing.Size(241, 20);
             this.downloadSearch.TabIndex = 8;
-            this.downloadSearch.TextChanged += new System.EventHandler(this.downloadSearch_TextChanged);
+            this.downloadSearch.TextChanged += new System.EventHandler(this.DownloadSearch_TextChanged);
             // 
             // label3
             // 
@@ -525,6 +601,27 @@
             this.downloadsHistoryGrid.Size = new System.Drawing.Size(1059, 547);
             this.downloadsHistoryGrid.TabIndex = 0;
             // 
+            // targetPathDataGridViewTextBoxColumn
+            // 
+            this.targetPathDataGridViewTextBoxColumn.DataPropertyName = "TargetPath";
+            this.targetPathDataGridViewTextBoxColumn.HeaderText = "TargetPath";
+            this.targetPathDataGridViewTextBoxColumn.Name = "targetPathDataGridViewTextBoxColumn";
+            this.targetPathDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // startTimeDataGridViewTextBoxColumn
+            // 
+            this.startTimeDataGridViewTextBoxColumn.DataPropertyName = "StartTime";
+            this.startTimeDataGridViewTextBoxColumn.HeaderText = "StartTime";
+            this.startTimeDataGridViewTextBoxColumn.Name = "startTimeDataGridViewTextBoxColumn";
+            this.startTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // endTimeDataGridViewTextBoxColumn
+            // 
+            this.endTimeDataGridViewTextBoxColumn.DataPropertyName = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn.HeaderText = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn.Name = "endTimeDataGridViewTextBoxColumn";
+            this.endTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Referer
             // 
             this.Referer.DataPropertyName = "Referer";
@@ -532,10 +629,28 @@
             this.Referer.Name = "Referer";
             this.Referer.ReadOnly = true;
             // 
+            // mimeTypeDataGridViewTextBoxColumn
+            // 
+            this.mimeTypeDataGridViewTextBoxColumn.DataPropertyName = "MimeType";
+            this.mimeTypeDataGridViewTextBoxColumn.HeaderText = "MimeType";
+            this.mimeTypeDataGridViewTextBoxColumn.Name = "mimeTypeDataGridViewTextBoxColumn";
+            this.mimeTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // originalMimeTypeDataGridViewTextBoxColumn
+            // 
+            this.originalMimeTypeDataGridViewTextBoxColumn.DataPropertyName = "OriginalMimeType";
+            this.originalMimeTypeDataGridViewTextBoxColumn.HeaderText = "OriginalMimeType";
+            this.originalMimeTypeDataGridViewTextBoxColumn.Name = "originalMimeTypeDataGridViewTextBoxColumn";
+            this.originalMimeTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // addToReportDownloads
             // 
             this.addToReportDownloads.HeaderText = "Add To Report";
             this.addToReportDownloads.Name = "addToReportDownloads";
+            // 
+            // downloadsChromeBindingSource
+            // 
+            this.downloadsChromeBindingSource.DataSource = typeof(BrowserCheck.Model.DownloadsChrome);
             // 
             // autofillTab
             // 
@@ -551,6 +666,7 @@
             // splitContainer4
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.IsSplitterFixed = true;
             this.splitContainer4.Location = new System.Drawing.Point(3, 3);
             this.splitContainer4.Name = "splitContainer4";
             this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -594,7 +710,7 @@
             this.sortAutofill.TabIndex = 10;
             this.sortAutofill.Text = "Sort";
             this.sortAutofill.UseVisualStyleBackColor = true;
-            this.sortAutofill.Click += new System.EventHandler(this.sortAutofill_Click);
+            this.sortAutofill.Click += new System.EventHandler(this.SortAutofill_Click);
             // 
             // autofillAscDsc
             // 
@@ -615,7 +731,7 @@
             this.autofillSearch.Name = "autofillSearch";
             this.autofillSearch.Size = new System.Drawing.Size(241, 20);
             this.autofillSearch.TabIndex = 8;
-            this.autofillSearch.TextChanged += new System.EventHandler(this.autofillSearch_TextChanged);
+            this.autofillSearch.TextChanged += new System.EventHandler(this.AutofillSearch_TextChanged);
             // 
             // label4
             // 
@@ -647,10 +763,49 @@
             this.autofillGrid.Size = new System.Drawing.Size(1053, 542);
             this.autofillGrid.TabIndex = 0;
             // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // valueDataGridViewTextBoxColumn
+            // 
+            this.valueDataGridViewTextBoxColumn.DataPropertyName = "Value";
+            this.valueDataGridViewTextBoxColumn.HeaderText = "Value";
+            this.valueDataGridViewTextBoxColumn.Name = "valueDataGridViewTextBoxColumn";
+            this.valueDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateCreatedDataGridViewTextBoxColumn
+            // 
+            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "DateCreated";
+            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
+            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateLastUsedDataGridViewTextBoxColumn
+            // 
+            this.dateLastUsedDataGridViewTextBoxColumn.DataPropertyName = "DateLastUsed";
+            this.dateLastUsedDataGridViewTextBoxColumn.HeaderText = "DateLastUsed";
+            this.dateLastUsedDataGridViewTextBoxColumn.Name = "dateLastUsedDataGridViewTextBoxColumn";
+            this.dateLastUsedDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // countDataGridViewTextBoxColumn
+            // 
+            this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
+            this.countDataGridViewTextBoxColumn.HeaderText = "Count";
+            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+            this.countDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // addToReportAutofill
             // 
             this.addToReportAutofill.HeaderText = "Add To Report";
             this.addToReportAutofill.Name = "addToReportAutofill";
+            // 
+            // autoFillChromeBindingSource
+            // 
+            this.autoFillChromeBindingSource.DataSource = typeof(BrowserCheck.Model.AutoFillChrome);
             // 
             // cookiesTab
             // 
@@ -665,6 +820,7 @@
             // splitContainer5
             // 
             this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.IsSplitterFixed = true;
             this.splitContainer5.Location = new System.Drawing.Point(0, 0);
             this.splitContainer5.Name = "splitContainer5";
             this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -709,7 +865,7 @@
             this.sortCookies.TabIndex = 10;
             this.sortCookies.Text = "Sort";
             this.sortCookies.UseVisualStyleBackColor = true;
-            this.sortCookies.Click += new System.EventHandler(this.sortCookies_Click);
+            this.sortCookies.Click += new System.EventHandler(this.SortCookies_Click);
             // 
             // cookiesAscDsc
             // 
@@ -730,7 +886,7 @@
             this.cookieSearch.Name = "cookieSearch";
             this.cookieSearch.Size = new System.Drawing.Size(241, 20);
             this.cookieSearch.TabIndex = 8;
-            this.cookieSearch.TextChanged += new System.EventHandler(this.cookieSearch_TextChanged);
+            this.cookieSearch.TextChanged += new System.EventHandler(this.CookieSearch_TextChanged);
             // 
             // label5
             // 
@@ -763,10 +919,56 @@
             this.cookiesGrid.Size = new System.Drawing.Size(1059, 544);
             this.cookiesGrid.TabIndex = 0;
             // 
+            // creationDataGridViewTextBoxColumn
+            // 
+            this.creationDataGridViewTextBoxColumn.DataPropertyName = "Creation";
+            this.creationDataGridViewTextBoxColumn.HeaderText = "Creation";
+            this.creationDataGridViewTextBoxColumn.Name = "creationDataGridViewTextBoxColumn";
+            this.creationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hostKeyDataGridViewTextBoxColumn
+            // 
+            this.hostKeyDataGridViewTextBoxColumn.DataPropertyName = "HostKey";
+            this.hostKeyDataGridViewTextBoxColumn.HeaderText = "HostKey";
+            this.hostKeyDataGridViewTextBoxColumn.Name = "hostKeyDataGridViewTextBoxColumn";
+            this.hostKeyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn1
+            // 
+            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // valueDataGridViewTextBoxColumn1
+            // 
+            this.valueDataGridViewTextBoxColumn1.DataPropertyName = "Value";
+            this.valueDataGridViewTextBoxColumn1.HeaderText = "Value";
+            this.valueDataGridViewTextBoxColumn1.Name = "valueDataGridViewTextBoxColumn1";
+            this.valueDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // cookiePathDataGridViewTextBoxColumn
+            // 
+            this.cookiePathDataGridViewTextBoxColumn.DataPropertyName = "CookiePath";
+            this.cookiePathDataGridViewTextBoxColumn.HeaderText = "CookiePath";
+            this.cookiePathDataGridViewTextBoxColumn.Name = "cookiePathDataGridViewTextBoxColumn";
+            this.cookiePathDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // expiresDataGridViewTextBoxColumn
+            // 
+            this.expiresDataGridViewTextBoxColumn.DataPropertyName = "Expires";
+            this.expiresDataGridViewTextBoxColumn.HeaderText = "Expires";
+            this.expiresDataGridViewTextBoxColumn.Name = "expiresDataGridViewTextBoxColumn";
+            this.expiresDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // addToReportCookie
             // 
             this.addToReportCookie.HeaderText = "Add To Report";
             this.addToReportCookie.Name = "addToReportCookie";
+            // 
+            // cookiesChromeBindingSource
+            // 
+            this.cookiesChromeBindingSource.DataSource = typeof(BrowserCheck.Model.CookiesChrome);
             // 
             // topSites
             // 
@@ -781,6 +983,7 @@
             // splitContainer6
             // 
             this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer6.IsSplitterFixed = true;
             this.splitContainer6.Location = new System.Drawing.Point(0, 0);
             this.splitContainer6.Name = "splitContainer6";
             this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -822,7 +1025,7 @@
             this.topsitesSort.TabIndex = 10;
             this.topsitesSort.Text = "Sort";
             this.topsitesSort.UseVisualStyleBackColor = true;
-            this.topsitesSort.Click += new System.EventHandler(this.topsitesSort_Click);
+            this.topsitesSort.Click += new System.EventHandler(this.TopsitesSort_Click);
             // 
             // topsitesAscDsc
             // 
@@ -844,7 +1047,7 @@
             this.topsitesSearch.Size = new System.Drawing.Size(241, 20);
             this.topsitesSearch.TabIndex = 8;
             this.topsitesSearch.Text = " ";
-            this.topsitesSearch.TextChanged += new System.EventHandler(this.topsitesSearch_TextChanged);
+            this.topsitesSearch.TextChanged += new System.EventHandler(this.TopsitesSearch_TextChanged);
             // 
             // label6
             // 
@@ -874,10 +1077,35 @@
             this.topsitesGrid.Size = new System.Drawing.Size(1059, 543);
             this.topsitesGrid.TabIndex = 0;
             // 
+            // urlDataGridViewTextBoxColumn
+            // 
+            this.urlDataGridViewTextBoxColumn.DataPropertyName = "Url";
+            this.urlDataGridViewTextBoxColumn.HeaderText = "Url";
+            this.urlDataGridViewTextBoxColumn.Name = "urlDataGridViewTextBoxColumn";
+            this.urlDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // urlRankDataGridViewTextBoxColumn
+            // 
+            this.urlRankDataGridViewTextBoxColumn.DataPropertyName = "UrlRank";
+            this.urlRankDataGridViewTextBoxColumn.HeaderText = "UrlRank";
+            this.urlRankDataGridViewTextBoxColumn.Name = "urlRankDataGridViewTextBoxColumn";
+            this.urlRankDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn1
+            // 
+            this.titleDataGridViewTextBoxColumn1.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn1.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
+            this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
             // addToReportTopSites
             // 
             this.addToReportTopSites.HeaderText = "Add To Report";
             this.addToReportTopSites.Name = "addToReportTopSites";
+            // 
+            // topSitesChromeBindingSource
+            // 
+            this.topSitesChromeBindingSource.DataSource = typeof(BrowserCheck.Model.TopSitesChrome);
             // 
             // printPdf
             // 
@@ -892,6 +1120,7 @@
             // splitContainer7
             // 
             this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer7.IsSplitterFixed = true;
             this.splitContainer7.Location = new System.Drawing.Point(0, 0);
             this.splitContainer7.Name = "splitContainer7";
             // 
@@ -928,14 +1157,7 @@
             this.printButton.Text = "Print";
             this.printButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.printButton.UseVisualStyleBackColor = true;
-            this.printButton.Click += new System.EventHandler(this.printButton_Click);
-            // 
-            // imageListButton
-            // 
-            this.imageListButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButton.ImageStream")));
-            this.imageListButton.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListButton.Images.SetKeyName(0, "plus.png");
-            this.imageListButton.Images.SetKeyName(1, "save.png");
+            this.printButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
             // label8
             // 
@@ -976,7 +1198,7 @@
             this.reportNote.Size = new System.Drawing.Size(575, 405);
             this.reportNote.TabIndex = 18;
             this.reportNote.Text = "";
-            this.reportNote.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.reportNote_KeyPress);
+            this.reportNote.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ReportNote_KeyPress);
             // 
             // addPicture
             // 
@@ -992,7 +1214,7 @@
             this.addPicture.Text = "Add Picture";
             this.addPicture.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addPicture.UseVisualStyleBackColor = true;
-            this.addPicture.Click += new System.EventHandler(this.addPicture_Click);
+            this.addPicture.Click += new System.EventHandler(this.AddPicture_Click);
             // 
             // groupBox1
             // 
@@ -1059,7 +1281,7 @@
             this.noForPhoto.TabStop = true;
             this.noForPhoto.Text = "No";
             this.noForPhoto.UseVisualStyleBackColor = true;
-            this.noForPhoto.CheckedChanged += new System.EventHandler(this.noForPhoto_CheckedChanged);
+            this.noForPhoto.CheckedChanged += new System.EventHandler(this.NoForPhoto_CheckedChanged);
             // 
             // yesForPhoto
             // 
@@ -1071,7 +1293,7 @@
             this.yesForPhoto.TabIndex = 4;
             this.yesForPhoto.Text = "Yes";
             this.yesForPhoto.UseVisualStyleBackColor = true;
-            this.yesForPhoto.CheckedChanged += new System.EventHandler(this.yesForPhoto_CheckedChanged);
+            this.yesForPhoto.CheckedChanged += new System.EventHandler(this.YesForPhoto_CheckedChanged);
             // 
             // evidenceNumber
             // 
@@ -1122,220 +1344,6 @@
             this.profilePic.TabIndex = 0;
             this.profilePic.TabStop = false;
             // 
-            // termsDataGridViewTextBoxColumn
-            // 
-            this.termsDataGridViewTextBoxColumn.DataPropertyName = "Terms";
-            this.termsDataGridViewTextBoxColumn.HeaderText = "Terms";
-            this.termsDataGridViewTextBoxColumn.Name = "termsDataGridViewTextBoxColumn";
-            this.termsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // keywordSearchChromeBindingSource
-            // 
-            this.keywordSearchChromeBindingSource.DataSource = typeof(BrowserCheck.Model.KeywordSearchChrome);
-            // 
-            // historyChromeBindingSource
-            // 
-            this.historyChromeBindingSource.DataSource = typeof(BrowserCheck.Model.HistoryChrome);
-            // 
-            // targetPathDataGridViewTextBoxColumn
-            // 
-            this.targetPathDataGridViewTextBoxColumn.DataPropertyName = "TargetPath";
-            this.targetPathDataGridViewTextBoxColumn.HeaderText = "TargetPath";
-            this.targetPathDataGridViewTextBoxColumn.Name = "targetPathDataGridViewTextBoxColumn";
-            this.targetPathDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // startTimeDataGridViewTextBoxColumn
-            // 
-            this.startTimeDataGridViewTextBoxColumn.DataPropertyName = "StartTime";
-            this.startTimeDataGridViewTextBoxColumn.HeaderText = "StartTime";
-            this.startTimeDataGridViewTextBoxColumn.Name = "startTimeDataGridViewTextBoxColumn";
-            this.startTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // endTimeDataGridViewTextBoxColumn
-            // 
-            this.endTimeDataGridViewTextBoxColumn.DataPropertyName = "EndTime";
-            this.endTimeDataGridViewTextBoxColumn.HeaderText = "EndTime";
-            this.endTimeDataGridViewTextBoxColumn.Name = "endTimeDataGridViewTextBoxColumn";
-            this.endTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mimeTypeDataGridViewTextBoxColumn
-            // 
-            this.mimeTypeDataGridViewTextBoxColumn.DataPropertyName = "MimeType";
-            this.mimeTypeDataGridViewTextBoxColumn.HeaderText = "MimeType";
-            this.mimeTypeDataGridViewTextBoxColumn.Name = "mimeTypeDataGridViewTextBoxColumn";
-            this.mimeTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // originalMimeTypeDataGridViewTextBoxColumn
-            // 
-            this.originalMimeTypeDataGridViewTextBoxColumn.DataPropertyName = "OriginalMimeType";
-            this.originalMimeTypeDataGridViewTextBoxColumn.HeaderText = "OriginalMimeType";
-            this.originalMimeTypeDataGridViewTextBoxColumn.Name = "originalMimeTypeDataGridViewTextBoxColumn";
-            this.originalMimeTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // downloadsChromeBindingSource
-            // 
-            this.downloadsChromeBindingSource.DataSource = typeof(BrowserCheck.Model.DownloadsChrome);
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // valueDataGridViewTextBoxColumn
-            // 
-            this.valueDataGridViewTextBoxColumn.DataPropertyName = "Value";
-            this.valueDataGridViewTextBoxColumn.HeaderText = "Value";
-            this.valueDataGridViewTextBoxColumn.Name = "valueDataGridViewTextBoxColumn";
-            this.valueDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateCreatedDataGridViewTextBoxColumn
-            // 
-            this.dateCreatedDataGridViewTextBoxColumn.DataPropertyName = "DateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.HeaderText = "DateCreated";
-            this.dateCreatedDataGridViewTextBoxColumn.Name = "dateCreatedDataGridViewTextBoxColumn";
-            this.dateCreatedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateLastUsedDataGridViewTextBoxColumn
-            // 
-            this.dateLastUsedDataGridViewTextBoxColumn.DataPropertyName = "DateLastUsed";
-            this.dateLastUsedDataGridViewTextBoxColumn.HeaderText = "DateLastUsed";
-            this.dateLastUsedDataGridViewTextBoxColumn.Name = "dateLastUsedDataGridViewTextBoxColumn";
-            this.dateLastUsedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // countDataGridViewTextBoxColumn
-            // 
-            this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
-            this.countDataGridViewTextBoxColumn.HeaderText = "Count";
-            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
-            this.countDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // autoFillChromeBindingSource
-            // 
-            this.autoFillChromeBindingSource.DataSource = typeof(BrowserCheck.Model.AutoFillChrome);
-            // 
-            // creationDataGridViewTextBoxColumn
-            // 
-            this.creationDataGridViewTextBoxColumn.DataPropertyName = "Creation";
-            this.creationDataGridViewTextBoxColumn.HeaderText = "Creation";
-            this.creationDataGridViewTextBoxColumn.Name = "creationDataGridViewTextBoxColumn";
-            this.creationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hostKeyDataGridViewTextBoxColumn
-            // 
-            this.hostKeyDataGridViewTextBoxColumn.DataPropertyName = "HostKey";
-            this.hostKeyDataGridViewTextBoxColumn.HeaderText = "HostKey";
-            this.hostKeyDataGridViewTextBoxColumn.Name = "hostKeyDataGridViewTextBoxColumn";
-            this.hostKeyDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // valueDataGridViewTextBoxColumn1
-            // 
-            this.valueDataGridViewTextBoxColumn1.DataPropertyName = "Value";
-            this.valueDataGridViewTextBoxColumn1.HeaderText = "Value";
-            this.valueDataGridViewTextBoxColumn1.Name = "valueDataGridViewTextBoxColumn1";
-            this.valueDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // cookiePathDataGridViewTextBoxColumn
-            // 
-            this.cookiePathDataGridViewTextBoxColumn.DataPropertyName = "CookiePath";
-            this.cookiePathDataGridViewTextBoxColumn.HeaderText = "CookiePath";
-            this.cookiePathDataGridViewTextBoxColumn.Name = "cookiePathDataGridViewTextBoxColumn";
-            this.cookiePathDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // expiresDataGridViewTextBoxColumn
-            // 
-            this.expiresDataGridViewTextBoxColumn.DataPropertyName = "Expires";
-            this.expiresDataGridViewTextBoxColumn.HeaderText = "Expires";
-            this.expiresDataGridViewTextBoxColumn.Name = "expiresDataGridViewTextBoxColumn";
-            this.expiresDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cookiesChromeBindingSource
-            // 
-            this.cookiesChromeBindingSource.DataSource = typeof(BrowserCheck.Model.CookiesChrome);
-            // 
-            // urlDataGridViewTextBoxColumn
-            // 
-            this.urlDataGridViewTextBoxColumn.DataPropertyName = "Url";
-            this.urlDataGridViewTextBoxColumn.HeaderText = "Url";
-            this.urlDataGridViewTextBoxColumn.Name = "urlDataGridViewTextBoxColumn";
-            this.urlDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // urlRankDataGridViewTextBoxColumn
-            // 
-            this.urlRankDataGridViewTextBoxColumn.DataPropertyName = "UrlRank";
-            this.urlRankDataGridViewTextBoxColumn.HeaderText = "UrlRank";
-            this.urlRankDataGridViewTextBoxColumn.Name = "urlRankDataGridViewTextBoxColumn";
-            this.urlRankDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // titleDataGridViewTextBoxColumn1
-            // 
-            this.titleDataGridViewTextBoxColumn1.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn1.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
-            this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // topSitesChromeBindingSource
-            // 
-            this.topSitesChromeBindingSource.DataSource = typeof(BrowserCheck.Model.TopSitesChrome);
-            // 
-            // browseUrl
-            // 
-            this.browseUrl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.browseUrl.DataPropertyName = "Browse";
-            this.browseUrl.HeaderText = "Browse";
-            this.browseUrl.Name = "browseUrl";
-            this.browseUrl.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.browseUrl.Text = "Browse";
-            this.browseUrl.UseColumnTextForLinkValue = true;
-            this.browseUrl.Width = 48;
-            // 
-            // urlColumn
-            // 
-            this.urlColumn.DataPropertyName = "Url";
-            this.urlColumn.HeaderText = "Url";
-            this.urlColumn.Name = "urlColumn";
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // visitCountDataGridViewTextBoxColumn
-            // 
-            this.visitCountDataGridViewTextBoxColumn.DataPropertyName = "VisitCount";
-            this.visitCountDataGridViewTextBoxColumn.HeaderText = "VisitCount";
-            this.visitCountDataGridViewTextBoxColumn.Name = "visitCountDataGridViewTextBoxColumn";
-            this.visitCountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastVisitTimeDataGridViewTextBoxColumn
-            // 
-            this.lastVisitTimeDataGridViewTextBoxColumn.DataPropertyName = "LastVisitTime";
-            this.lastVisitTimeDataGridViewTextBoxColumn.HeaderText = "LastVisitTime";
-            this.lastVisitTimeDataGridViewTextBoxColumn.Name = "lastVisitTimeDataGridViewTextBoxColumn";
-            this.lastVisitTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // visitDurationDataGridViewTextBoxColumn
-            // 
-            this.visitDurationDataGridViewTextBoxColumn.DataPropertyName = "VisitDuration";
-            this.visitDurationDataGridViewTextBoxColumn.HeaderText = "VisitDuration";
-            this.visitDurationDataGridViewTextBoxColumn.Name = "visitDurationDataGridViewTextBoxColumn";
-            this.visitDurationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addToReportHistory
-            // 
-            this.addToReportHistory.HeaderText = "Add To Report";
-            this.addToReportHistory.Name = "addToReportHistory";
-            // 
             // ChromeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1357,6 +1365,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.keywordsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keywordSearchChromeBindingSource)).EndInit();
             this.urlHistoryTab.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
@@ -1364,6 +1373,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.urlHistoryGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyChromeBindingSource)).EndInit();
             this.downloadHistory.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
@@ -1371,6 +1381,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.downloadsHistoryGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.downloadsChromeBindingSource)).EndInit();
             this.autofillTab.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel1.PerformLayout();
@@ -1378,6 +1389,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.autofillGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoFillChromeBindingSource)).EndInit();
             this.cookiesTab.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
             this.splitContainer5.Panel1.PerformLayout();
@@ -1385,6 +1397,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cookiesGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cookiesChromeBindingSource)).EndInit();
             this.topSites.ResumeLayout(false);
             this.splitContainer6.Panel1.ResumeLayout(false);
             this.splitContainer6.Panel1.PerformLayout();
@@ -1392,6 +1405,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
             this.splitContainer6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.topsitesGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.topSitesChromeBindingSource)).EndInit();
             this.printPdf.ResumeLayout(false);
             this.splitContainer7.Panel1.ResumeLayout(false);
             this.splitContainer7.Panel1.PerformLayout();
@@ -1401,12 +1415,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.keywordSearchChromeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyChromeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.downloadsChromeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.autoFillChromeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cookiesChromeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.topSitesChromeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

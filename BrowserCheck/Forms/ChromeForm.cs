@@ -14,17 +14,17 @@ namespace BrowserCheck.Forms
 {
     public partial class ChromeForm : Form
     {
-        ChromeController chrome;
+        readonly ChromeController chrome;
         List<KeywordSearchChrome> keywordList = new List<KeywordSearchChrome>();
         List<HistoryChrome> historyList = new List<HistoryChrome>();
         List<DownloadsChrome> downloadList = new List<DownloadsChrome>();
         List<AutoFillChrome> autofillList = new List<AutoFillChrome>();
         List<CookiesChrome> cookieList = new List<CookiesChrome>();
         List<TopSitesChrome> topSitesList = new List<TopSitesChrome>();
-        static PdfController pdfController = new PdfController();
-        PdfDocument doc = pdfController.create();
-        PdfSection sec;
-        PdfOperation setPdf = new PdfOperation();
+        static readonly PdfController pdfController = new PdfController();
+        PdfDocument doc = pdfController.Create();
+        readonly PdfSection sec;
+        readonly PdfOperation setPdf = new PdfOperation();
         public ChromeForm(ChromeController chrome)
         {
             InitializeComponent();
@@ -37,24 +37,24 @@ namespace BrowserCheck.Forms
             nameLabel.Text = Global.Session.Instance.MyUser.Name;
             surnameLabel.Text = Global.Session.Instance.MyUser.Surname;
             emailLabel.Text = Global.Session.Instance.MyUser.Email;
-            keywordList = chrome.getKeywords();
+            keywordList = chrome.GetKeywords();
             keywordsGrid.DataSource = keywordList;
-            historyList = chrome.getHistory();
+            historyList = chrome.GetHistory();
             urlHistoryGrid.DataSource = historyList;
-            downloadList = chrome.getDownloads();
+            downloadList = chrome.GetDownloads();
             downloadsHistoryGrid.DataSource = downloadList;
-            autofillList = chrome.getAutofill();
+            autofillList = chrome.GetAutofill();
             autofillGrid.DataSource = autofillList;
-            cookieList = chrome.getCookies();
+            cookieList = chrome.GetCookies();
             cookiesGrid.DataSource = cookieList;
-            topSitesList = chrome.getTopSites();
+            topSitesList = chrome.GetTopSites();
             topsitesGrid.DataSource = topSitesList;
 
 
         }
         int counter = 0;
 
-        private void reportNote_KeyPress(object sender, KeyPressEventArgs e)
+        private void ReportNote_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (counter >= 60)
             {
@@ -70,17 +70,17 @@ namespace BrowserCheck.Forms
             }
         }
 
-        private void noForPhoto_CheckedChanged(object sender, EventArgs e)
+        private void NoForPhoto_CheckedChanged(object sender, EventArgs e)
         {
             addPicture.Enabled = false;
         }
 
-        private void yesForPhoto_CheckedChanged(object sender, EventArgs e)
+        private void YesForPhoto_CheckedChanged(object sender, EventArgs e)
         {
             addPicture.Enabled = true;
         }
 
-        private void addPicture_Click(object sender, EventArgs e)
+        private void AddPicture_Click(object sender, EventArgs e)
         {
             openFilePicture.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
             openFilePicture.InitialDirectory = @"C:\";
@@ -91,20 +91,20 @@ namespace BrowserCheck.Forms
             }
         }
 
-        public void runCreatePdf(bool argument)
+        public void RunCreatePdf(bool argument)
         {
             ProgressBarLoad progress = new ProgressBarLoad();
             progress.ShowDialog();
-            bool controlForPhoto = pdfController.pdfIntro(doc, sec, reportNote.Text, profilePic.ImageLocation, reportNote.Lines.Length, argument);
+            bool controlForPhoto = pdfController.PdfIntro(doc, sec, reportNote.Text, profilePic.ImageLocation, reportNote.Lines.Length, argument);
             if (controlForPhoto)
             {
-                pdfController.createPdf(doc, sec, keywordsGrid, 1, "Keyword History");
-                pdfController.createPdf(doc, sec, urlHistoryGrid, 4, "Url History");
-                pdfController.createPdf(doc, sec, downloadsHistoryGrid, 6, "Download History");
-                pdfController.createPdf(doc, sec, autofillGrid, 5, "Autofill");
-                pdfController.createPdf(doc, sec, cookiesGrid, 6, "Cookies");
-                pdfController.createPdf(doc, sec, topsitesGrid, 3, "Top Sites");
-                int check = setPdf.savePdf(doc, reportName.Text);
+                pdfController.CreatePdf(doc, sec, keywordsGrid, 1, "Keyword History");
+                pdfController.CreatePdf(doc, sec, urlHistoryGrid, 6, "Url History");
+                pdfController.CreatePdf(doc, sec, downloadsHistoryGrid, 6, "Download History");
+                pdfController.CreatePdf(doc, sec, autofillGrid, 5, "Autofill");
+                pdfController.CreatePdf(doc, sec, cookiesGrid, 6, "Cookies");
+                pdfController.CreatePdf(doc, sec, topsitesGrid, 3, "Top Sites");
+                int check = setPdf.SavePdf(doc, reportName.Text);
                 if (check == 1)
                 {
                     Exception.ThrowExc.Instance.InformationMessage(Const.Constants.REPORT_CREATED);
@@ -118,11 +118,11 @@ namespace BrowserCheck.Forms
             {
                 Exception.ThrowExc.Instance.ErrorMessage(Const.Constants.PICTURE_SIZE_ERROR);
                 doc = null;
-                doc = pdfController.create();
+                doc = pdfController.Create();
             }
         }
 
-        private void printButton_Click(object sender, EventArgs e)
+        private void PrintButton_Click(object sender, EventArgs e)
         {
             bool argument = true;
             if (yesForPhoto.Checked)
@@ -134,27 +134,27 @@ namespace BrowserCheck.Forms
                 else
                 {
 
-                    runCreatePdf(argument);
+                    RunCreatePdf(argument);
                 }
             }
             else
             {
 
-                runCreatePdf(!argument);
+                RunCreatePdf(!argument);
             }
         }
 
-        private void keywordSearch_TextChanged(object sender, EventArgs e)
+        private void KeywordSearch_TextChanged(object sender, EventArgs e)
         {
             keywordsGrid.DataSource = keywordList.Where(x => x.Terms.Contains(keywordSearch.Text)).ToList(); 
         }
 
-        private void urlSearch_TextChanged(object sender, EventArgs e)
+        private void UrlSearch_TextChanged(object sender, EventArgs e)
         {
             urlHistoryGrid.DataSource = historyList.Where(x => x.Title.Contains(urlSearch.Text)).ToList();
         }
 
-        private void downloadSearch_TextChanged(object sender, EventArgs e)
+        private void DownloadSearch_TextChanged(object sender, EventArgs e)
         {
             downloadsHistoryGrid.DataSource = downloadList.Where(x => x.TargetPath.Contains(downloadSearch.Text) 
             || x.Referer.Contains(downloadSearch.Text)
@@ -162,13 +162,13 @@ namespace BrowserCheck.Forms
             ||x.OriginalMimeType.Contains(downloadSearch.Text)).ToList();
         }
 
-        private void autofillSearch_TextChanged(object sender, EventArgs e)
+        private void AutofillSearch_TextChanged(object sender, EventArgs e)
         {
             autofillGrid.DataSource = autofillList.Where(x => x.Name.Contains(autofillSearch.Text)
             ||x.Value.Contains(autofillSearch.Text)).ToList();
         }
 
-        private void cookieSearch_TextChanged(object sender, EventArgs e)
+        private void CookieSearch_TextChanged(object sender, EventArgs e)
         {
             cookiesGrid.DataSource = cookieList.Where(x => x.HostKey.Contains(cookieSearch.Text)
             || x.Name.Contains(cookieSearch.Text)
@@ -176,42 +176,42 @@ namespace BrowserCheck.Forms
             || x.CookiePath.Contains(cookieSearch.Text)).ToList();
         }
 
-        private void topsitesSearch_TextChanged(object sender, EventArgs e)
+        private void TopsitesSearch_TextChanged(object sender, EventArgs e)
         {
             topsitesGrid.DataSource = topSitesList.Where(x => x.Title.Contains(topsitesSearch.Text) || x.Url.Contains(topsitesSearch.Text)).ToList();
         }
 
-        private void sortKeyword_Click(object sender, EventArgs e)
+        private void SortKeyword_Click(object sender, EventArgs e)
         {
             keywordsGrid.DataSource = Common.Common.Instance.Sort_List<KeywordSearchChrome>(keywordAscDsc.SelectedItem.ToString(), "Terms", keywordList);
         }
 
-        private void urlsSort_Click(object sender, EventArgs e)
+        private void UrlsSort_Click(object sender, EventArgs e)
         {
             urlHistoryGrid.DataSource = Common.Common.Instance.Sort_List<HistoryChrome>(urlsAscDsc.SelectedItem.ToString(), urlsCombo.SelectedItem.ToString(), historyList);
         }
 
-        private void sortDownloads_Click(object sender, EventArgs e)
+        private void SortDownloads_Click(object sender, EventArgs e)
         {
             downloadsHistoryGrid.DataSource = Common.Common.Instance.Sort_List<DownloadsChrome>(downloadsAscDsc.SelectedItem.ToString(), downloadsCombo.SelectedItem.ToString(), downloadList);
         }
 
-        private void sortAutofill_Click(object sender, EventArgs e)
+        private void SortAutofill_Click(object sender, EventArgs e)
         {
             autofillGrid.DataSource = Common.Common.Instance.Sort_List<AutoFillChrome>(autofillAscDsc.SelectedItem.ToString(), autofillCombo.SelectedItem.ToString(), autofillList);
         }
 
-        private void sortCookies_Click(object sender, EventArgs e)
+        private void SortCookies_Click(object sender, EventArgs e)
         {
             cookiesGrid.DataSource = Common.Common.Instance.Sort_List<CookiesChrome>(cookiesAscDsc.SelectedItem.ToString(), cookiesCombo.SelectedItem.ToString(), cookieList);
         }
 
-        private void topsitesSort_Click(object sender, EventArgs e)
+        private void TopsitesSort_Click(object sender, EventArgs e)
         {
             topsitesGrid.DataSource = Common.Common.Instance.Sort_List<TopSitesChrome>(topsitesAscDsc.SelectedItem.ToString(), topsitesCombo.SelectedItem.ToString(), topSitesList);
         }
 
-        private void urlHistoryGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void UrlHistoryGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var send = (DataGridView)sender;
             if (send.Columns[e.ColumnIndex] is DataGridViewLinkColumn && e.RowIndex >= 0)

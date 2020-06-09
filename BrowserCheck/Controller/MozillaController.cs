@@ -8,14 +8,14 @@ namespace BrowserCheck.Controller
     public class MozillaController
     {
         
-        private Mozilla mozilla = new Mozilla();
-        private static string version = "Version=3;";
+        private readonly Mozilla mozilla = new Mozilla();
+        private static readonly string version = "Version=3;";
         private SQLiteConnection conn;
-        public void setPath(string path)
+        public void SetPath(string path)
         {
             mozilla.Path = path;
         }
-        public List<FormHistoryMozilla> getFormHistory()
+        public List<FormHistoryMozilla> GetFormHistory()
         {
             List<FormHistoryMozilla> formList;
             bool check = Validator.BrowserValidator.Instance.checkFile(mozilla.Path + "\\formhistory.sqlite");
@@ -52,7 +52,7 @@ namespace BrowserCheck.Controller
                     }
                     catch
                     {
-                        formList = null;
+                       ;
                     }
                     finally
                     {
@@ -67,7 +67,7 @@ namespace BrowserCheck.Controller
             return formList;
         }
 
-        public List<WebHistoryMozilla> getWebHistory()
+        public List<WebHistoryMozilla> GetWebHistory()
         {
             bool check = Validator.BrowserValidator.Instance.checkFile(mozilla.Path + "\\places.sqlite");
             List<WebHistoryMozilla> webList;
@@ -107,7 +107,7 @@ namespace BrowserCheck.Controller
                     }
                     catch
                     {
-                        webList = null;
+                       ;
                     }
                     finally
                     {
@@ -121,7 +121,7 @@ namespace BrowserCheck.Controller
             }
             return webList;
         }
-        public List<InputHistoryMozilla> getInputHistory()
+        public List<InputHistoryMozilla> GetInputHistory()
         {
             bool check = Validator.BrowserValidator.Instance.checkFile(mozilla.Path + "\\places.sqlite");
             List<InputHistoryMozilla> inputList;
@@ -154,7 +154,7 @@ namespace BrowserCheck.Controller
                     }
                     catch
                     {
-                        inputList = null;
+                      ;
                     }
                     finally
                     {
@@ -169,7 +169,7 @@ namespace BrowserCheck.Controller
             
             return inputList;
         }
-        public List<BookmarksMozilla> getBookmarks()
+        public List<BookmarksMozilla> GetBookmarks()
         {
             bool check = Validator.BrowserValidator.Instance.checkFile(mozilla.Path + "\\places.sqlite");
             List<BookmarksMozilla> bookmarkList;
@@ -209,7 +209,7 @@ namespace BrowserCheck.Controller
                     }
                     catch
                     {
-                    bookmarkList = null;
+                        ;
                     }
                     finally
                     {
@@ -225,7 +225,7 @@ namespace BrowserCheck.Controller
             return bookmarkList;
         }
 
-        public List<CookiesMozilla> getCookies()
+        public List<CookiesMozilla> GetCookies()
         {
             bool check = Validator.BrowserValidator.Instance.checkFile(mozilla.Path + "\\cookies.sqlite");
             List<CookiesMozilla> cookiesList;
@@ -271,7 +271,7 @@ namespace BrowserCheck.Controller
                     }
                     catch
                     {
-                    cookiesList = null;
+                        ;
                     }
                     finally
                     {
@@ -286,7 +286,7 @@ namespace BrowserCheck.Controller
             
             return cookiesList;
         }
-        public List<AnnosMozilla> getAnnos()
+        public List<AnnosMozilla> GetAnnos()
         {
             bool check = Validator.BrowserValidator.Instance.checkFile(mozilla.Path + "\\places.sqlite");
             List<AnnosMozilla> annosList;
@@ -327,7 +327,7 @@ namespace BrowserCheck.Controller
                     }
                     catch
                     {
-                        annosList = null;
+                       ;
                     }
                     finally
                     {

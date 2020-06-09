@@ -23,7 +23,6 @@ namespace BrowserCheck.Forms
         {
 
             string curDir = Directory.GetCurrentDirectory()+ "\\..\\..\\ApplicationFiles\\File\\howtouse.html";
-            Console.WriteLine(curDir + "\\ApplicationFiles\\File\\howtouse.html");
             this.webBrowser.Url = new Uri(String.Format("file:///{0}", curDir));
         }
     }

@@ -11,14 +11,14 @@ namespace BrowserCheck.Config
     class PdfOperation
     {
 
-        PdfBrush brush1 = PdfBrushes.Black;
+        readonly PdfBrush brush1 = PdfBrushes.Black;
         PdfPageBase page;
-        PdfTrueTypeFont font1 = new PdfTrueTypeFont(new Font("Arial", 16f, FontStyle.Bold));
-        PdfTrueTypeFont fontInfo = new PdfTrueTypeFont(new Font("Arial", 12f, FontStyle.Regular));
-        PdfStringFormat format1 = new PdfStringFormat(PdfTextAlignment.Center);
-        PdfStringFormat leftAlignment = new PdfStringFormat(PdfTextAlignment.Left, PdfVerticalAlignment.Middle);
+        readonly PdfTrueTypeFont font1 = new PdfTrueTypeFont(new Font("Arial", 16f, FontStyle.Bold));
+        readonly PdfTrueTypeFont fontInfo = new PdfTrueTypeFont(new Font("Arial", 12f, FontStyle.Regular));
+        readonly PdfStringFormat format1 = new PdfStringFormat(PdfTextAlignment.Center);
+        readonly PdfStringFormat leftAlignment = new PdfStringFormat(PdfTextAlignment.Left, PdfVerticalAlignment.Middle);
         private static string yourRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Reports\\"+Global.Session.Instance.MyUser.Email;
-        public bool printPdf(PdfDocument doc, PdfSection sec, string name, string[] dataset)
+        public bool PrintPdf(PdfSection sec, string name, string[] dataset)
         {
             float y = 10;
             bool check = true;
@@ -57,7 +57,7 @@ namespace BrowserCheck.Config
             }
             return check;
         }
-        public bool introPdf(PdfDocument doc, PdfSection sec, string name, string surname, string email, string note, string pathOfImage, int numberOfNewLine,bool argument)
+        public bool IntroPdf(PdfSection sec, string name, string surname, string email, string note, string pathOfImage, int numberOfNewLine,bool argument)
         {
             float intro = 10;
             try
@@ -91,15 +91,17 @@ namespace BrowserCheck.Config
                 page.Canvas.DrawString("E-Mail  : " + email, fontInfo, brush1, 0, intro, leftAlignment);
                 if (numberOfNewLine <= 1)
                 {
-                    intro = intro + 20 * numberOfNewLine;
+                    intro += (20 * numberOfNewLine);
                 }
                 else
                 {
-                    intro = intro + (20 * numberOfNewLine)- fontInfo.MeasureString("Country List", format1).Height;
+                    intro += (20 * numberOfNewLine)- fontInfo.MeasureString("Country List", format1).Height;
                 }
                
                 if (note.Length != 0)
                     page.Canvas.DrawString("Notes   : " + note, fontInfo, brush1, 0, intro, leftAlignment);
+                intro += 20;
+                page.Canvas.DrawString("Date  : " + DateTime.Now, fontInfo, brush1, 0, intro, leftAlignment);
                 return true;
                 
             }
@@ -111,7 +113,7 @@ namespace BrowserCheck.Config
 
         }
 
-        public int savePdf(PdfDocument doc, string name)
+        public int SavePdf(PdfDocument doc, string name)
         {
             if (!Directory.Exists(yourRoot))
             {

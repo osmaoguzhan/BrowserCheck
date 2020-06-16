@@ -10,11 +10,13 @@ namespace BrowserCheck.Model
 {
     public class User
     {
+        public string Name { get; set; }
 
-        private string name; public string Name { get { return name; } set { this.name = value; } }
-        private string surname; public string Surname { get {return surname;} set {this.surname = value;} }
-        private string email; public string Email { get {return email;} set {this.email = value;} }
-        private string password; public string Password { get {return password;} set {this.password = value;} }
+        public string Surname { get; set; }
+
+        public string Email { get; set; }
+
+        public string Password { get; set; }
 
     }
 }

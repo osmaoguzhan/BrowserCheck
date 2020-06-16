@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace BrowserCheck.Validator
 {
-    class MozillaValidator
+    class BrowserValidator
     {
-        private static MozillaValidator _Instance;
+        private static BrowserValidator _Instance;
 
-        public static MozillaValidator Instance
+        public static BrowserValidator Instance
         {
 
             get
             {
                 if (_Instance == null)
                 {
-                    _Instance = new MozillaValidator();
+                    _Instance = new BrowserValidator();
                 }
                 return (_Instance);
             }

@@ -27,14 +27,13 @@ namespace BrowserCheck.Forms
         {
             clock.Start();
             DateTime thisDay = DateTime.Today;
-            dateToolStrip.Text = thisDay.ToString("d");
+            labelDate.Text = thisDay.ToString("d");
             nameSurnameLabel.Text = Global.Session.Instance.MyUser.Name + " " + Global.Session.Instance.MyUser.Surname;
             if (Global.Session.Instance.isLoggedIn)
             {
                 this.user.Text = Global.Session.Instance.MyUser.Name.Substring(0,1) + Global.Session.Instance.MyUser.Surname.Substring(0, 1);
                 Color c2 = Color.FromKnownColor(KnownColor.AliceBlue);
                 this.user.BackColor = c2;
-                //dateToolStrip.Text =  Global.Session.Instance.MyUser.Name + " " + Global.Session.Instance.MyUser.Surname;
             }
             if (Directory.Exists(yourRoot))
             {
@@ -109,7 +108,7 @@ namespace BrowserCheck.Forms
             bool formAlreadyOpened = false;
             foreach (Form form in forms)
             {
-                if (form.Name == "CasePage" || form.Name == "MozillaForm")
+                if (form.Name == "CasePage" || form.Name == "MozillaForm" || form.Name == "ChromeForm")
                 {
                     formAlreadyOpened = true;
                 }
@@ -135,7 +134,7 @@ namespace BrowserCheck.Forms
         {
 
             Application.OpenForms[0].Show();
-            Global.Session.Instance.clearSession();
+            Global.Session.Instance.MyUser = null;
             this.Close();             
         }
 
@@ -160,12 +159,24 @@ namespace BrowserCheck.Forms
 
         private void clock_Tick(object sender, EventArgs e)
         {
-            clockTool.Text = DateTime.Now.ToString();
+            labelTime.Text = DateTime.Now.ToString();
         }
 
         private void showFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("explorer.exe", yourRoot);
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.ShowDialog();
+        }
+
+        private void authorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HowToUse how = new HowToUse();
+            how.ShowDialog();
         }
     }
 }

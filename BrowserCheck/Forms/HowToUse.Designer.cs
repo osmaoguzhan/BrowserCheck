@@ -1,6 +1,6 @@
 ﻿namespace BrowserCheck.Forms
 {
-    partial class DefaultPopup
+    partial class HowToUse
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.okButton = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HowToUse));
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
-            // okButton
+            // webBrowser
             // 
-            this.okButton.Location = new System.Drawing.Point(308, 179);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 0;
-            this.okButton.Text = "OK";
-            this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
+            this.webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(843, 486);
+            this.webBrowser.TabIndex = 0;
             // 
-            // DefaultPopup
+            // HowToUse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 214);
-            this.ControlBox = false;
-            this.Controls.Add(this.okButton);
+            this.ClientSize = new System.Drawing.Size(843, 486);
+            this.Controls.Add(this.webBrowser);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "DefaultPopup";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Please select one of folders";
+            this.Name = "HowToUse";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "HowToUse";
+            this.Load += new System.EventHandler(this.HowToUse_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button okButton;
+        private System.Windows.Forms.WebBrowser webBrowser;
     }
 }

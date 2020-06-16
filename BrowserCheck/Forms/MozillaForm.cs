@@ -5,6 +5,7 @@ using Spire.Pdf;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -13,9 +14,10 @@ namespace BrowserCheck.Forms
 {
     public partial class MozillaForm : Form
     {
+        //Arraylists and objects that are going to be used
         MozillaController mozilla;
         static PdfController pdfController = new PdfController();
-        PdfDocument doc = pdfController.create();
+        PdfDocument doc = pdfController.Create();
         PdfSection sec;
         PdfOperation setPdf = new PdfOperation();
         List<FormHistoryMozilla> formList = new List<FormHistoryMozilla>();
@@ -30,25 +32,31 @@ namespace BrowserCheck.Forms
             InitializeComboboxes();
             this.mozilla = mozilla;
         }
+        //Initializing gridviews
         private void Form1_Load(object sender, EventArgs e)
         {
             nameLabel.Text = Global.Session.Instance.MyUser.Name;
             surnameLabel.Text = Global.Session.Instance.MyUser.Surname;
             emailLabel.Text = Global.Session.Instance.MyUser.Email;
-            formList = mozilla.getFormHistory();
+            formList = mozilla.GetFormHistory();
             formHistoryGrid.DataSource = formList;
-            webList = mozilla.getWebHistory();
+            webList = mozilla.GetWebHistory();
             webHistoryGrid.DataSource = webList;
-            inputList = mozilla.getInputHistory();
+            inputList = mozilla.GetInputHistory();
             inputHistoryGrid.DataSource = inputList;
-            bookmarkList = mozilla.getBookmarks();
+            bookmarkList = mozilla.GetBookmarks();
             bookmarkMozillaGrid.DataSource = bookmarkList;
-            cookiesList = mozilla.getCookies();
+            cookiesList = mozilla.GetCookies();
             cookiesMozillaGrid.DataSource = cookiesList;
-            annosList = mozilla.getAnnos();
+            annosList = mozilla.GetAnnos();
             annosMozillaGrid.DataSource = annosList;
 
         }
+        /**
+         * 
+         * Sorting and searching datagridview elements
+         * 
+         * **/
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
             formHistoryGrid.DataSource = formList.Where(x => x.Value.Contains(searchBox.Text) || x.FieldName.Contains(searchBox.Text)).ToList();
@@ -122,17 +130,6 @@ namespace BrowserCheck.Forms
                 runCreatePdf(!argument);
             }
         }
-        private void mozillaTabControl_Selected(object sender, TabControlEventArgs e)
-        {
-            if (e.TabPage == printTab)
-            {
-                this.MaximizeBox = false;
-            }
-            else
-            {
-                this.MaximizeBox = true;
-            }
-        }
         private void addPicture_Click(object sender, EventArgs e)
         {
             openFilePicutre.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
@@ -171,16 +168,16 @@ namespace BrowserCheck.Forms
         {
             ProgressBarLoad progress = new ProgressBarLoad();
             progress.ShowDialog();
-            bool controlForPhoto = pdfController.pdfIntro(doc,sec,reportNote.Text,profilePic.ImageLocation,reportNote.Lines.Count(), argument);
+            bool controlForPhoto = pdfController.PdfIntro(doc,sec,reportNote.Text,profilePic.ImageLocation,reportNote.Lines.Count(), argument);
             if (controlForPhoto)
             {
-                pdfController.createPdf(doc, sec, formHistoryGrid, 5, "Form History");
-                pdfController.createPdf(doc, sec, webHistoryGrid, 5, "Web History");
-                pdfController.createPdf(doc, sec, inputHistoryGrid, 2, "Input History");
-                pdfController.createPdf(doc, sec, bookmarkMozillaGrid, 4, "Bookmark");
-                pdfController.createPdf(doc, sec, cookiesMozillaGrid, 7, "Cookies");
-                pdfController.createPdf(doc, sec, annosMozillaGrid, 3, "Downloads");
-                int check = setPdf.savePdf(doc, reportName.Text);
+                pdfController.CreatePdf(doc, sec, formHistoryGrid, 5, "Form History");
+                pdfController.CreatePdf(doc, sec, webHistoryGrid, 6, "Web History");
+                pdfController.CreatePdf(doc, sec, inputHistoryGrid, 2, "Input History");
+                pdfController.CreatePdf(doc, sec, bookmarkMozillaGrid, 4, "Bookmark");
+                pdfController.CreatePdf(doc, sec, cookiesMozillaGrid, 7, "Cookies");
+                pdfController.CreatePdf(doc, sec, annosMozillaGrid, 3, "Downloads");
+                int check = setPdf.SavePdf(doc, reportName.Text);
                 if (check == 1)
                 {
                     Exception.ThrowExc.Instance.InformationMessage(Const.Constants.REPORT_CREATED);
@@ -193,9 +190,20 @@ namespace BrowserCheck.Forms
             {
                 Exception.ThrowExc.Instance.ErrorMessage(Const.Constants.PICTURE_SIZE_ERROR);
                 doc = null;
-                doc = pdfController.create();
+                doc = pdfController.Create();
             }           
         }
-       
+
+        private void webHistoryGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var send = (DataGridView)sender;
+            if(send.Columns[e.ColumnIndex] is DataGridViewLinkColumn && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = webHistoryGrid.Rows[e.RowIndex];         
+                Process.Start("IExplore.exe", row.Cells[1].Value.ToString());
+
+            }
+
+        }
     }
 }

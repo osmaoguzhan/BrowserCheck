@@ -8,7 +8,7 @@ namespace BrowserCheck.Validator
 {
     class Validator
     {
-        MozillaValidator MozillaValidator = new MozillaValidator();
+        BrowserValidator BrowserValidator = new BrowserValidator();
         UserValidator UserValidator = new UserValidator();
 
         private static Validator _Instance;

@@ -11,14 +11,14 @@ namespace BrowserCheck.Config
     class PdfOperation
     {
 
-        PdfBrush brush1 = PdfBrushes.Black;
+        readonly PdfBrush brush1 = PdfBrushes.Black;
         PdfPageBase page;
-        PdfTrueTypeFont font1 = new PdfTrueTypeFont(new Font("Arial", 16f, FontStyle.Bold));
-        PdfTrueTypeFont fontInfo = new PdfTrueTypeFont(new Font("Arial", 12f, FontStyle.Regular));
-        PdfStringFormat format1 = new PdfStringFormat(PdfTextAlignment.Center);
-        PdfStringFormat leftAlignment = new PdfStringFormat(PdfTextAlignment.Left, PdfVerticalAlignment.Middle);
+        readonly PdfTrueTypeFont font1 = new PdfTrueTypeFont(new Font("Arial", 16f, FontStyle.Bold));
+        readonly PdfTrueTypeFont fontInfo = new PdfTrueTypeFont(new Font("Arial", 12f, FontStyle.Regular));
+        readonly PdfStringFormat format1 = new PdfStringFormat(PdfTextAlignment.Center);
+        readonly PdfStringFormat leftAlignment = new PdfStringFormat(PdfTextAlignment.Left, PdfVerticalAlignment.Middle);
         private static string yourRoot = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Reports\\"+Global.Session.Instance.MyUser.Email;
-        public bool printPdf(PdfDocument doc, PdfSection sec, string name, string[] dataset)
+        public bool PrintPdf(PdfSection sec, string name, string[] dataset)
         {
             float y = 10;
             bool check = true;
@@ -28,8 +28,8 @@ namespace BrowserCheck.Config
                 try
                 {
                     page.Canvas.DrawString(name, font1, brush1, page.Canvas.ClientSize.Width / 2, y, format1);
-                    y = y + font1.MeasureString("Country List", format1).Height;
-                    y = y + 5;
+                    y += font1.MeasureString("Country List", format1).Height;
+                    y += 5;
                     String[][] dataSource = new String[dataset.Length][];
                     for (int i = 0; i < dataset.Length; i++)
                     {
@@ -57,7 +57,7 @@ namespace BrowserCheck.Config
             }
             return check;
         }
-        public bool introPdf(PdfDocument doc, PdfSection sec, string name, string surname, string email, string note, string pathOfImage, int numberOfNewLine,bool argument)
+        public bool IntroPdf(PdfSection sec, string name, string surname, string email, string note, string pathOfImage, int numberOfNewLine,bool argument)
         {
             float intro = 10;
             try
@@ -80,26 +80,28 @@ namespace BrowserCheck.Config
                         page.Canvas.DrawImage(image, x, intro, width, height);
                     }
                 }
-                intro = intro + height;
+                intro += height;
                 page.Canvas.DrawString("Browser Report", font1, brush1, page.Canvas.ClientSize.Width / 2, intro, format1);
-                intro = intro + fontInfo.MeasureString("Country List", format1).Height;
-                intro = intro + 20;
+                intro += fontInfo.MeasureString("Country List", format1).Height;
+                intro += 20;
                 page.Canvas.DrawString("Name    : " + name, fontInfo, brush1, 0, intro, leftAlignment);
-                intro = intro + 20;
+                intro += 20;
                 page.Canvas.DrawString("Surname : " + surname, fontInfo, brush1, 0, intro, leftAlignment);
-                intro = intro + 20;
+                intro += 20;
                 page.Canvas.DrawString("E-Mail  : " + email, fontInfo, brush1, 0, intro, leftAlignment);
                 if (numberOfNewLine <= 1)
                 {
-                    intro = intro + 20 * numberOfNewLine;
+                    intro += (20 * numberOfNewLine);
                 }
                 else
                 {
-                    intro = intro + (20 * numberOfNewLine)- fontInfo.MeasureString("Country List", format1).Height;
+                    intro += (20 * numberOfNewLine)- fontInfo.MeasureString("Country List", format1).Height;
                 }
                
                 if (note.Length != 0)
                     page.Canvas.DrawString("Notes   : " + note, fontInfo, brush1, 0, intro, leftAlignment);
+                intro += 20;
+                page.Canvas.DrawString("Date  : " + DateTime.Now, fontInfo, brush1, 0, intro, leftAlignment);
                 return true;
                 
             }
@@ -111,13 +113,13 @@ namespace BrowserCheck.Config
 
         }
 
-        public int savePdf(PdfDocument doc, string name)
+        public int SavePdf(PdfDocument doc, string name)
         {
             if (!Directory.Exists(yourRoot))
             {
                 Directory.CreateDirectory(yourRoot);
             }
-            yourRoot = yourRoot + "\\";
+            yourRoot += "\\";
             if (File.Exists(yourRoot+name + ".pdf"))
             {
                 DialogResult result = Exception.ThrowExc.Instance.WarningYesNo(Const.Constants.WANT_OVERWRITE);

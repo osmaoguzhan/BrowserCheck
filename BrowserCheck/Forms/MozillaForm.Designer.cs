@@ -46,7 +46,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MozillaForm));
-            BrowserCheck.Model.User user1 = new BrowserCheck.Model.User();
             this.mozillaTabControl = new System.Windows.Forms.TabControl();
             this.formHistoryMozilla = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -71,6 +70,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.searchBoxWeb = new System.Windows.Forms.TextBox();
             this.webHistoryGrid = new System.Windows.Forms.DataGridView();
+            this.browseUrl = new System.Windows.Forms.DataGridViewLinkColumn();
             this.urlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.visitCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -226,7 +226,6 @@
             this.mozillaTabControl.SelectedIndex = 0;
             this.mozillaTabControl.Size = new System.Drawing.Size(1064, 580);
             this.mozillaTabControl.TabIndex = 1;
-            this.mozillaTabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.mozillaTabControl_Selected);
             // 
             // formHistoryMozilla
             // 
@@ -276,6 +275,8 @@
             // ascDsc
             // 
             this.ascDsc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ascDsc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ascDsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ascDsc.FormattingEnabled = true;
             this.ascDsc.Items.AddRange(new object[] {
             "Ascending",
@@ -288,6 +289,8 @@
             // sortColumnsCombo
             // 
             this.sortColumnsCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.sortColumnsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sortColumnsCombo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sortColumnsCombo.FormattingEnabled = true;
             this.sortColumnsCombo.Items.AddRange(new object[] {
             "FieldName",
@@ -303,7 +306,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 10);
+            this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 1;
@@ -341,6 +344,7 @@
             // fieldNameDataGridViewTextBoxColumn
             // 
             this.fieldNameDataGridViewTextBoxColumn.DataPropertyName = "FieldName";
+            this.fieldNameDataGridViewTextBoxColumn.FillWeight = 91.85447F;
             this.fieldNameDataGridViewTextBoxColumn.HeaderText = "FieldName";
             this.fieldNameDataGridViewTextBoxColumn.Name = "fieldNameDataGridViewTextBoxColumn";
             this.fieldNameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -348,6 +352,7 @@
             // valueDataGridViewTextBoxColumn
             // 
             this.valueDataGridViewTextBoxColumn.DataPropertyName = "Value";
+            this.valueDataGridViewTextBoxColumn.FillWeight = 91.85447F;
             this.valueDataGridViewTextBoxColumn.HeaderText = "Value";
             this.valueDataGridViewTextBoxColumn.Name = "valueDataGridViewTextBoxColumn";
             this.valueDataGridViewTextBoxColumn.ReadOnly = true;
@@ -355,6 +360,7 @@
             // timeUsedDataGridViewTextBoxColumn
             // 
             this.timeUsedDataGridViewTextBoxColumn.DataPropertyName = "TimeUsed";
+            this.timeUsedDataGridViewTextBoxColumn.FillWeight = 91.85447F;
             this.timeUsedDataGridViewTextBoxColumn.HeaderText = "TimeUsed";
             this.timeUsedDataGridViewTextBoxColumn.Name = "timeUsedDataGridViewTextBoxColumn";
             this.timeUsedDataGridViewTextBoxColumn.ReadOnly = true;
@@ -362,6 +368,7 @@
             // firstDateDataGridViewTextBoxColumn
             // 
             this.firstDateDataGridViewTextBoxColumn.DataPropertyName = "FirstDate";
+            this.firstDateDataGridViewTextBoxColumn.FillWeight = 91.85447F;
             this.firstDateDataGridViewTextBoxColumn.HeaderText = "FirstDate";
             this.firstDateDataGridViewTextBoxColumn.Name = "firstDateDataGridViewTextBoxColumn";
             this.firstDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -369,12 +376,14 @@
             // lastDateDataGridViewTextBoxColumn
             // 
             this.lastDateDataGridViewTextBoxColumn.DataPropertyName = "LastDate";
+            this.lastDateDataGridViewTextBoxColumn.FillWeight = 91.85447F;
             this.lastDateDataGridViewTextBoxColumn.HeaderText = "LastDate";
             this.lastDateDataGridViewTextBoxColumn.Name = "lastDateDataGridViewTextBoxColumn";
             this.lastDateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // addToReport
             // 
+            this.addToReport.FillWeight = 91.85447F;
             this.addToReport.HeaderText = "Add To Report";
             this.addToReport.Name = "addToReport";
             // 
@@ -428,6 +437,8 @@
             // 
             // webAscDsc
             // 
+            this.webAscDsc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.webAscDsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.webAscDsc.FormattingEnabled = true;
             this.webAscDsc.Items.AddRange(new object[] {
             "Ascending",
@@ -439,6 +450,8 @@
             // 
             // sortWeb
             // 
+            this.sortWeb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sortWeb.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sortWeb.FormattingEnabled = true;
             this.sortWeb.Items.AddRange(new object[] {
             "Url",
@@ -476,6 +489,7 @@
             this.webHistoryGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.webHistoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.webHistoryGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.browseUrl,
             this.urlDataGridViewTextBoxColumn,
             this.titleDataGridViewTextBoxColumn,
             this.visitCountDataGridViewTextBoxColumn,
@@ -488,10 +502,23 @@
             this.webHistoryGrid.Name = "webHistoryGrid";
             this.webHistoryGrid.Size = new System.Drawing.Size(1050, 508);
             this.webHistoryGrid.TabIndex = 0;
+            this.webHistoryGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.webHistoryGrid_CellContentClick);
+            // 
+            // browseUrl
+            // 
+            this.browseUrl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.browseUrl.DataPropertyName = "Url";
+            this.browseUrl.FillWeight = 177.665F;
+            this.browseUrl.HeaderText = "Browse";
+            this.browseUrl.Name = "browseUrl";
+            this.browseUrl.Text = "Browse";
+            this.browseUrl.UseColumnTextForLinkValue = true;
+            this.browseUrl.Width = 48;
             // 
             // urlDataGridViewTextBoxColumn
             // 
             this.urlDataGridViewTextBoxColumn.DataPropertyName = "Url";
+            this.urlDataGridViewTextBoxColumn.FillWeight = 87.05586F;
             this.urlDataGridViewTextBoxColumn.HeaderText = "Url";
             this.urlDataGridViewTextBoxColumn.Name = "urlDataGridViewTextBoxColumn";
             this.urlDataGridViewTextBoxColumn.ReadOnly = true;
@@ -499,6 +526,7 @@
             // titleDataGridViewTextBoxColumn
             // 
             this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.FillWeight = 87.05586F;
             this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
             this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
             this.titleDataGridViewTextBoxColumn.ReadOnly = true;
@@ -506,6 +534,7 @@
             // visitCountDataGridViewTextBoxColumn
             // 
             this.visitCountDataGridViewTextBoxColumn.DataPropertyName = "VisitCount";
+            this.visitCountDataGridViewTextBoxColumn.FillWeight = 87.05586F;
             this.visitCountDataGridViewTextBoxColumn.HeaderText = "VisitCount";
             this.visitCountDataGridViewTextBoxColumn.Name = "visitCountDataGridViewTextBoxColumn";
             this.visitCountDataGridViewTextBoxColumn.ReadOnly = true;
@@ -513,6 +542,7 @@
             // lastVisitDateDataGridViewTextBoxColumn
             // 
             this.lastVisitDateDataGridViewTextBoxColumn.DataPropertyName = "LastVisitDate";
+            this.lastVisitDateDataGridViewTextBoxColumn.FillWeight = 87.05586F;
             this.lastVisitDateDataGridViewTextBoxColumn.HeaderText = "LastVisitDate";
             this.lastVisitDateDataGridViewTextBoxColumn.Name = "lastVisitDateDataGridViewTextBoxColumn";
             this.lastVisitDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -520,12 +550,14 @@
             // descriptionDataGridViewTextBoxColumn
             // 
             this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.FillWeight = 87.05586F;
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // addToReportWeb
             // 
+            this.addToReportWeb.FillWeight = 87.05586F;
             this.addToReportWeb.HeaderText = "Add To Report";
             this.addToReportWeb.Name = "addToReportWeb";
             // 
@@ -578,6 +610,8 @@
             // 
             // inputAscDsc
             // 
+            this.inputAscDsc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.inputAscDsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.inputAscDsc.FormattingEnabled = true;
             this.inputAscDsc.Items.AddRange(new object[] {
             "Ascending",
@@ -589,6 +623,8 @@
             // 
             // inputSort
             // 
+            this.inputSort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.inputSort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.inputSort.FormattingEnabled = true;
             this.inputSort.Items.AddRange(new object[] {
             "Input",
@@ -701,6 +737,8 @@
             // 
             // bookmarkAscDsc
             // 
+            this.bookmarkAscDsc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bookmarkAscDsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bookmarkAscDsc.FormattingEnabled = true;
             this.bookmarkAscDsc.Items.AddRange(new object[] {
             "Ascending",
@@ -712,6 +750,8 @@
             // 
             // sortBookmarks
             // 
+            this.sortBookmarks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sortBookmarks.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sortBookmarks.FormattingEnabled = true;
             this.sortBookmarks.Items.AddRange(new object[] {
             "Url",
@@ -842,6 +882,8 @@
             // 
             // cookiesAscDsc
             // 
+            this.cookiesAscDsc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cookiesAscDsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cookiesAscDsc.FormattingEnabled = true;
             this.cookiesAscDsc.Items.AddRange(new object[] {
             "Ascending",
@@ -853,6 +895,8 @@
             // 
             // sortCookies
             // 
+            this.sortCookies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sortCookies.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sortCookies.FormattingEnabled = true;
             this.sortCookies.Items.AddRange(new object[] {
             "Name",
@@ -1011,6 +1055,8 @@
             // 
             // annosAscDsc
             // 
+            this.annosAscDsc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.annosAscDsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.annosAscDsc.FormattingEnabled = true;
             this.annosAscDsc.Items.AddRange(new object[] {
             "Ascending",
@@ -1022,6 +1068,8 @@
             // 
             // sortAnnos
             // 
+            this.sortAnnos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sortAnnos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sortAnnos.FormattingEnabled = true;
             this.sortAnnos.Items.AddRange(new object[] {
             "Content",
@@ -1250,11 +1298,6 @@
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(0, 13);
             this.emailLabel.TabIndex = 9;
-            user1.Email = null;
-            user1.Name = null;
-            user1.Password = null;
-            user1.Surname = null;
-            this.emailLabel.Text = user1.Email;
             // 
             // surnameLabel
             // 
@@ -1263,7 +1306,6 @@
             this.surnameLabel.Name = "surnameLabel";
             this.surnameLabel.Size = new System.Drawing.Size(0, 13);
             this.surnameLabel.TabIndex = 8;
-            this.surnameLabel.Text = user1.Surname;
             // 
             // nameLabel
             // 
@@ -1272,7 +1314,6 @@
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(0, 13);
             this.nameLabel.TabIndex = 7;
-            this.nameLabel.Text = user1.Name;
             // 
             // label13
             // 
@@ -1369,8 +1410,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 580);
             this.Controls.Add(this.mozillaTabControl);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MozillaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mozilla Datas";
@@ -1459,12 +1501,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox searchBoxWeb;
         private System.Windows.Forms.DataGridView webHistoryGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn urlDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn visitCountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisitDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn addToReportWeb;
         private System.Windows.Forms.BindingSource webHistoryMozillaBindingSource;
         private System.Windows.Forms.TabPage inputHistoryMozilla;
         private System.Windows.Forms.SplitContainer splitContainer3;
@@ -1501,12 +1537,6 @@
         private System.Windows.Forms.TextBox searchBoxCookies;
         private System.Windows.Forms.DataGridView cookiesMozillaGrid;
         private System.Windows.Forms.BindingSource cookiesMozillaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fieldNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeUsedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn addToReport;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn hostDataGridViewTextBoxColumn;
@@ -1549,5 +1579,18 @@
         private System.Windows.Forms.Label emailLabel;
         private System.Windows.Forms.Label surnameLabel;
         private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fieldNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeUsedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn addToReport;
+        private System.Windows.Forms.DataGridViewLinkColumn browseUrl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn urlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visitCountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisitDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn addToReportWeb;
     }
 }

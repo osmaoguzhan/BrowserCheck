@@ -8,23 +8,23 @@ namespace BrowserCheck.Controller
     public class ChromeController
     {
 
-        private Chrome chrome = new Chrome();
-        private static string version = "Version=3;";
+        private readonly Chrome chrome = new Chrome();
+        private static readonly string version = "Version=3;";
         private SQLiteConnection conn;
 
-        public void setPath(string path)
+        public void SetPath(string path)
         {
             chrome.Path = path;
         }
 
-        public List<KeywordSearchChrome> getKeywords()
+        public List<KeywordSearchChrome> GetKeywords()
         {
             List<KeywordSearchChrome> keywordList;
-            bool check = Validator.MozillaValidator.Instance.checkFile(chrome.Path);
+            bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path+"\\History");
             if (check)
             {
                 keywordList = new List<KeywordSearchChrome>();
-                conn = new SQLiteConnection("Data Source=" + chrome.Path + ";" + version);
+                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\History;" + version);
                 try
                 {
                     using (conn)
@@ -51,7 +51,7 @@ namespace BrowserCheck.Controller
                 }
                 catch
                 {
-                    keywordList = null;
+                   ;
                 }
             }
             else
@@ -61,14 +61,14 @@ namespace BrowserCheck.Controller
 
             return keywordList;
         }
-        public List<HistoryChrome> getHistory()
+        public List<HistoryChrome> GetHistory()
         {
             List<HistoryChrome> historyList;
-            bool check = Validator.MozillaValidator.Instance.checkFile(chrome.Path);
+            bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path+ "\\History");
             if (check)
             {
                 historyList = new List<HistoryChrome>();
-                conn = new SQLiteConnection("Data Source=" + chrome.Path + ";" + version);
+                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\History;" + version);
                 try
                 {
                     using (conn)
@@ -76,20 +76,21 @@ namespace BrowserCheck.Controller
                         conn.Open();
                         using (SQLiteCommand cmd = new SQLiteCommand(conn))
                         {
-                            cmd.CommandText = "SELECT urls.title,urls.last_visit_time,urls.visit_count,visits.visit_duration FROM urls INNER JOIN visits ON urls.id = visits.url ORDER BY visit_duration DESC";
+                            cmd.CommandText = "SELECT urls.url,urls.title,urls.last_visit_time,urls.visit_count,visits.visit_duration FROM urls INNER JOIN visits ON urls.id = visits.url ORDER BY visit_duration DESC";
                             cmd.Prepare();
                             using (SQLiteDataReader rdr = cmd.ExecuteReader())
                             {
                                 while (rdr.Read())
                                 {
                                     long temp = 0;
-                                    if (rdr.GetValue(1) != DBNull.Value) temp = Convert.ToInt64(rdr.GetValue(1));
+                                    if (rdr.GetValue(2) != DBNull.Value) temp = Convert.ToInt64(rdr.GetValue(2));
                                     historyList.Add(new HistoryChrome()
                                     {
-                                        Title = rdr.GetValue(0).ToString() ?? "-",
+                                        Url = rdr.GetValue(0).ToString() ?? "-",
+                                        Title = rdr.GetValue(1).ToString() ?? "-",
                                         LastVisitTime = Common.Common.Instance.FromUnixTime(temp).AddYears(-369),
-                                        VisitCount = Convert.ToInt32(rdr.GetValue(2) ?? 0), 
-                                        VisitDuration = Convert.ToInt64(rdr.GetValue(3) ?? 0) 
+                                        VisitCount = Convert.ToInt32(rdr.GetValue(3) ?? 0), 
+                                        VisitDuration = Convert.ToInt64(rdr.GetValue(4) ?? 0) 
                                     });
                                 }
                             }
@@ -100,7 +101,7 @@ namespace BrowserCheck.Controller
                 }
                 catch
                 {
-                    historyList = null;
+                   ;
                 }
             }
             else
@@ -109,14 +110,14 @@ namespace BrowserCheck.Controller
             }
             return historyList;
         }
-        public List<DownloadsChrome> getDownloads()
+        public List<DownloadsChrome> GetDownloads()
         {
             List<DownloadsChrome> downloadList;
-            bool check = Validator.MozillaValidator.Instance.checkFile(chrome.Path);
+            bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path+ "\\History");
             if (check)
             {
                 downloadList = new List<DownloadsChrome>();
-                conn = new SQLiteConnection("Data Source=" + chrome.Path + ";" + version);
+                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\History;" + version);
                 try
                 {
                     using (conn)
@@ -152,7 +153,7 @@ namespace BrowserCheck.Controller
                 catch
                 {
                     
-                    downloadList = null;
+                  ;
                 }
             }
             else
@@ -161,14 +162,14 @@ namespace BrowserCheck.Controller
             }
             return downloadList;
         }
-        public List<AutoFillChrome> getAutofill()
+        public List<AutoFillChrome> GetAutofill()
         {
             List<AutoFillChrome> autofillList;
-            bool check = Validator.MozillaValidator.Instance.checkFile(chrome.Path+"\\..\\Web Data");
+            bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path+"\\Web Data");
             if (check)
             {
                 autofillList = new List<AutoFillChrome>();
-                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\..\\Web Data;" + version);
+                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\Web Data;" + version);
                 try
                 {
                     using (conn)
@@ -203,7 +204,7 @@ namespace BrowserCheck.Controller
                 catch
                 {
 
-                    autofillList = null;
+                   ;
                 }
             }
             else
@@ -212,14 +213,14 @@ namespace BrowserCheck.Controller
             }
             return autofillList;
         }
-        public List<CookiesChrome> getCookies()
+        public List<CookiesChrome> GetCookies()
         {
             List<CookiesChrome> cookieList;
-            bool check = Validator.MozillaValidator.Instance.checkFile(chrome.Path + "\\..\\Cookies");
+            bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path + "\\Cookies");
             if (check)
             {
                 cookieList = new List<CookiesChrome>();
-                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\..\\Cookies;" + version);
+                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\Cookies;" + version);
                 try
                 {
                     using (conn)
@@ -239,23 +240,21 @@ namespace BrowserCheck.Controller
                                     cookieList.Add(new CookiesChrome()
                                     {
                                         Creation = Common.Common.Instance.FromUnixTime(creation).AddYears(-369),
-                                        HostKey = rdr.GetValue(1).ToString() ?? "-",
-                                        Name = rdr.GetValue(2).ToString() ?? "-",
-                                        Value = rdr.GetValue(3).ToString() ?? "-",
+                                        HostKey = rdr.GetValue(1).ToString() ?? "",
+                                        Name = rdr.GetValue(2).ToString() ?? "",
+                                        Value = rdr.GetValue(3).ToString() ?? "",
                                         CookiePath = rdr.GetValue(4).ToString() ?? "-",
                                         Expires = Common.Common.Instance.FromUnixTime(expires).AddYears(-369)
                                     });
                                 }
                             }
-
                         }
-                        conn.Close();
+                        conn.Close();                       
                     }
                 }
                 catch
                 {
-
-                    cookieList = null;
+                     ;
                 }
             }
             else
@@ -264,14 +263,14 @@ namespace BrowserCheck.Controller
             }
             return cookieList;
         }
-        public List<TopSitesChrome> getTopSites()
+        public List<TopSitesChrome> GetTopSites()
         {
             List<TopSitesChrome> topSitesList;
-            bool check = Validator.MozillaValidator.Instance.checkFile(chrome.Path + "\\..\\Top Sites");
+            bool check = Validator.BrowserValidator.Instance.checkFile(chrome.Path + "\\Top Sites");
             if (check)
             {
                 topSitesList = new List<TopSitesChrome>();
-                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\..\\Top Sites;" + version);
+                conn = new SQLiteConnection("Data Source=" + chrome.Path + "\\Top Sites;" + version);
                 try
                 {
                     using (conn)
@@ -302,7 +301,7 @@ namespace BrowserCheck.Controller
                 catch
                 {
 
-                    topSitesList = null;
+                    ;
                 }
             }
             else

@@ -30,64 +30,101 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChromeForm));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.chromeTabControl = new System.Windows.Forms.TabControl();
             this.keywordHistoryTab = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.sortKeyword = new System.Windows.Forms.Button();
+            this.imageListButton = new System.Windows.Forms.ImageList(this.components);
+            this.keywordAscDsc = new System.Windows.Forms.ComboBox();
+            this.keywordSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.keywordsGrid = new System.Windows.Forms.DataGridView();
+            this.termsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addToReportKeyword = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.keywordSearchChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.urlHistoryTab = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.urlsCombo = new System.Windows.Forms.ComboBox();
+            this.urlsSort = new System.Windows.Forms.Button();
+            this.urlsAscDsc = new System.Windows.Forms.ComboBox();
+            this.urlSearch = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.urlHistoryGrid = new System.Windows.Forms.DataGridView();
-            this.addToReportHistory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.downloadHistory = new System.Windows.Forms.TabPage();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.downloadsHistoryGrid = new System.Windows.Forms.DataGridView();
-            this.Referer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addToReportDownloads = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.autofillTab = new System.Windows.Forms.TabPage();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.autofillGrid = new System.Windows.Forms.DataGridView();
-            this.addToReportAutofill = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cookiesTab = new System.Windows.Forms.TabPage();
-            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.cookiesGrid = new System.Windows.Forms.DataGridView();
-            this.addToReportCookie = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.topSites = new System.Windows.Forms.TabPage();
-            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
-            this.topsitesGrid = new System.Windows.Forms.DataGridView();
-            this.addToReportTopSites = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.termsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.keywordSearchChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.browseUrl = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.urlColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.visitCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastVisitTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.visitDurationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addToReportHistory = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.historyChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.downloadHistory = new System.Windows.Forms.TabPage();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.downloadsCombo = new System.Windows.Forms.ComboBox();
+            this.sortDownloads = new System.Windows.Forms.Button();
+            this.downloadsAscDsc = new System.Windows.Forms.ComboBox();
+            this.downloadSearch = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.downloadsHistoryGrid = new System.Windows.Forms.DataGridView();
             this.targetPathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Referer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mimeTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.originalMimeTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addToReportDownloads = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.downloadsChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.autofillTab = new System.Windows.Forms.TabPage();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.autofillCombo = new System.Windows.Forms.ComboBox();
+            this.sortAutofill = new System.Windows.Forms.Button();
+            this.autofillAscDsc = new System.Windows.Forms.ComboBox();
+            this.autofillSearch = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.autofillGrid = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateCreatedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateLastUsedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addToReportAutofill = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.autoFillChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cookiesTab = new System.Windows.Forms.TabPage();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.cookiesCombo = new System.Windows.Forms.ComboBox();
+            this.sortCookies = new System.Windows.Forms.Button();
+            this.cookiesAscDsc = new System.Windows.Forms.ComboBox();
+            this.cookieSearch = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cookiesGrid = new System.Windows.Forms.DataGridView();
             this.creationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hostKeyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valueDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cookiePathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.expiresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addToReportCookie = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cookiesChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.topSites = new System.Windows.Forms.TabPage();
+            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.topsitesCombo = new System.Windows.Forms.ComboBox();
+            this.topsitesSort = new System.Windows.Forms.Button();
+            this.topsitesAscDsc = new System.Windows.Forms.ComboBox();
+            this.topsitesSearch = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.topsitesGrid = new System.Windows.Forms.DataGridView();
             this.urlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.urlRankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addToReportTopSites = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.topSitesChromeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printPdf = new System.Windows.Forms.TabPage();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.printButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.reportName = new System.Windows.Forms.TextBox();
+            this.reportNote = new System.Windows.Forms.RichTextBox();
             this.addPicture = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.emailLabel = new System.Windows.Forms.Label();
@@ -101,66 +138,74 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.profilePic = new System.Windows.Forms.PictureBox();
-            this.tabControl1.SuspendLayout();
+            this.openFilePicture = new System.Windows.Forms.OpenFileDialog();
+            this.chromeTabControl.SuspendLayout();
             this.keywordHistoryTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.keywordsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keywordSearchChromeBindingSource)).BeginInit();
             this.urlHistoryTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.urlHistoryGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyChromeBindingSource)).BeginInit();
             this.downloadHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.downloadsHistoryGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.downloadsChromeBindingSource)).BeginInit();
             this.autofillTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
+            this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autofillGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoFillChromeBindingSource)).BeginInit();
             this.cookiesTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
+            this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cookiesGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cookiesChromeBindingSource)).BeginInit();
             this.topSites.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
             this.splitContainer6.Panel2.SuspendLayout();
             this.splitContainer6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.topsitesGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.keywordSearchChromeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyChromeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.downloadsChromeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.autoFillChromeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cookiesChromeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topSitesChromeBindingSource)).BeginInit();
             this.printPdf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
+            this.splitContainer7.Panel1.SuspendLayout();
             this.splitContainer7.Panel2.SuspendLayout();
             this.splitContainer7.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.profilePic)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // chromeTabControl
             // 
-            this.tabControl1.Controls.Add(this.keywordHistoryTab);
-            this.tabControl1.Controls.Add(this.urlHistoryTab);
-            this.tabControl1.Controls.Add(this.downloadHistory);
-            this.tabControl1.Controls.Add(this.autofillTab);
-            this.tabControl1.Controls.Add(this.cookiesTab);
-            this.tabControl1.Controls.Add(this.topSites);
-            this.tabControl1.Controls.Add(this.printPdf);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1067, 611);
-            this.tabControl1.TabIndex = 0;
+            this.chromeTabControl.Controls.Add(this.keywordHistoryTab);
+            this.chromeTabControl.Controls.Add(this.urlHistoryTab);
+            this.chromeTabControl.Controls.Add(this.downloadHistory);
+            this.chromeTabControl.Controls.Add(this.autofillTab);
+            this.chromeTabControl.Controls.Add(this.cookiesTab);
+            this.chromeTabControl.Controls.Add(this.topSites);
+            this.chromeTabControl.Controls.Add(this.printPdf);
+            this.chromeTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chromeTabControl.Location = new System.Drawing.Point(0, 0);
+            this.chromeTabControl.Name = "chromeTabControl";
+            this.chromeTabControl.SelectedIndex = 0;
+            this.chromeTabControl.Size = new System.Drawing.Size(1067, 611);
+            this.chromeTabControl.TabIndex = 0;
             // 
             // keywordHistoryTab
             // 
@@ -176,16 +221,74 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(3, 3);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.sortKeyword);
+            this.splitContainer1.Panel1.Controls.Add(this.keywordAscDsc);
+            this.splitContainer1.Panel1.Controls.Add(this.keywordSearch);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.keywordsGrid);
             this.splitContainer1.Size = new System.Drawing.Size(1053, 579);
-            this.splitContainer1.SplitterDistance = 38;
+            this.splitContainer1.SplitterDistance = 31;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // sortKeyword
+            // 
+            this.sortKeyword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sortKeyword.ImageList = this.imageListButton;
+            this.sortKeyword.Location = new System.Drawing.Point(962, 4);
+            this.sortKeyword.Name = "sortKeyword";
+            this.sortKeyword.Size = new System.Drawing.Size(75, 23);
+            this.sortKeyword.TabIndex = 6;
+            this.sortKeyword.Text = "Sort";
+            this.sortKeyword.UseVisualStyleBackColor = true;
+            this.sortKeyword.Click += new System.EventHandler(this.SortKeyword_Click);
+            // 
+            // imageListButton
+            // 
+            this.imageListButton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButton.ImageStream")));
+            this.imageListButton.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListButton.Images.SetKeyName(0, "plus.png");
+            this.imageListButton.Images.SetKeyName(1, "save.png");
+            this.imageListButton.Images.SetKeyName(2, "sort.png");
+            // 
+            // keywordAscDsc
+            // 
+            this.keywordAscDsc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.keywordAscDsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.keywordAscDsc.FormattingEnabled = true;
+            this.keywordAscDsc.Items.AddRange(new object[] {
+            "Ascending",
+            "Descending"});
+            this.keywordAscDsc.Location = new System.Drawing.Point(817, 6);
+            this.keywordAscDsc.Name = "keywordAscDsc";
+            this.keywordAscDsc.Size = new System.Drawing.Size(121, 21);
+            this.keywordAscDsc.TabIndex = 5;
+            // 
+            // keywordSearch
+            // 
+            this.keywordSearch.Location = new System.Drawing.Point(96, 6);
+            this.keywordSearch.Name = "keywordSearch";
+            this.keywordSearch.Size = new System.Drawing.Size(241, 20);
+            this.keywordSearch.TabIndex = 3;
+            this.keywordSearch.TextChanged += new System.EventHandler(this.KeywordSearch_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Search in Table:";
             // 
             // keywordsGrid
             // 
@@ -201,13 +304,24 @@
             this.keywordsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.keywordsGrid.Location = new System.Drawing.Point(0, 0);
             this.keywordsGrid.Name = "keywordsGrid";
-            this.keywordsGrid.Size = new System.Drawing.Size(1053, 537);
+            this.keywordsGrid.Size = new System.Drawing.Size(1053, 544);
             this.keywordsGrid.TabIndex = 0;
+            // 
+            // termsDataGridViewTextBoxColumn
+            // 
+            this.termsDataGridViewTextBoxColumn.DataPropertyName = "Terms";
+            this.termsDataGridViewTextBoxColumn.HeaderText = "Terms";
+            this.termsDataGridViewTextBoxColumn.Name = "termsDataGridViewTextBoxColumn";
+            this.termsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // addToReportKeyword
             // 
             this.addToReportKeyword.HeaderText = "Add To Report";
             this.addToReportKeyword.Name = "addToReportKeyword";
+            // 
+            // keywordSearchChromeBindingSource
+            // 
+            this.keywordSearchChromeBindingSource.DataSource = typeof(BrowserCheck.Model.KeywordSearchChrome);
             // 
             // urlHistoryTab
             // 
@@ -223,16 +337,80 @@
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(3, 3);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.urlsCombo);
+            this.splitContainer2.Panel1.Controls.Add(this.urlsSort);
+            this.splitContainer2.Panel1.Controls.Add(this.urlsAscDsc);
+            this.splitContainer2.Panel1.Controls.Add(this.urlSearch);
+            this.splitContainer2.Panel1.Controls.Add(this.label2);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.urlHistoryGrid);
             this.splitContainer2.Size = new System.Drawing.Size(1053, 579);
-            this.splitContainer2.SplitterDistance = 38;
+            this.splitContainer2.SplitterDistance = 32;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // urlsCombo
+            // 
+            this.urlsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.urlsCombo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.urlsCombo.FormattingEnabled = true;
+            this.urlsCombo.Items.AddRange(new object[] {
+            "Title",
+            "VisitCount",
+            "LastVisitTime",
+            "VisitDuration"});
+            this.urlsCombo.Location = new System.Drawing.Point(693, 6);
+            this.urlsCombo.Name = "urlsCombo";
+            this.urlsCombo.Size = new System.Drawing.Size(121, 21);
+            this.urlsCombo.TabIndex = 11;
+            // 
+            // urlsSort
+            // 
+            this.urlsSort.Location = new System.Drawing.Point(973, 4);
+            this.urlsSort.Name = "urlsSort";
+            this.urlsSort.Size = new System.Drawing.Size(75, 23);
+            this.urlsSort.TabIndex = 10;
+            this.urlsSort.Text = "Sort";
+            this.urlsSort.UseVisualStyleBackColor = true;
+            this.urlsSort.Click += new System.EventHandler(this.UrlsSort_Click);
+            // 
+            // urlsAscDsc
+            // 
+            this.urlsAscDsc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.urlsAscDsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.urlsAscDsc.FormattingEnabled = true;
+            this.urlsAscDsc.Items.AddRange(new object[] {
+            "Ascending",
+            "Descending"});
+            this.urlsAscDsc.Location = new System.Drawing.Point(820, 6);
+            this.urlsAscDsc.Name = "urlsAscDsc";
+            this.urlsAscDsc.Size = new System.Drawing.Size(121, 21);
+            this.urlsAscDsc.TabIndex = 9;
+            // 
+            // urlSearch
+            // 
+            this.urlSearch.Location = new System.Drawing.Point(96, 6);
+            this.urlSearch.Name = "urlSearch";
+            this.urlSearch.Size = new System.Drawing.Size(241, 20);
+            this.urlSearch.TabIndex = 8;
+            this.urlSearch.TextChanged += new System.EventHandler(this.UrlSearch_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(5, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Search in Table:";
             // 
             // urlHistoryGrid
             // 
@@ -242,6 +420,8 @@
             this.urlHistoryGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.urlHistoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.urlHistoryGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.browseUrl,
+            this.urlColumn,
             this.titleDataGridViewTextBoxColumn,
             this.visitCountDataGridViewTextBoxColumn,
             this.lastVisitTimeDataGridViewTextBoxColumn,
@@ -251,232 +431,26 @@
             this.urlHistoryGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.urlHistoryGrid.Location = new System.Drawing.Point(0, 0);
             this.urlHistoryGrid.Name = "urlHistoryGrid";
-            this.urlHistoryGrid.Size = new System.Drawing.Size(1053, 537);
+            this.urlHistoryGrid.Size = new System.Drawing.Size(1053, 543);
             this.urlHistoryGrid.TabIndex = 0;
+            this.urlHistoryGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UrlHistoryGrid_CellContentClick);
             // 
-            // addToReportHistory
+            // browseUrl
             // 
-            this.addToReportHistory.HeaderText = "Add To Report";
-            this.addToReportHistory.Name = "addToReportHistory";
+            this.browseUrl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.browseUrl.DataPropertyName = "Browse";
+            this.browseUrl.HeaderText = "Browse";
+            this.browseUrl.Name = "browseUrl";
+            this.browseUrl.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.browseUrl.Text = "Browse";
+            this.browseUrl.UseColumnTextForLinkValue = true;
+            this.browseUrl.Width = 48;
             // 
-            // downloadHistory
+            // urlColumn
             // 
-            this.downloadHistory.Controls.Add(this.splitContainer3);
-            this.downloadHistory.Location = new System.Drawing.Point(4, 22);
-            this.downloadHistory.Name = "downloadHistory";
-            this.downloadHistory.Size = new System.Drawing.Size(1059, 585);
-            this.downloadHistory.TabIndex = 2;
-            this.downloadHistory.Text = "Downloads";
-            this.downloadHistory.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.downloadsHistoryGrid);
-            this.splitContainer3.Size = new System.Drawing.Size(1059, 585);
-            this.splitContainer3.SplitterDistance = 41;
-            this.splitContainer3.TabIndex = 0;
-            // 
-            // downloadsHistoryGrid
-            // 
-            this.downloadsHistoryGrid.AllowUserToAddRows = false;
-            this.downloadsHistoryGrid.AllowUserToDeleteRows = false;
-            this.downloadsHistoryGrid.AutoGenerateColumns = false;
-            this.downloadsHistoryGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.downloadsHistoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.downloadsHistoryGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.targetPathDataGridViewTextBoxColumn,
-            this.startTimeDataGridViewTextBoxColumn,
-            this.endTimeDataGridViewTextBoxColumn,
-            this.Referer,
-            this.mimeTypeDataGridViewTextBoxColumn,
-            this.originalMimeTypeDataGridViewTextBoxColumn,
-            this.addToReportDownloads});
-            this.downloadsHistoryGrid.DataSource = this.downloadsChromeBindingSource;
-            this.downloadsHistoryGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.downloadsHistoryGrid.Location = new System.Drawing.Point(0, 0);
-            this.downloadsHistoryGrid.Name = "downloadsHistoryGrid";
-            this.downloadsHistoryGrid.Size = new System.Drawing.Size(1059, 540);
-            this.downloadsHistoryGrid.TabIndex = 0;
-            // 
-            // Referer
-            // 
-            this.Referer.DataPropertyName = "Referer";
-            this.Referer.HeaderText = "Referer";
-            this.Referer.Name = "Referer";
-            this.Referer.ReadOnly = true;
-            // 
-            // addToReportDownloads
-            // 
-            this.addToReportDownloads.HeaderText = "Add To Report";
-            this.addToReportDownloads.Name = "addToReportDownloads";
-            // 
-            // autofillTab
-            // 
-            this.autofillTab.Controls.Add(this.splitContainer4);
-            this.autofillTab.Location = new System.Drawing.Point(4, 22);
-            this.autofillTab.Name = "autofillTab";
-            this.autofillTab.Padding = new System.Windows.Forms.Padding(3);
-            this.autofillTab.Size = new System.Drawing.Size(1059, 585);
-            this.autofillTab.TabIndex = 3;
-            this.autofillTab.Text = "Autofill";
-            this.autofillTab.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer4
-            // 
-            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer4.Name = "splitContainer4";
-            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer4.Panel2
-            // 
-            this.splitContainer4.Panel2.Controls.Add(this.autofillGrid);
-            this.splitContainer4.Size = new System.Drawing.Size(1053, 579);
-            this.splitContainer4.SplitterDistance = 40;
-            this.splitContainer4.TabIndex = 0;
-            // 
-            // autofillGrid
-            // 
-            this.autofillGrid.AllowUserToAddRows = false;
-            this.autofillGrid.AllowUserToDeleteRows = false;
-            this.autofillGrid.AutoGenerateColumns = false;
-            this.autofillGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.autofillGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.autofillGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.valueDataGridViewTextBoxColumn,
-            this.dateCreatedDataGridViewTextBoxColumn,
-            this.dateLastUsedDataGridViewTextBoxColumn,
-            this.countDataGridViewTextBoxColumn,
-            this.addToReportAutofill});
-            this.autofillGrid.DataSource = this.autoFillChromeBindingSource;
-            this.autofillGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.autofillGrid.Location = new System.Drawing.Point(0, 0);
-            this.autofillGrid.Name = "autofillGrid";
-            this.autofillGrid.Size = new System.Drawing.Size(1053, 535);
-            this.autofillGrid.TabIndex = 0;
-            // 
-            // addToReportAutofill
-            // 
-            this.addToReportAutofill.HeaderText = "Add To Report";
-            this.addToReportAutofill.Name = "addToReportAutofill";
-            // 
-            // cookiesTab
-            // 
-            this.cookiesTab.Controls.Add(this.splitContainer5);
-            this.cookiesTab.Location = new System.Drawing.Point(4, 22);
-            this.cookiesTab.Name = "cookiesTab";
-            this.cookiesTab.Size = new System.Drawing.Size(1059, 585);
-            this.cookiesTab.TabIndex = 4;
-            this.cookiesTab.Text = "Cookies";
-            this.cookiesTab.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer5
-            // 
-            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer5.Name = "splitContainer5";
-            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer5.Panel2
-            // 
-            this.splitContainer5.Panel2.Controls.Add(this.cookiesGrid);
-            this.splitContainer5.Size = new System.Drawing.Size(1059, 585);
-            this.splitContainer5.SplitterDistance = 42;
-            this.splitContainer5.TabIndex = 0;
-            // 
-            // cookiesGrid
-            // 
-            this.cookiesGrid.AllowUserToAddRows = false;
-            this.cookiesGrid.AllowUserToDeleteRows = false;
-            this.cookiesGrid.AutoGenerateColumns = false;
-            this.cookiesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.cookiesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cookiesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.creationDataGridViewTextBoxColumn,
-            this.hostKeyDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn1,
-            this.valueDataGridViewTextBoxColumn1,
-            this.cookiePathDataGridViewTextBoxColumn,
-            this.expiresDataGridViewTextBoxColumn,
-            this.addToReportCookie});
-            this.cookiesGrid.DataSource = this.cookiesChromeBindingSource;
-            this.cookiesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cookiesGrid.Location = new System.Drawing.Point(0, 0);
-            this.cookiesGrid.Name = "cookiesGrid";
-            this.cookiesGrid.Size = new System.Drawing.Size(1059, 539);
-            this.cookiesGrid.TabIndex = 0;
-            // 
-            // addToReportCookie
-            // 
-            this.addToReportCookie.HeaderText = "Add To Report";
-            this.addToReportCookie.Name = "addToReportCookie";
-            // 
-            // topSites
-            // 
-            this.topSites.Controls.Add(this.splitContainer6);
-            this.topSites.Location = new System.Drawing.Point(4, 22);
-            this.topSites.Name = "topSites";
-            this.topSites.Size = new System.Drawing.Size(1059, 585);
-            this.topSites.TabIndex = 5;
-            this.topSites.Text = "Top Sites";
-            this.topSites.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer6
-            // 
-            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer6.Name = "splitContainer6";
-            this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer6.Panel2
-            // 
-            this.splitContainer6.Panel2.Controls.Add(this.topsitesGrid);
-            this.splitContainer6.Size = new System.Drawing.Size(1059, 585);
-            this.splitContainer6.SplitterDistance = 48;
-            this.splitContainer6.TabIndex = 0;
-            // 
-            // topsitesGrid
-            // 
-            this.topsitesGrid.AllowUserToAddRows = false;
-            this.topsitesGrid.AllowUserToDeleteRows = false;
-            this.topsitesGrid.AutoGenerateColumns = false;
-            this.topsitesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.topsitesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.topsitesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.urlDataGridViewTextBoxColumn,
-            this.urlRankDataGridViewTextBoxColumn,
-            this.titleDataGridViewTextBoxColumn1,
-            this.addToReportTopSites});
-            this.topsitesGrid.DataSource = this.topSitesChromeBindingSource;
-            this.topsitesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.topsitesGrid.Location = new System.Drawing.Point(0, 0);
-            this.topsitesGrid.Name = "topsitesGrid";
-            this.topsitesGrid.Size = new System.Drawing.Size(1059, 533);
-            this.topsitesGrid.TabIndex = 0;
-            // 
-            // addToReportTopSites
-            // 
-            this.addToReportTopSites.HeaderText = "Add To Report";
-            this.addToReportTopSites.Name = "addToReportTopSites";
-            // 
-            // termsDataGridViewTextBoxColumn
-            // 
-            this.termsDataGridViewTextBoxColumn.DataPropertyName = "Terms";
-            this.termsDataGridViewTextBoxColumn.HeaderText = "Terms";
-            this.termsDataGridViewTextBoxColumn.Name = "termsDataGridViewTextBoxColumn";
-            this.termsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // keywordSearchChromeBindingSource
-            // 
-            this.keywordSearchChromeBindingSource.DataSource = typeof(BrowserCheck.Model.KeywordSearchChrome);
+            this.urlColumn.DataPropertyName = "Url";
+            this.urlColumn.HeaderText = "Url";
+            this.urlColumn.Name = "urlColumn";
             // 
             // titleDataGridViewTextBoxColumn
             // 
@@ -506,9 +480,126 @@
             this.visitDurationDataGridViewTextBoxColumn.Name = "visitDurationDataGridViewTextBoxColumn";
             this.visitDurationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // addToReportHistory
+            // 
+            this.addToReportHistory.HeaderText = "Add To Report";
+            this.addToReportHistory.Name = "addToReportHistory";
+            // 
             // historyChromeBindingSource
             // 
             this.historyChromeBindingSource.DataSource = typeof(BrowserCheck.Model.HistoryChrome);
+            // 
+            // downloadHistory
+            // 
+            this.downloadHistory.Controls.Add(this.splitContainer3);
+            this.downloadHistory.Location = new System.Drawing.Point(4, 22);
+            this.downloadHistory.Name = "downloadHistory";
+            this.downloadHistory.Size = new System.Drawing.Size(1059, 585);
+            this.downloadHistory.TabIndex = 2;
+            this.downloadHistory.Text = "Downloads";
+            this.downloadHistory.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.IsSplitterFixed = true;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.downloadsCombo);
+            this.splitContainer3.Panel1.Controls.Add(this.sortDownloads);
+            this.splitContainer3.Panel1.Controls.Add(this.downloadsAscDsc);
+            this.splitContainer3.Panel1.Controls.Add(this.downloadSearch);
+            this.splitContainer3.Panel1.Controls.Add(this.label3);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.downloadsHistoryGrid);
+            this.splitContainer3.Size = new System.Drawing.Size(1059, 585);
+            this.splitContainer3.SplitterDistance = 34;
+            this.splitContainer3.TabIndex = 0;
+            // 
+            // downloadsCombo
+            // 
+            this.downloadsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.downloadsCombo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.downloadsCombo.FormattingEnabled = true;
+            this.downloadsCombo.Items.AddRange(new object[] {
+            "TargetPath",
+            "StartTime",
+            "EndTime",
+            "Referer",
+            "MimeType",
+            "OriginalMimeType"});
+            this.downloadsCombo.Location = new System.Drawing.Point(701, 6);
+            this.downloadsCombo.Name = "downloadsCombo";
+            this.downloadsCombo.Size = new System.Drawing.Size(121, 21);
+            this.downloadsCombo.TabIndex = 12;
+            // 
+            // sortDownloads
+            // 
+            this.sortDownloads.Location = new System.Drawing.Point(976, 4);
+            this.sortDownloads.Name = "sortDownloads";
+            this.sortDownloads.Size = new System.Drawing.Size(75, 23);
+            this.sortDownloads.TabIndex = 10;
+            this.sortDownloads.Text = "Sort";
+            this.sortDownloads.UseVisualStyleBackColor = true;
+            this.sortDownloads.Click += new System.EventHandler(this.SortDownloads_Click);
+            // 
+            // downloadsAscDsc
+            // 
+            this.downloadsAscDsc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.downloadsAscDsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.downloadsAscDsc.FormattingEnabled = true;
+            this.downloadsAscDsc.Items.AddRange(new object[] {
+            "Ascending",
+            "Descending"});
+            this.downloadsAscDsc.Location = new System.Drawing.Point(828, 6);
+            this.downloadsAscDsc.Name = "downloadsAscDsc";
+            this.downloadsAscDsc.Size = new System.Drawing.Size(121, 21);
+            this.downloadsAscDsc.TabIndex = 9;
+            // 
+            // downloadSearch
+            // 
+            this.downloadSearch.Location = new System.Drawing.Point(99, 6);
+            this.downloadSearch.Name = "downloadSearch";
+            this.downloadSearch.Size = new System.Drawing.Size(241, 20);
+            this.downloadSearch.TabIndex = 8;
+            this.downloadSearch.TextChanged += new System.EventHandler(this.DownloadSearch_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Search in Table:";
+            // 
+            // downloadsHistoryGrid
+            // 
+            this.downloadsHistoryGrid.AllowUserToAddRows = false;
+            this.downloadsHistoryGrid.AllowUserToDeleteRows = false;
+            this.downloadsHistoryGrid.AutoGenerateColumns = false;
+            this.downloadsHistoryGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.downloadsHistoryGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.downloadsHistoryGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.targetPathDataGridViewTextBoxColumn,
+            this.startTimeDataGridViewTextBoxColumn,
+            this.endTimeDataGridViewTextBoxColumn,
+            this.Referer,
+            this.mimeTypeDataGridViewTextBoxColumn,
+            this.originalMimeTypeDataGridViewTextBoxColumn,
+            this.addToReportDownloads});
+            this.downloadsHistoryGrid.DataSource = this.downloadsChromeBindingSource;
+            this.downloadsHistoryGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.downloadsHistoryGrid.Location = new System.Drawing.Point(0, 0);
+            this.downloadsHistoryGrid.Name = "downloadsHistoryGrid";
+            this.downloadsHistoryGrid.Size = new System.Drawing.Size(1059, 547);
+            this.downloadsHistoryGrid.TabIndex = 0;
             // 
             // targetPathDataGridViewTextBoxColumn
             // 
@@ -531,6 +622,13 @@
             this.endTimeDataGridViewTextBoxColumn.Name = "endTimeDataGridViewTextBoxColumn";
             this.endTimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // Referer
+            // 
+            this.Referer.DataPropertyName = "Referer";
+            this.Referer.HeaderText = "Referer";
+            this.Referer.Name = "Referer";
+            this.Referer.ReadOnly = true;
+            // 
             // mimeTypeDataGridViewTextBoxColumn
             // 
             this.mimeTypeDataGridViewTextBoxColumn.DataPropertyName = "MimeType";
@@ -545,9 +643,125 @@
             this.originalMimeTypeDataGridViewTextBoxColumn.Name = "originalMimeTypeDataGridViewTextBoxColumn";
             this.originalMimeTypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // addToReportDownloads
+            // 
+            this.addToReportDownloads.HeaderText = "Add To Report";
+            this.addToReportDownloads.Name = "addToReportDownloads";
+            // 
             // downloadsChromeBindingSource
             // 
             this.downloadsChromeBindingSource.DataSource = typeof(BrowserCheck.Model.DownloadsChrome);
+            // 
+            // autofillTab
+            // 
+            this.autofillTab.Controls.Add(this.splitContainer4);
+            this.autofillTab.Location = new System.Drawing.Point(4, 22);
+            this.autofillTab.Name = "autofillTab";
+            this.autofillTab.Padding = new System.Windows.Forms.Padding(3);
+            this.autofillTab.Size = new System.Drawing.Size(1059, 585);
+            this.autofillTab.TabIndex = 3;
+            this.autofillTab.Text = "Autofill";
+            this.autofillTab.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer4
+            // 
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.IsSplitterFixed = true;
+            this.splitContainer4.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer4.Name = "splitContainer4";
+            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this.autofillCombo);
+            this.splitContainer4.Panel1.Controls.Add(this.sortAutofill);
+            this.splitContainer4.Panel1.Controls.Add(this.autofillAscDsc);
+            this.splitContainer4.Panel1.Controls.Add(this.autofillSearch);
+            this.splitContainer4.Panel1.Controls.Add(this.label4);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.Controls.Add(this.autofillGrid);
+            this.splitContainer4.Size = new System.Drawing.Size(1053, 579);
+            this.splitContainer4.SplitterDistance = 33;
+            this.splitContainer4.TabIndex = 0;
+            // 
+            // autofillCombo
+            // 
+            this.autofillCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.autofillCombo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.autofillCombo.FormattingEnabled = true;
+            this.autofillCombo.Items.AddRange(new object[] {
+            "Name",
+            "Value",
+            "DateCreated",
+            "DateLastUsed",
+            "Count"});
+            this.autofillCombo.Location = new System.Drawing.Point(698, 7);
+            this.autofillCombo.Name = "autofillCombo";
+            this.autofillCombo.Size = new System.Drawing.Size(121, 21);
+            this.autofillCombo.TabIndex = 13;
+            // 
+            // sortAutofill
+            // 
+            this.sortAutofill.Location = new System.Drawing.Point(962, 5);
+            this.sortAutofill.Name = "sortAutofill";
+            this.sortAutofill.Size = new System.Drawing.Size(75, 23);
+            this.sortAutofill.TabIndex = 10;
+            this.sortAutofill.Text = "Sort";
+            this.sortAutofill.UseVisualStyleBackColor = true;
+            this.sortAutofill.Click += new System.EventHandler(this.SortAutofill_Click);
+            // 
+            // autofillAscDsc
+            // 
+            this.autofillAscDsc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.autofillAscDsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.autofillAscDsc.FormattingEnabled = true;
+            this.autofillAscDsc.Items.AddRange(new object[] {
+            "Ascending",
+            "Descending"});
+            this.autofillAscDsc.Location = new System.Drawing.Point(825, 6);
+            this.autofillAscDsc.Name = "autofillAscDsc";
+            this.autofillAscDsc.Size = new System.Drawing.Size(121, 21);
+            this.autofillAscDsc.TabIndex = 9;
+            // 
+            // autofillSearch
+            // 
+            this.autofillSearch.Location = new System.Drawing.Point(101, 7);
+            this.autofillSearch.Name = "autofillSearch";
+            this.autofillSearch.Size = new System.Drawing.Size(241, 20);
+            this.autofillSearch.TabIndex = 8;
+            this.autofillSearch.TextChanged += new System.EventHandler(this.AutofillSearch_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Search in Table:";
+            // 
+            // autofillGrid
+            // 
+            this.autofillGrid.AllowUserToAddRows = false;
+            this.autofillGrid.AllowUserToDeleteRows = false;
+            this.autofillGrid.AutoGenerateColumns = false;
+            this.autofillGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.autofillGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.autofillGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.valueDataGridViewTextBoxColumn,
+            this.dateCreatedDataGridViewTextBoxColumn,
+            this.dateLastUsedDataGridViewTextBoxColumn,
+            this.countDataGridViewTextBoxColumn,
+            this.addToReportAutofill});
+            this.autofillGrid.DataSource = this.autoFillChromeBindingSource;
+            this.autofillGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.autofillGrid.Location = new System.Drawing.Point(0, 0);
+            this.autofillGrid.Name = "autofillGrid";
+            this.autofillGrid.Size = new System.Drawing.Size(1053, 542);
+            this.autofillGrid.TabIndex = 0;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -584,9 +798,126 @@
             this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
             this.countDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // addToReportAutofill
+            // 
+            this.addToReportAutofill.HeaderText = "Add To Report";
+            this.addToReportAutofill.Name = "addToReportAutofill";
+            // 
             // autoFillChromeBindingSource
             // 
             this.autoFillChromeBindingSource.DataSource = typeof(BrowserCheck.Model.AutoFillChrome);
+            // 
+            // cookiesTab
+            // 
+            this.cookiesTab.Controls.Add(this.splitContainer5);
+            this.cookiesTab.Location = new System.Drawing.Point(4, 22);
+            this.cookiesTab.Name = "cookiesTab";
+            this.cookiesTab.Size = new System.Drawing.Size(1059, 585);
+            this.cookiesTab.TabIndex = 4;
+            this.cookiesTab.Text = "Cookies";
+            this.cookiesTab.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer5
+            // 
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.IsSplitterFixed = true;
+            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer5.Name = "splitContainer5";
+            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer5.Panel1
+            // 
+            this.splitContainer5.Panel1.Controls.Add(this.cookiesCombo);
+            this.splitContainer5.Panel1.Controls.Add(this.sortCookies);
+            this.splitContainer5.Panel1.Controls.Add(this.cookiesAscDsc);
+            this.splitContainer5.Panel1.Controls.Add(this.cookieSearch);
+            this.splitContainer5.Panel1.Controls.Add(this.label5);
+            // 
+            // splitContainer5.Panel2
+            // 
+            this.splitContainer5.Panel2.Controls.Add(this.cookiesGrid);
+            this.splitContainer5.Size = new System.Drawing.Size(1059, 585);
+            this.splitContainer5.SplitterDistance = 37;
+            this.splitContainer5.TabIndex = 0;
+            // 
+            // cookiesCombo
+            // 
+            this.cookiesCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cookiesCombo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cookiesCombo.FormattingEnabled = true;
+            this.cookiesCombo.Items.AddRange(new object[] {
+            "Creation",
+            "HostKey",
+            "Name",
+            "Value",
+            "CookiePath",
+            "Expires"});
+            this.cookiesCombo.Location = new System.Drawing.Point(700, 11);
+            this.cookiesCombo.Name = "cookiesCombo";
+            this.cookiesCombo.Size = new System.Drawing.Size(121, 21);
+            this.cookiesCombo.TabIndex = 14;
+            // 
+            // sortCookies
+            // 
+            this.sortCookies.Location = new System.Drawing.Point(976, 10);
+            this.sortCookies.Name = "sortCookies";
+            this.sortCookies.Size = new System.Drawing.Size(75, 23);
+            this.sortCookies.TabIndex = 10;
+            this.sortCookies.Text = "Sort";
+            this.sortCookies.UseVisualStyleBackColor = true;
+            this.sortCookies.Click += new System.EventHandler(this.SortCookies_Click);
+            // 
+            // cookiesAscDsc
+            // 
+            this.cookiesAscDsc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cookiesAscDsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cookiesAscDsc.FormattingEnabled = true;
+            this.cookiesAscDsc.Items.AddRange(new object[] {
+            "Ascending",
+            "Descending"});
+            this.cookiesAscDsc.Location = new System.Drawing.Point(827, 11);
+            this.cookiesAscDsc.Name = "cookiesAscDsc";
+            this.cookiesAscDsc.Size = new System.Drawing.Size(121, 21);
+            this.cookiesAscDsc.TabIndex = 9;
+            // 
+            // cookieSearch
+            // 
+            this.cookieSearch.Location = new System.Drawing.Point(104, 12);
+            this.cookieSearch.Name = "cookieSearch";
+            this.cookieSearch.Size = new System.Drawing.Size(241, 20);
+            this.cookieSearch.TabIndex = 8;
+            this.cookieSearch.TextChanged += new System.EventHandler(this.CookieSearch_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Search in Table:";
+            // 
+            // cookiesGrid
+            // 
+            this.cookiesGrid.AllowUserToAddRows = false;
+            this.cookiesGrid.AllowUserToDeleteRows = false;
+            this.cookiesGrid.AutoGenerateColumns = false;
+            this.cookiesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.cookiesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cookiesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.creationDataGridViewTextBoxColumn,
+            this.hostKeyDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn1,
+            this.valueDataGridViewTextBoxColumn1,
+            this.cookiePathDataGridViewTextBoxColumn,
+            this.expiresDataGridViewTextBoxColumn,
+            this.addToReportCookie});
+            this.cookiesGrid.DataSource = this.cookiesChromeBindingSource;
+            this.cookiesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cookiesGrid.Location = new System.Drawing.Point(0, 0);
+            this.cookiesGrid.Name = "cookiesGrid";
+            this.cookiesGrid.Size = new System.Drawing.Size(1059, 544);
+            this.cookiesGrid.TabIndex = 0;
             // 
             // creationDataGridViewTextBoxColumn
             // 
@@ -630,9 +961,121 @@
             this.expiresDataGridViewTextBoxColumn.Name = "expiresDataGridViewTextBoxColumn";
             this.expiresDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // addToReportCookie
+            // 
+            this.addToReportCookie.HeaderText = "Add To Report";
+            this.addToReportCookie.Name = "addToReportCookie";
+            // 
             // cookiesChromeBindingSource
             // 
             this.cookiesChromeBindingSource.DataSource = typeof(BrowserCheck.Model.CookiesChrome);
+            // 
+            // topSites
+            // 
+            this.topSites.Controls.Add(this.splitContainer6);
+            this.topSites.Location = new System.Drawing.Point(4, 22);
+            this.topSites.Name = "topSites";
+            this.topSites.Size = new System.Drawing.Size(1059, 585);
+            this.topSites.TabIndex = 5;
+            this.topSites.Text = "Top Sites";
+            this.topSites.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer6
+            // 
+            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer6.IsSplitterFixed = true;
+            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer6.Name = "splitContainer6";
+            this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer6.Panel1
+            // 
+            this.splitContainer6.Panel1.Controls.Add(this.topsitesCombo);
+            this.splitContainer6.Panel1.Controls.Add(this.topsitesSort);
+            this.splitContainer6.Panel1.Controls.Add(this.topsitesAscDsc);
+            this.splitContainer6.Panel1.Controls.Add(this.topsitesSearch);
+            this.splitContainer6.Panel1.Controls.Add(this.label6);
+            // 
+            // splitContainer6.Panel2
+            // 
+            this.splitContainer6.Panel2.Controls.Add(this.topsitesGrid);
+            this.splitContainer6.Size = new System.Drawing.Size(1059, 585);
+            this.splitContainer6.SplitterDistance = 38;
+            this.splitContainer6.TabIndex = 0;
+            // 
+            // topsitesCombo
+            // 
+            this.topsitesCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.topsitesCombo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.topsitesCombo.FormattingEnabled = true;
+            this.topsitesCombo.Items.AddRange(new object[] {
+            "Url",
+            "UrlRank",
+            "Title"});
+            this.topsitesCombo.Location = new System.Drawing.Point(700, 11);
+            this.topsitesCombo.Name = "topsitesCombo";
+            this.topsitesCombo.Size = new System.Drawing.Size(121, 21);
+            this.topsitesCombo.TabIndex = 15;
+            // 
+            // topsitesSort
+            // 
+            this.topsitesSort.Location = new System.Drawing.Point(970, 9);
+            this.topsitesSort.Name = "topsitesSort";
+            this.topsitesSort.Size = new System.Drawing.Size(75, 23);
+            this.topsitesSort.TabIndex = 10;
+            this.topsitesSort.Text = "Sort";
+            this.topsitesSort.UseVisualStyleBackColor = true;
+            this.topsitesSort.Click += new System.EventHandler(this.TopsitesSort_Click);
+            // 
+            // topsitesAscDsc
+            // 
+            this.topsitesAscDsc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.topsitesAscDsc.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.topsitesAscDsc.FormattingEnabled = true;
+            this.topsitesAscDsc.Items.AddRange(new object[] {
+            "Ascending",
+            "Descending"});
+            this.topsitesAscDsc.Location = new System.Drawing.Point(827, 11);
+            this.topsitesAscDsc.Name = "topsitesAscDsc";
+            this.topsitesAscDsc.Size = new System.Drawing.Size(121, 21);
+            this.topsitesAscDsc.TabIndex = 9;
+            // 
+            // topsitesSearch
+            // 
+            this.topsitesSearch.Location = new System.Drawing.Point(104, 11);
+            this.topsitesSearch.Name = "topsitesSearch";
+            this.topsitesSearch.Size = new System.Drawing.Size(241, 20);
+            this.topsitesSearch.TabIndex = 8;
+            this.topsitesSearch.Text = " ";
+            this.topsitesSearch.TextChanged += new System.EventHandler(this.TopsitesSearch_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Search in Table:";
+            // 
+            // topsitesGrid
+            // 
+            this.topsitesGrid.AllowUserToAddRows = false;
+            this.topsitesGrid.AllowUserToDeleteRows = false;
+            this.topsitesGrid.AutoGenerateColumns = false;
+            this.topsitesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.topsitesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.topsitesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.urlDataGridViewTextBoxColumn,
+            this.urlRankDataGridViewTextBoxColumn,
+            this.titleDataGridViewTextBoxColumn1,
+            this.addToReportTopSites});
+            this.topsitesGrid.DataSource = this.topSitesChromeBindingSource;
+            this.topsitesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.topsitesGrid.Location = new System.Drawing.Point(0, 0);
+            this.topsitesGrid.Name = "topsitesGrid";
+            this.topsitesGrid.Size = new System.Drawing.Size(1059, 543);
+            this.topsitesGrid.TabIndex = 0;
             // 
             // urlDataGridViewTextBoxColumn
             // 
@@ -655,6 +1098,11 @@
             this.titleDataGridViewTextBoxColumn1.Name = "titleDataGridViewTextBoxColumn1";
             this.titleDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
+            // addToReportTopSites
+            // 
+            this.addToReportTopSites.HeaderText = "Add To Report";
+            this.addToReportTopSites.Name = "addToReportTopSites";
+            // 
             // topSitesChromeBindingSource
             // 
             this.topSitesChromeBindingSource.DataSource = typeof(BrowserCheck.Model.TopSitesChrome);
@@ -672,15 +1120,22 @@
             // splitContainer7
             // 
             this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer7.IsSplitterFixed = true;
             this.splitContainer7.Location = new System.Drawing.Point(0, 0);
             this.splitContainer7.Name = "splitContainer7";
             // 
-            // 
+            // splitContainer7.Panel1
             // 
             this.splitContainer7.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.splitContainer7.Panel1.Controls.Add(this.printButton);
+            this.splitContainer7.Panel1.Controls.Add(this.label8);
+            this.splitContainer7.Panel1.Controls.Add(this.label7);
+            this.splitContainer7.Panel1.Controls.Add(this.reportName);
+            this.splitContainer7.Panel1.Controls.Add(this.reportNote);
             // 
-            // Panel2
+            // splitContainer7.Panel2
             // 
+            this.splitContainer7.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitContainer7.Panel2.Controls.Add(this.addPicture);
             this.splitContainer7.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer7.Panel2.Controls.Add(this.profilePic);
@@ -688,12 +1143,70 @@
             this.splitContainer7.SplitterDistance = 719;
             this.splitContainer7.TabIndex = 0;
             // 
+            // printButton
+            // 
+            this.printButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.printButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.printButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.printButton.ImageIndex = 1;
+            this.printButton.ImageList = this.imageListButton;
+            this.printButton.Location = new System.Drawing.Point(328, 535);
+            this.printButton.Name = "printButton";
+            this.printButton.Size = new System.Drawing.Size(75, 28);
+            this.printButton.TabIndex = 22;
+            this.printButton.Text = "Print";
+            this.printButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.printButton.UseVisualStyleBackColor = true;
+            this.printButton.Click += new System.EventHandler(this.PrintButton_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(70, 108);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Report Notes:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(70, 56);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Report Name:";
+            // 
+            // reportName
+            // 
+            this.reportName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reportName.Location = new System.Drawing.Point(73, 72);
+            this.reportName.Name = "reportName";
+            this.reportName.Size = new System.Drawing.Size(575, 20);
+            this.reportName.TabIndex = 19;
+            // 
+            // reportNote
+            // 
+            this.reportNote.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reportNote.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.reportNote.Location = new System.Drawing.Point(73, 124);
+            this.reportNote.MaxLength = 300;
+            this.reportNote.Name = "reportNote";
+            this.reportNote.Size = new System.Drawing.Size(575, 405);
+            this.reportNote.TabIndex = 18;
+            this.reportNote.Text = "";
+            this.reportNote.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ReportNote_KeyPress);
+            // 
             // addPicture
             // 
             this.addPicture.Enabled = false;
             this.addPicture.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.addPicture.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addPicture.ImageIndex = 2;
+            this.addPicture.ImageIndex = 0;
+            this.addPicture.ImageList = this.imageListButton;
             this.addPicture.Location = new System.Drawing.Point(113, 174);
             this.addPicture.Name = "addPicture";
             this.addPicture.Size = new System.Drawing.Size(123, 27);
@@ -701,6 +1214,7 @@
             this.addPicture.Text = "Add Picture";
             this.addPicture.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addPicture.UseVisualStyleBackColor = true;
+            this.addPicture.Click += new System.EventHandler(this.AddPicture_Click);
             // 
             // groupBox1
             // 
@@ -767,6 +1281,7 @@
             this.noForPhoto.TabStop = true;
             this.noForPhoto.Text = "No";
             this.noForPhoto.UseVisualStyleBackColor = true;
+            this.noForPhoto.CheckedChanged += new System.EventHandler(this.NoForPhoto_CheckedChanged);
             // 
             // yesForPhoto
             // 
@@ -778,6 +1293,7 @@
             this.yesForPhoto.TabIndex = 4;
             this.yesForPhoto.Text = "Yes";
             this.yesForPhoto.UseVisualStyleBackColor = true;
+            this.yesForPhoto.CheckedChanged += new System.EventHandler(this.YesForPhoto_CheckedChanged);
             // 
             // evidenceNumber
             // 
@@ -833,49 +1349,66 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 611);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.chromeTabControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ChromeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chrome Datas";
             this.Load += new System.EventHandler(this.ChromeForm_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.chromeTabControl.ResumeLayout(false);
             this.keywordHistoryTab.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.keywordsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.keywordSearchChromeBindingSource)).EndInit();
             this.urlHistoryTab.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.urlHistoryGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.historyChromeBindingSource)).EndInit();
             this.downloadHistory.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel1.PerformLayout();
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.downloadsHistoryGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.downloadsChromeBindingSource)).EndInit();
             this.autofillTab.ResumeLayout(false);
+            this.splitContainer4.Panel1.ResumeLayout(false);
+            this.splitContainer4.Panel1.PerformLayout();
             this.splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.autofillGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoFillChromeBindingSource)).EndInit();
             this.cookiesTab.ResumeLayout(false);
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel1.PerformLayout();
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cookiesGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cookiesChromeBindingSource)).EndInit();
             this.topSites.ResumeLayout(false);
+            this.splitContainer6.Panel1.ResumeLayout(false);
+            this.splitContainer6.Panel1.PerformLayout();
             this.splitContainer6.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
             this.splitContainer6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.topsitesGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.keywordSearchChromeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.historyChromeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.downloadsChromeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.autoFillChromeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cookiesChromeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.topSitesChromeBindingSource)).EndInit();
             this.printPdf.ResumeLayout(false);
+            this.splitContainer7.Panel1.ResumeLayout(false);
+            this.splitContainer7.Panel1.PerformLayout();
             this.splitContainer7.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
             this.splitContainer7.ResumeLayout(false);
@@ -885,10 +1418,23 @@
             this.ResumeLayout(false);
 
         }
-
+        private void InitializeComboboxes()
+        {
+            urlsAscDsc.SelectedIndex = 0;
+            urlsCombo.SelectedIndex = 0;
+            keywordAscDsc.SelectedIndex = 0;
+            cookiesAscDsc.SelectedIndex = 0;
+            cookiesCombo.SelectedIndex = 0;
+            topsitesAscDsc.SelectedIndex = 0;
+            topsitesCombo.SelectedIndex = 0;
+            downloadsAscDsc.SelectedIndex = 0;
+            downloadsCombo.SelectedIndex = 0;
+            autofillAscDsc.SelectedIndex = 0;
+            autofillCombo.SelectedIndex = 0;
+        }
         #endregion
         private System.Windows.Forms.BindingSource keywordSearchChromeBindingSource;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl chromeTabControl;
         private System.Windows.Forms.TabPage keywordHistoryTab;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView keywordsGrid;
@@ -898,11 +1444,6 @@
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.TabPage downloadHistory;
         private System.Windows.Forms.DataGridView urlHistoryGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn visitCountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisitTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn visitDurationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn addToReportHistory;
         private System.Windows.Forms.BindingSource historyChromeBindingSource;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.DataGridView downloadsHistoryGrid;
@@ -958,5 +1499,48 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox profilePic;
+        private System.Windows.Forms.ImageList imageListButton;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox reportName;
+        private System.Windows.Forms.RichTextBox reportNote;
+        private System.Windows.Forms.Button printButton;
+        private System.Windows.Forms.TextBox keywordSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button sortKeyword;
+        private System.Windows.Forms.ComboBox keywordAscDsc;
+        private System.Windows.Forms.Button urlsSort;
+        private System.Windows.Forms.ComboBox urlsAscDsc;
+        private System.Windows.Forms.TextBox urlSearch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button sortDownloads;
+        private System.Windows.Forms.ComboBox downloadsAscDsc;
+        private System.Windows.Forms.TextBox downloadSearch;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button sortAutofill;
+        private System.Windows.Forms.ComboBox autofillAscDsc;
+        private System.Windows.Forms.TextBox autofillSearch;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button sortCookies;
+        private System.Windows.Forms.ComboBox cookiesAscDsc;
+        private System.Windows.Forms.TextBox cookieSearch;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button topsitesSort;
+        private System.Windows.Forms.ComboBox topsitesAscDsc;
+        private System.Windows.Forms.TextBox topsitesSearch;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.OpenFileDialog openFilePicture;
+        private System.Windows.Forms.ComboBox urlsCombo;
+        private System.Windows.Forms.ComboBox downloadsCombo;
+        private System.Windows.Forms.ComboBox autofillCombo;
+        private System.Windows.Forms.ComboBox cookiesCombo;
+        private System.Windows.Forms.ComboBox topsitesCombo;
+        private System.Windows.Forms.DataGridViewLinkColumn browseUrl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn urlColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visitCountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastVisitTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visitDurationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn addToReportHistory;
     }
 }

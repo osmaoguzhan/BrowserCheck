@@ -1,27 +1,24 @@
 ﻿using BrowserCheck.Model;
 using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BrowserCheck.DatabaseOperations
 {
     class UserDatabase
     {
         private static string path = Directory.GetCurrentDirectory();
-        private SQLiteConnection conn = new SQLiteConnection("Data Source=" + path + "/../../Application Files/Database/users.db;Version=3;");
+        private SQLiteConnection conn = new SQLiteConnection("Data Source=" + path + "/../../ApplicationFiles/Database/users.db;Version=3;");
 
         public bool checkUser(string email, string password)
         {
+           
             bool check = false;
-            try
+            User user = new User();
+            using (conn)
             {
-
-                using (conn)
-                {
+                try
+                {                
                     conn.Open();
                     using (SQLiteCommand cmd = new SQLiteCommand(conn))
                     {
@@ -35,34 +32,39 @@ namespace BrowserCheck.DatabaseOperations
                             {
                                 while (rdr.Read())
                                 {
-                                    Global.Session.Instance.MyUser.Name = rdr.GetValue(0).ToString();
-                                    Global.Session.Instance.MyUser.Surname = rdr.GetValue(1).ToString();
-                                    Global.Session.Instance.MyUser.Email = rdr.GetValue(2).ToString();
+                                    user.Name = rdr.GetValue(0).ToString();
+                                    user.Surname = rdr.GetValue(1).ToString();
+                                    user.Email = rdr.GetValue(2).ToString();
+                                    Global.Session.Instance.MyUser = user;
                                 }
-
                                 check = true;
                             }
                         }
 
                     }
-                    conn.Close();
                 }
+                catch
+                {
+                    check = false;
+                }
+                finally
+                {
+                    conn.Close();
 
+                }
             }
-            catch
-            {
-                check = false;
-            }
-             return check;
+            return check;
         }
 
         public bool addUser(User user)
         {
-            bool check = false;
-            try
+         
+            bool check = false;  
+            using (conn)
             {
-                using (conn)
+                try
                 {
+
                     conn.Open();
                     using (SQLiteCommand cmd = new SQLiteCommand(conn))
                     {
@@ -78,16 +80,18 @@ namespace BrowserCheck.DatabaseOperations
                         cmd.ExecuteNonQuery();
 
                         transaction.Commit();
+                        check = true;
                     }
+                }    
+                catch
+                {
+                    check = false;
+                }
+                finally
+                {
                     conn.Close();
                 }
-                check = true;
             }
-            catch
-            {
-                check = false;
-            }
-
             return check;
         }
 
